@@ -122,35 +122,48 @@
     .pill strong { color: var(--verde-claro); font-weight: 600; }
 
     /* ── NAV ── */
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: var(--blanco);
-      border-bottom: 2px solid var(--verde-claro);
-      padding: 0.7rem 1.5rem;
-      display: flex;
-      gap: 0.4rem;
-      flex-wrap: wrap;
-      justify-content: center;
-      box-shadow: 0 2px 12px rgba(13,110,78,0.10);
-    }
-    nav a {
-      text-decoration: none;
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: var(--verde);
-      background: transparent;
-      border: 1.5px solid var(--borde);
-      border-radius: 8px;
-      padding: 0.3rem 0.85rem;
-      transition: all 0.2s;
-    }
-    nav a:hover {
-      background: var(--verde);
-      color: white;
-      border-color: var(--verde);
-    }
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #162a44; /* azul oscuro como la imagen */
+  border-bottom: 4px solid #e8c840; /* línea amarilla */
+  padding: 0.6rem 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+nav a {
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #dbe6f3;
+  padding: 0.5rem 0.8rem;
+  position: relative;
+  transition: all 0.2s;
+}
+
+/* Hover elegante */
+nav a:hover {
+  color: #ffffff;
+}
+
+/* Línea activa (como en la imagen) */
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 3px;
+  background: #e8c840;
+  transition: width 0.3s;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
 
     /* ── MAIN ── */
     main {
