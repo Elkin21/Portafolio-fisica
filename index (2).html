@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portafolio de Física Aplicada – Mateo Torres</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Fira+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --verde:       #0d6e4e;
+      --verde-med:   #14a374;
+      --verde-claro: #1fcb8f;
+      --acento:      #e8c840;
+      --oscuro:      #0a1a12;
+      --fondo:       #f2f9f6;
+      --blanco:      #ffffff;
+      --gris:        #4a6357;
+      --borde:       #c3ddd4;
+      --card-bg:     #ffffff;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: var(--fondo);
+      color: var(--oscuro);
+      min-height: 100vh;
+    }
+
+    /* ── TOP BAR ── */
+    .topbar {
+      background: var(--oscuro);
+      color: rgba(255,255,255,0.6);
+      font-size: 0.75rem;
+      text-align: center;
+      padding: 0.4rem 1rem;
+      letter-spacing: 0.08em;
+    }
+    .topbar span { color: var(--acento); font-weight: 600; }
+
+    /* ── HERO ── */
+    header {
+      background: linear-gradient(135deg, var(--oscuro) 0%, #0d3526 60%, var(--verde) 100%);
+      color: white;
+      padding: 3.5rem 2rem 3rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    header::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image: radial-gradient(circle at 20% 80%, rgba(31,203,143,0.15) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(232,200,64,0.10) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    .logos-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+    .logo-box {
+      background: rgba(255,255,255,0.10);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 12px;
+      padding: 0.6rem 1.2rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      color: rgba(255,255,255,0.85);
+    }
+    .logo-box.uce { color: var(--acento); border-color: rgba(232,200,64,0.3); background: rgba(232,200,64,0.08); }
+    .chip {
+      display: inline-block;
+      background: rgba(31,203,143,0.18);
+      color: var(--verde-claro);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.3rem 1rem;
+      border-radius: 999px;
+      border: 1px solid rgba(31,203,143,0.35);
+      margin-bottom: 1rem;
+    }
+    header h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 0.5rem;
+    }
+    header h1 em {
+      font-style: normal;
+      color: var(--acento);
+    }
+    .subtitle {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.65);
+      font-weight: 300;
+      margin-bottom: 1.8rem;
+    }
+    .info-pills {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+    .pill {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 999px;
+      padding: 0.35rem 0.9rem;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.78);
+    }
+    .pill strong { color: var(--verde-claro); font-weight: 600; }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--blanco);
+      border-bottom: 2px solid var(--verde-claro);
+      padding: 0.7rem 1.5rem;
+      display: flex;
+      gap: 0.4rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      box-shadow: 0 2px 12px rgba(13,110,78,0.10);
+    }
+    nav a {
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--verde);
+      background: transparent;
+      border: 1.5px solid var(--borde);
+      border-radius: 8px;
+      padding: 0.3rem 0.85rem;
+      transition: all 0.2s;
+    }
+    nav a:hover {
+      background: var(--verde);
+      color: white;
+      border-color: var(--verde);
+    }
+
+    /* ── MAIN ── */
+    main {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 5rem;
+    }
+
+    /* ── SECTION HEADER ── */
+    section { margin-bottom: 3rem; }
+
+    .sec-head {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 2px solid var(--borde);
+    }
+    .sec-num {
+      font-family: 'Fira Mono', monospace;
+      font-size: 0.72rem;
+      font-weight: 500;
+      color: var(--verde-claro);
+      background: rgba(20,163,116,0.12);
+      border: 1px solid rgba(20,163,116,0.25);
+      border-radius: 6px;
+      padding: 0.15rem 0.55rem;
+    }
+    .sec-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--verde);
+      letter-spacing: -0.01em;
+    }
+    .sec-line { flex: 1; }
+
+    /* ── GRID ── */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+      gap: 1rem;
+    }
+
+    /* ── CARD ── */
+    .card {
+      background: var(--card-bg);
+      border: 1.5px solid var(--borde);
+      border-radius: 14px;
+      padding: 1rem 1.2rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.9rem;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+    .card::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 4px;
+      background: var(--verde-claro);
+      transform: scaleY(0);
+      transform-origin: bottom;
+      border-radius: 4px 0 0 4px;
+      transition: transform 0.22s;
+    }
+    .card:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(13,110,78,0.14); border-color: var(--verde-med); }
+    .card:hover::before { transform: scaleY(1); }
+
+    .card-ico {
+      width: 42px; height: 42px;
+      border-radius: 10px;
+      background: rgba(20,163,116,0.10);
+      border: 1px solid rgba(20,163,116,0.20);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .card-ico svg { width: 22px; height: 22px; stroke: var(--verde); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+
+    .card-body { flex: 1; min-width: 0; }
+    .card-tag {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--verde-med);
+      margin-bottom: 0.2rem;
+      font-family: 'Fira Mono', monospace;
+    }
+    .card-title {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--oscuro);
+      line-height: 1.35;
+    }
+    .card-desc {
+      font-size: 0.75rem;
+      color: var(--gris);
+      margin-top: 0.15rem;
+      font-weight: 300;
+    }
+    .card-arrow {
+      color: var(--borde);
+      transition: color 0.2s, transform 0.2s;
+      flex-shrink: 0;
+      align-self: center;
+    }
+    .card:hover .card-arrow { color: var(--verde-claro); transform: translateX(3px); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--oscuro);
+      color: rgba(255,255,255,0.5);
+      text-align: center;
+      padding: 1.8rem 1rem;
+      font-size: 0.8rem;
+    }
+    footer strong { color: var(--verde-claro); }
+  </style>
+</head>
+<body>
+
+<div class="topbar">Universidad Central del Ecuador &nbsp;·&nbsp; Facultad de Ingeniería &nbsp;·&nbsp; <span>Física Aplicada</span></div>
+
+<header>
+  <div class="logos-row">
+    <div class="logo-box uce">UCE</div>
+    <div class="logo-box">Ingeniería</div>
+    <div class="logo-box">2024 – 2025</div>
+  </div>
+  <div class="chip">Portafolio Académico</div>
+  <h1>Física <em>Aplicada</em></h1>
+  <p class="subtitle">Mateo Torres &nbsp;|&nbsp; Todos los recursos del curso organizados por unidad</p>
+  <div class="info-pills">
+    <span class="pill"><strong>Docente:</strong> Nombre del Docente</span>
+    <span class="pill"><strong>Semestre:</strong> 2024-B</span>
+    <span class="pill"><strong>Paralelo:</strong> A</span>
+    <span class="pill"><strong>NRC:</strong> 00000</span>
+  </div>
+</header>
+
+<nav>
+  <a href="#unidad1">Unidad 1</a>
+  <a href="#unidad2">Unidad 2</a>
+  <a href="#unidad3">Unidad 3</a>
+  <a href="#unidad4">Unidad 4</a>
+  <a href="#trabajos">Trabajos</a>
+  <a href="#extras">Recursos Extra</a>
+</nav>
+
+<main>
+
+  <!-- ══ UNIDAD 1 ══ -->
+  <section id="unidad1">
+    <div class="sec-head">
+      <span class="sec-num">01</span>
+      <span class="sec-title">Unidad 1 — Nombre de la Unidad</span>
+      <div class="sec-line"></div>
+    </div>
+    <div class="grid">
+
+      <a class="card" href="LINK_GOOGLE_DRIVE_AQUI" target="_blank" rel="noopener">
+        <div class="card-ico"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+        <div class="card-body">
+          <div class="card-tag">PDF · Tema 1.1</div>
+          <div class="card-title">Nombre del documento 1</div>
+          <div class="card-desc">Descripción o páginas del tema</div>
+        </div>
+        <svg class="card-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+
+      <a class="card" href="LINK_GOOGLE_DRIVE_AQUI" target="_blank" rel="noopener">
+        <div class="card-ico"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+        <div class="card-body">
+          <div class="card-tag">PDF · Tema 1.2</div>
+          <div class="card-title">Nombre del documento 2</div>
+          <div class="card-desc">Descripción o páginas del tema</div>
+        </div>
+        <svg class="card-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+
+      <a class="card" href="LINK_GOOGLE_DRIVE_AQUI" target="_blank" rel="noopener">
+        <div class="card-ico"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+        <div class="card-body">
+          <div class="card-tag">PDF · Tema 1.3</div>
+          <div class="card-title">Nombre del documento 3</div>
+          <div class="card-desc">Descripción o páginas del tema</div>
+        </div>
+        <svg class="card-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ══ UNIDAD 2 ══ -->
+  <section id="unidad2">
+    <div class="sec-head">
+      <span class="sec-num">02</span>
+      <span class="sec-title">Unidad 2 — Nombre de la Unidad</span>
+      <div class="sec-line"></div>
+    </div>
+    <div class="grid">
+
+      <a class="card" href="LINK_GOOGLE_DRIVE_AQUI" target="_blank" rel="noopener">
+        <div class="card-ico"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+        <div class="card-body">
+          <div class="card-tag">PDF · Tema 2.1</div>
+          <div class="card-title">Nombre del documento 4</div>
+          <div class="card-desc">Descripción o páginas del tema</div>
+        </div>
+        <svg class="card-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+
+      <a class="card" href="LINK_GOOGLE_DRIVE_AQUI" target="_blank" rel="noopener">
+        <div class="card-ico"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+        <div class="card-body">
+          <div class="card-tag">PDF · Tema 2.2</div>
+          <div class="card-title">Nombre del documento 5</div>
+          <div class="card-desc">Descripción o páginas del tema</div>
+        </div>
+        <svg class="card-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+
+      <a class="card" href="LINK_GOOGLE_DRIVE_AQUI" target="_blank" rel="noopener">
+        <div class="card-ico"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+        <div class="card-body">
+          <div class="card-tag">PDF · Tema 2.3</div>
+          <div class="card-title">Nombre del documento 6</div>
+          <div class="card-desc">Descripción o páginas del tema</div>
+        </div>
+        <svg class="card-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ══ UNIDAD 3 ══ -->
+  <section id="unidad3">
+    <div class="sec-head">
+      <span class="sec-num">03</span>
+      <span class="sec-title">Unidad 3 — Nombre de la Unidad</span>
+      <div class="sec-line"></div>
+    </div>
+    <div class="grid">
+
+      <a class="card" href="LINK_GOOGLE_DRIVE_AQUI" target="_blank" rel="noopener">
+        <div class="card-ico"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+        <div class="card-body">
+          <div class="card-tag">PDF · Tema 3.1</div>
+          <div class="card-title">Nombre del documento 7</div>
+          <div class="card-desc">Descripción o páginas del tema</div>
+        </div>
+        <svg class="card-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+
+      <a class="card" href="LINK_GOOGLE_DRIVE_AQUI" target="_blank" rel="noopener">
+        <div class="card-ico"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+        <div class="card-body">
+          <div class="card-tag">PDF · Tema 3.2</div>
+          <div class="card-title">Nombre del documento 8</div>
+          <div class="card-desc">Descripción o páginas del tema</div>
+        </div>
+        <svg class="card-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+
+      <a class="card" href="LINK_GOOGLE_DRIVE_AQUI" target="_blank" rel="noopener">
+        <div class="card-ico"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+        <div class="card-body">
+          <div class="card-tag">PDF · Tema 3.3</div>
+          <div class="card-title">Nombre del documento 9</div>
+          <div class="card-desc">Descripción o páginas del tema</div>
+        </div>
+        <svg class="card-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ══ UNIDAD 4 ══ -->
+  <section id="unidad4">
+    <div class="sec-head">
+      <span class="sec-num">04</span>
+      <span class="sec-title">Unidad 4 — Nombre de la Unidad</span>
+      <div class="sec-line"></div>
+    </div>
+    <div class="grid">
+
+      <a class="card" href="LINK_GOOGLE_DRIVE_AQUI" target="_blank" rel="noopener">
+        <div class="card-ico"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+        <div class="card-body">
+          <div class="card-tag">PDF · Tema 4.1</div>
+          <div class="card-title">Nombre del documento 10</div>
+          <div class="card-desc">Descripción o páginas del tema</div>
+        </div>
+        <svg class="card-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+
+      <a class="card" href="LINK_GOOGLE_DRIVE_AQUI" target="_blank" rel="noopener">
+        <div class="card-ico"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+        <div class="card-body">
+          <div class="card-tag">PDF · Tema 4.2</div>
+          <div class="card-title">Nombre del documento 11</div>
+          <div class="card-desc">Descripción o páginas del tema</div>
+        </div>
+        <svg class="card-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+
+      <a class="card" href="LINK_GOOGLE_DRIVE_AQUI" target="_blank" rel="noopener">
+        <div class="card-ico"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+        <div class="card-body">
+          <div class="card-tag">PDF · Tema 4.3</div>
+          <div class="card-title">Nombre del documento 12</div>
+          <div class="card-desc">Descripción o páginas del tema</div>
+        </div>
+        <svg class="card-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ══ TRABAJOS ══ -->
+  <section id="trabajos">
+    <div class="sec-head">
+      <span class="sec-num">05</span>
+      <span class="sec-title">Trabajos y Prácticas</span>
+      <div class="sec-line"></div>
+    </div>
+    <div class="grid">
+
+      <a class="card" href="LINK_GOOGLE_DRIVE_AQUI" target="_blank" rel="noopener">
+        <div class="card-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--verde)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="card-tag">Trabajo · Práctica 1</div>
+          <div class="card-title">Nombre del trabajo 1</div>
+          <div class="card-desc">Descripción breve del trabajo</div>
+        </div>
+        <svg class="card-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+
+      <a class="card" href="LINK_GOOGLE_DRIVE_AQUI" target="_blank" rel="noopener">
+        <div class="card-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--verde)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="card-tag">Trabajo · Práctica 2</div>
+          <div class="card-title">Nombre del trabajo 2</div>
+          <div class="card-desc">Descripción breve del trabajo</div>
+        </div>
+        <svg class="card-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ══ EXTRAS ══ -->
+  <section id="extras">
+    <div class="sec-head">
+      <span class="sec-num">06</span>
+      <span class="sec-title">Recursos Extra</span>
+      <div class="sec-line"></div>
+    </div>
+    <div class="grid">
+
+      <a class="card" href="LINK_GOOGLE_DRIVE_AQUI" target="_blank" rel="noopener">
+        <div class="card-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#c9a800" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="card-tag" style="color:#c9a800;">Extra · Recurso 1</div>
+          <div class="card-title">Nombre del recurso extra 1</div>
+          <div class="card-desc">Descripción breve</div>
+        </div>
+        <svg class="card-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+
+      <a class="card" href="LINK_GOOGLE_DRIVE_AQUI" target="_blank" rel="noopener">
+        <div class="card-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#c9a800" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="card-tag" style="color:#c9a800;">Extra · Recurso 2</div>
+          <div class="card-title">Nombre del recurso extra 2</div>
+          <div class="card-desc">Descripción breve</div>
+        </div>
+        <svg class="card-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>Portafolio de <strong>Física Aplicada</strong> &nbsp;·&nbsp; Mateo Torres &nbsp;·&nbsp; Universidad Central del Ecuador &nbsp;·&nbsp; 2024–2025</p>
+</footer>
+
+</body>
+</html>
