@@ -3,34 +3,42 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Portafolio de Física Aplicada – Mateo Torres</title>
+  <title>Portafolio de Física Aplicada – Elkin Morales</title>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Fira+Mono:wght@400;500&display=swap" rel="stylesheet"/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    :root {
-      --verde:       #0d6e4e;
-      --verde-med:   #14a374;
-      --verde-claro: #1fcb8f;
-      --acento:      #e8c840;
-      --oscuro:      #0a1a12;
-      --fondo:       #f2f9f6;
-      --blanco:      #ffffff;
-      --gris:        #4a6357;
-      --borde:       #c3ddd4;
-      --card-bg:     #ffffff;
-    }
+    :root{
+    --azul:#0f172a;
+    --azul2:#1e3a8a;
+    --celeste:#38bdf8;
+    --morado:#7c3aed;
+    --rosa:#ec4899;
+    --amarillo:#facc15;
+    --blanco:#ffffff;
+    --gris:#64748b;
+    --fondo:#eef5ff;
+    --borde:#cbd5e1;
+    --card-bg:rgba(255,255,255,.92);
+}
 
     html { scroll-behavior: smooth; }
 
-    body {
-      font-family: 'Outfit', sans-serif;
-      background: var(--fondo);
-      color: var(--oscuro);
-      min-height: 100vh;
-    }
+    body{
+    font-family:'Outfit',sans-serif;
 
-    /* ── TOP BAR ── */
+    background:
+    linear-gradient(rgba(255,255,255,.92),rgba(255,255,255,.92)),
+    url("https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1800&q=80");
+
+    background-size:cover;
+    background-attachment:fixed;
+    background-position:center;
+
+    color:#111827;
+
+    min-height:100vh;
+}
     .topbar {
       background: var(--oscuro);
       color: rgba(255,255,255,0.6);
@@ -42,14 +50,26 @@
     .topbar span { color: var(--acento); font-weight: 600; }
 
     /* ── HERO ── */
-    header {
-      background: linear-gradient(135deg, var(--oscuro) 0%, #0d3526 60%, var(--verde) 100%);
-      color: white;
-      padding: 3.5rem 2rem 3rem;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
+header{
+
+background:
+linear-gradient(rgba(15,23,42,.85),rgba(30,58,138,.80)),
+url("https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1800&q=80");
+
+background-size:cover;
+background-position:center;
+
+color:white;
+
+padding:4rem 2rem;
+
+text-align:center;
+
+position:relative;
+
+overflow:hidden;
+
+}
     header::before {
       content: '';
       position: absolute; inset: 0;
@@ -122,26 +142,56 @@
     .pill strong { color: var(--verde-claro); font-weight: 600; }
 
     /* ── NAV ── */
-nav {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: #162a44; /* azul oscuro como la imagen */
-  border-bottom: 4px solid #e8c840; /* línea amarilla */
-  padding: 0.6rem 1rem;
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
+nav{
+
+position:sticky;
+
+top:0;
+
+z-index:100;
+
+background:linear-gradient(90deg,#1e3a8a,#2563eb,#0ea5e9);
+
+border-bottom:5px solid #facc15;
+
+padding:.8rem;
+
+display:flex;
+
+justify-content:center;
+
+gap:1rem;
+
+box-shadow:0 6px 18px rgba(0,0,0,.25);
+
 }
 
-nav a {
-  text-decoration: none;
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: #dbe6f3;
-  padding: 0.5rem 0.8rem;
-  position: relative;
-  transition: all 0.2s;
+nav a{
+
+text-decoration:none;
+
+font-size:15px;
+
+font-weight:700;
+
+color:white;
+
+padding:12px 18px;
+
+border-radius:8px;
+
+transition:.3s;
+
+}
+
+nav a:hover{
+
+background:white;
+
+color:#2563eb;
+
+transform:translateY(-3px);
+
 }
 
 /* Hover elegante */
@@ -166,12 +216,15 @@ nav a:hover::after {
 }
 
     /* ── MAIN ── */
-    main {
-      max-width: 1080px;
-      margin: 0 auto;
-      padding: 2.5rem 1.5rem 5rem;
-    }
+   main{
 
+max-width:1200px;
+
+margin:auto;
+
+padding:50px 20px;
+
+}
     /* ── SECTION HEADER ── */
     section { margin-bottom: 3rem; }
 
@@ -209,20 +262,35 @@ nav a:hover::after {
     }
 
     /* ── CARD ── */
-    .card {
-      background: var(--card-bg);
-      border: 1.5px solid var(--borde);
-      border-radius: 14px;
-      padding: 1rem 1.2rem;
-      display: flex;
-      align-items: flex-start;
-      gap: 0.9rem;
-      text-decoration: none;
-      color: inherit;
-      transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
-      position: relative;
-      overflow: hidden;
-    }
+    .card{
+
+background:rgba(255,255,255,.88);
+
+backdrop-filter:blur(12px);
+
+border:none;
+
+border-radius:18px;
+
+padding:20px;
+
+display:flex;
+
+gap:15px;
+
+text-decoration:none;
+
+color:inherit;
+
+box-shadow:0 10px 30px rgba(0,0,0,.12);
+
+transition:.35s;
+
+overflow:hidden;
+
+position:relative;
+
+}
     .card::before {
       content: '';
       position: absolute;
@@ -234,9 +302,13 @@ nav a:hover::after {
       border-radius: 4px 0 0 4px;
       transition: transform 0.22s;
     }
-    .card:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(13,110,78,0.14); border-color: var(--verde-med); }
-    .card:hover::before { transform: scaleY(1); }
+    .card:hover{
 
+transform:translateY(-8px);
+
+box-shadow:0 20px 40px rgba(37,99,235,.30);
+
+}
     .card-ico {
       width: 42px; height: 42px;
       border-radius: 10px;
@@ -294,22 +366,29 @@ nav a:hover::after {
 
 <header>
   <div class="logos-row">
-    <div class="logo-box uce">UCE</div>
-    <div class="logo-box">Ingeniería</div>
-    <div class="logo-box">2024 – 2025</div>
+    <div class="logo-box uce">UNIVERSIDAD CENTRAL DEL ECUADOR</div>
+    <div class="logo-box">PEDAGOGIA INFORMÁTICA</div>
+    <div class="logo-box">2026 – 2026</div>
   </div>
   <div class="chip">Portafolio Académico</div>
   <h1>Física <em>Aplicada</em></h1>
-  <p class="subtitle">Mateo Torres &nbsp;|&nbsp; Todos los recursos del curso organizados por unidad</p>
+  <p class="subtitle">MORALES ELKIN &nbsp;|&nbsp;</p>
   <div class="info-pills">
-    <span class="pill"><strong>Docente:</strong> Nombre del Docente</span>
-    <span class="pill"><strong>Semestre:</strong> 2024-B</span>
-    <span class="pill"><strong>Paralelo:</strong> A</span>
-    <span class="pill"><strong>NRC:</strong> 00000</span>
+    <span class="pill"><strong>Docente:</strong> DIEGO TIPAN</span>
+    <span class="pill"><strong>Semestre:</strong> 5 SEMESTRE</span>
+    <span class="pill"><strong>Paralelo:</strong> B</span>
   </div>
 </header>
 
 <nav>
+  <a href="#silabo">Silabo </a>
+  <a href="#hoja de vida">Hoja de vida</a>
+  <a href="#Deberes">Deberes </a>
+  <a href="#organizadores graficos">Organizadores graficos </a>
+  <a href="#Fundamentos Conceptuales">Fundamentos Conceptuales </a>
+  <a href="#informes">Informes </a>
+  <a href="#trabajos en clase">Trabajos en clases </a>
+  <a href="#Evaluaciones">Evaluaciones </a>
   <a href="#unidad1">Unidad 1</a>
   <a href="#unidad2">Unidad 2</a>
   <a href="#unidad3">Unidad 3</a>
@@ -320,6 +399,213 @@ nav a:hover::after {
 
 <main>
 
+  <!-- ══ SÍLABO ══ -->
+<section id="silabo">
+    <div class="sec-head">
+        <span class="sec-num">01</span>
+        <span class="sec-title">Sílabo</span>
+        <div class="sec-line"></div>
+    </div>
+
+    <div class="grid">
+
+        <a class="card" href="LINK_GOOGLE_DRIVE_AQUI" target="_blank">
+            <div class="card-ico">
+                <svg viewBox="0 0 24 24">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                    <polyline points="14 2 14 8 20 8"/>
+                </svg>
+            </div>
+
+            <div class="card-body">
+                <div class="card-tag">Documento Oficial</div>
+                <div class="card-title">Sílabo de la asignatura</div>
+                <div class="card-desc">
+                    Documento con la planificación del curso.
+                </div>
+            </div>
+
+            <svg class="card-arrow" width="16" height="16" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+
+        </a>
+
+    </div>
+</section>
+
+
+<!-- ══ HOJA DE VIDA ══ -->
+<section id="hoja de vida">
+    <div class="sec-head">
+        <span class="sec-num">02</span>
+        <span class="sec-title">Hoja de Vida</span>
+        <div class="sec-line"></div>
+    </div>
+
+    <div class="grid">
+
+        <a class="card" href="LINK_GOOGLE_DRIVE_AQUI" target="_blank">
+            <div class="card-ico">
+                <svg viewBox="0 0 24 24">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                    <polyline points="14 2 14 8 20 8"/>
+                </svg>
+            </div>
+
+            <div class="card-body">
+                <div class="card-tag">PDF</div>
+                <div class="card-title">Currículum Vitae</div>
+                <div class="card-desc">
+                    Información académica y profesional.
+                </div>
+            </div>
+
+            <svg class="card-arrow" width="16" height="16" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+
+        </a>
+
+    </div>
+</section>
+
+
+<!-- ══ DEBERES ══ -->
+<section id="Deberes">
+    <div class="sec-head">
+        <span class="sec-num">03</span>
+        <span class="sec-title">Deberes</span>
+        <div class="sec-line"></div>
+    </div>
+
+    <div class="grid">
+
+        <a class="card" href="LINK_GOOGLE_DRIVE_AQUI" target="_blank">
+            <div class="card-ico">
+                <svg viewBox="0 0 24 24">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                    <polyline points="14 2 14 8 20 8"/>
+                </svg>
+            </div>
+
+            <div class="card-body">
+                <div class="card-tag">Actividad</div>
+                <div class="card-title">Deber 1</div>
+                <div class="card-desc">Tareas y actividades desarrolladas.</div>
+            </div>
+
+            <svg class="card-arrow" width="16" height="16" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+
+        </a>
+
+    </div>
+</section>
+
+
+<!-- ══ ORGANIZADORES GRÁFICOS ══ -->
+<section id="organizadores graficos">
+    <div class="sec-head">
+        <span class="sec-num">04</span>
+        <span class="sec-title">Organizadores Gráficos</span>
+        <div class="sec-line"></div>
+    </div>
+
+    <div class="grid">
+        <a class="card" href="LINK_GOOGLE_DRIVE_AQUI" target="_blank">
+            <div class="card-body">
+                <div class="card-tag">Mapa Conceptual</div>
+                <div class="card-title">Organizador 1</div>
+                <div class="card-desc">Mapas conceptuales, mentales e infografías.</div>
+            </div>
+        </a>
+    </div>
+</section>
+
+
+<!-- ══ FUNDAMENTOS CONCEPTUALES ══ -->
+<section id="Fundamentos Conceptuales">
+    <div class="sec-head">
+        <span class="sec-num">05</span>
+        <span class="sec-title">Fundamentos Conceptuales</span>
+        <div class="sec-line"></div>
+    </div>
+
+    <div class="grid">
+        <a class="card" href="LINK_GOOGLE_DRIVE_AQUI" target="_blank">
+            <div class="card-body">
+                <div class="card-tag">Teoría</div>
+                <div class="card-title">Material de estudio</div>
+                <div class="card-desc">Conceptos y fundamentos de la asignatura.</div>
+            </div>
+        </a>
+    </div>
+</section>
+
+
+<!-- ══ INFORMES ══ -->
+<section id="informes">
+    <div class="sec-head">
+        <span class="sec-num">06</span>
+        <span class="sec-title">Informes</span>
+        <div class="sec-line"></div>
+    </div>
+
+    <div class="grid">
+        <a class="card" href="LINK_GOOGLE_DRIVE_AQUI" target="_blank">
+            <div class="card-body">
+                <div class="card-tag">Informe</div>
+                <div class="card-title">Informe 1</div>
+                <div class="card-desc">Reportes y documentos académicos.</div>
+            </div>
+        </a>
+    </div>
+</section>
+
+
+<!-- ══ TRABAJOS EN CLASE ══ -->
+<section id="trabajos en clase">
+    <div class="sec-head">
+        <span class="sec-num">07</span>
+        <span class="sec-title">Trabajos en Clase</span>
+        <div class="sec-line"></div>
+    </div>
+
+    <div class="grid">
+        <a class="card" href="LINK_GOOGLE_DRIVE_AQUI" target="_blank">
+            <div class="card-body">
+                <div class="card-tag">Clase</div>
+                <div class="card-title">Actividad en clase</div>
+                <div class="card-desc">Ejercicios desarrollados durante las clases.</div>
+            </div>
+        </a>
+    </div>
+</section>
+
+
+<!-- ══ EVALUACIONES ══ -->
+<section id="Evaluaciones">
+    <div class="sec-head">
+        <span class="sec-num">08</span>
+        <span class="sec-title">Evaluaciones</span>
+        <div class="sec-line"></div>
+    </div>
+
+    <div class="grid">
+        <a class="card" href="LINK_GOOGLE_DRIVE_AQUI" target="_blank">
+            <div class="card-body">
+                <div class="card-tag">Evaluación</div>
+                <div class="card-title">Examen o prueba</div>
+                <div class="card-desc">Evaluaciones realizadas durante el semestre.</div>
+            </div>
+        </a>
+    </div>
+</section>
   <!-- ══ UNIDAD 1 ══ -->
   <section id="unidad1">
     <div class="sec-head">
@@ -563,7 +849,7 @@ nav a:hover::after {
 </main>
 
 <footer>
-  <p>Portafolio de <strong>Física Aplicada</strong> &nbsp;·&nbsp; Mateo Torres &nbsp;·&nbsp; Universidad Central del Ecuador &nbsp;·&nbsp; 2024–2025</p>
+  <p>Portafolio de <strong>Física Aplicada</strong> &nbsp;·&nbsp; Morales Elkin  &nbsp;·&nbsp; Universidad Central del Ecuador &nbsp;·&nbsp; 2024–2025</p>
 </footer>
 
 </body>
