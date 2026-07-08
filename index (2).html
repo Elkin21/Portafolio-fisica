@@ -358,6 +358,54 @@ box-shadow:0 20px 40px rgba(37,99,235,.30);
       font-size: 0.8rem;
     }
     footer strong { color: var(--verde-claro); }
+    /* Contenedor de cada sección */
+.seccion-contenido{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:40px;
+}
+
+/* Parte izquierda */
+.seccion-texto{
+    flex:1;
+}
+
+/* Imagen derecha */
+.seccion-imagen{
+    width:380px;
+    flex-shrink:0;
+}
+
+.seccion-imagen img{
+    width:100%;
+    height:260px;
+    object-fit:cover;
+    border-radius:18px;
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
+    transition:.4s;
+}
+
+.seccion-imagen img:hover{
+    transform:scale(1.05);
+}
+
+/* Responsive */
+@media(max-width:900px){
+
+.seccion-contenido{
+    flex-direction:column;
+}
+
+.seccion-imagen{
+    width:100%;
+}
+
+.seccion-imagen img{
+    height:220px;
+}
+
+}
   </style>
 </head>
 <body>
@@ -402,7 +450,8 @@ box-shadow:0 20px 40px rgba(37,99,235,.30);
   <!-- ══ SÍLABO ══ -->
 <section id="silabo">
     <div class="sec-head">
-      <img src="img/deberes.jpg" class="sec-img">
+    <div class="seccion-imagen">
+        <img src="img/silabo.jpg" alt="Sílabo">
         <span class="sec-num">01</span>
         <span class="sec-title">Sílabo</span>
         <div class="sec-line"></div>
@@ -440,6 +489,8 @@ box-shadow:0 20px 40px rgba(37,99,235,.30);
 <!-- ══ HOJA DE VIDA ══ -->
 <section id="hoja de vida">
     <div class="sec-head">
+      <div class="seccion-imagen">
+    <img src="img/hoja_vida.jpg">
         <span class="sec-num">02</span>
         <span class="sec-title">Hoja de Vida</span>
         <div class="sec-line"></div>
@@ -477,6 +528,9 @@ box-shadow:0 20px 40px rgba(37,99,235,.30);
 <!-- ══ DEBERES ══ -->
 <section id="Deberes">
     <div class="sec-head">
+      <div class="seccion-imagen">
+    <img src="img/deberes.jpg">
+</div>
         <span class="sec-num">03</span>
         <span class="sec-title">Deberes</span>
         <div class="sec-line"></div>
@@ -610,6 +664,9 @@ box-shadow:0 20px 40px rgba(37,99,235,.30);
   <!-- ══ UNIDAD 1 ══ -->
   <section id="unidad1">
     <div class="sec-head">
+      <div class="seccion-imagen">
+    <img src="img/unidad1.jpg">
+</div>
       <span class="sec-num">01</span>
       <span class="sec-title">Unidad 1 — Nombre de la Unidad</span>
       <div class="sec-line"></div>
