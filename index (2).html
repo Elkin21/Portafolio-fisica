@@ -260,33 +260,65 @@ text-align:center;
 
 
 <nav>
+  <div class="nav-inner">
 
-<ul>
+    <a href="#" class="active" onclick="show('datos',this);return false;">
+      📋 Datos Informativos
+    </a>
 
-<li><a href="#" class="active" onclick="mostrar('datos',this)">📋 Datos Informativos</a></li>
+    <a href="#" onclick="show('silabo',this);return false;">
+      📘 Sílabo
+    </a>
 
-<li><a href="#" onclick="mostrar('silabo',this)">📘 Sílabo</a></li>
+    <a href="#" onclick="show('hoja',this);return false;">
+      👤 Hoja de Vida
+    </a>
 
-<li><a href="#" onclick="mostrar('hoja',this)">👤 Hoja de Vida</a></li>
+    <a href="#" onclick="show('deberes',this);return false;">
+      📝 Deberes
+    </a>
 
-<li><a href="#" onclick="mostrar('deberes',this)">📝 Deberes</a></li>
+    <a href="#" onclick="show('organizadores',this);return false;">
+      🧠 Organizadores Gráficos
+    </a>
 
-<li><a href="#" onclick="mostrar('organizadores',this)">🧠 Organizadores Gráficos</a></li>
+    <a href="#" onclick="show('fundamentos',this);return false;">
+      📚 Fundamentos Conceptuales
+    </a>
 
-<li><a href="#" onclick="mostrar('fundamentos',this)">📚 Fundamentos Conceptuales</a></li>
+    <a href="#" onclick="show('informes',this);return false;">
+      📑 Informes
+    </a>
 
-<li><a href="#" onclick="mostrar('informes',this)">📑 Informes</a></li>
+    <a href="#" onclick="show('clases',this);return false;">
+      🏫 Trabajos en Clase
+    </a>
 
-<li><a href="#" onclick="mostrar('clases',this)">🏫 Trabajos en Clase</a></li>
+    <a href="#" onclick="show('evaluaciones',this);return false;">
+      📊 Evaluaciones
+    </a>
 
-<li><a href="#" onclick="mostrar('evaluaciones',this)">📊 Evaluaciones</a></li>
+    <a href="#" onclick="show('individuales',this);return false;">
+      📂 Trabajos Individuales
+    </a>
 
-<li><a href="#" onclick="mostrar('trabajos',this)">💻 Trabajos del Aula Virtual</a></li>
+    <a href="#" onclick="show('grupales',this);return false;">
+      👥 Trabajos Grupales
+    </a>
 
-<li><a href="#" onclick="mostrar('grupo',this)">👥 Trabajos en Grupo</a></li>
+    <a href="#" onclick="show('trabajos',this);return false;">
+      💻 Trabajos del Aula Virtual
+    </a>
 
-</ul>
+    <a href="#" onclick="show('mapas',this);return false;">
+      🗺️ Organizadores / Mapas
+    </a>
 
+    <a href="#" onclick="show('anexos',this);return false;">
+      📎 Anexos
+    </a>
+
+  </div>
 </nav>
 
 <main>
@@ -677,7 +709,7 @@ Elkin Adriano Morales Coello
 
 <script>
 
-function mostrar(id, elemento){
+function show(id, elemento){
 
 // Ocultar todas las secciones
 var secciones = document.querySelectorAll(".section");
@@ -688,8 +720,10 @@ for(var i=0; i<secciones.length; i++){
 
 }
 
+
 // Mostrar la sección seleccionada
 document.getElementById(id).classList.add("active");
+
 
 // Quitar el color activo del menú
 var enlaces = document.querySelectorAll("nav a");
@@ -700,8 +734,10 @@ for(var i=0; i<enlaces.length; i++){
 
 }
 
+
 // Activar el botón seleccionado
 elemento.classList.add("active");
+
 
 // Regresar al inicio de la página
 window.scrollTo({
