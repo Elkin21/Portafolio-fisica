@@ -1,201 +1,11 @@
-<!DOCTYPE html>
-<html lang="es">
-
-<head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Portafolio de Física Aplicada</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-}
-
-body{
-background:#eef5ff;
-color:#222;
-}
-
-header{
-background:linear-gradient(rgba(15,23,42,.9),rgba(30,58,138,.85)),
-url("https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1800&q=80");
-background-size:cover;
-background-position:center;
-padding:70px 20px;
-text-align:center;
-color:#fff;
-}
-
-header img{
-width:120px;
-margin-bottom:20px;
-}
-
-header h1{
-font-size:42px;
-margin-bottom:10px;
-}
-
-header h2{
-font-weight:400;
-margin-bottom:10px;
-}
-
-/*========== MENU ==========*/
-
-nav{
-background:#0f172a;
-position:sticky;
-top:0;
-z-index:999;
-overflow-x:auto;
-overflow-y:hidden;
-white-space:nowrap;
-box-shadow:0 3px 8px rgba(0,0,0,.2);
-}
-
-nav::-webkit-scrollbar{
-height:8px;
-}
-
-nav::-webkit-scrollbar-thumb{
-background:#2563eb;
-border-radius:20px;
-}
-
-nav ul{
-display:flex;
-flex-wrap:nowrap;
-list-style:none;
-width:max-content;
-}
-
-nav li{
-flex:0 0 auto;
-}
-
-nav a{
-display:block;
-padding:16px 22px;
-text-decoration:none;
-color:#fff;
-font-weight:600;
-transition:.3s;
-white-space:nowrap;
-}
-
-nav a:hover{
-background:#2563eb;
-}
-
-nav a.active{
-background:#facc15;
-color:#111827;
-}
-
-/*========== CONTENIDO ==========*/
-
-main{
-max-width:1200px;
-margin:auto;
-padding:35px 20px;
-}
-
-.section{
-display:none;
-animation:fade .4s;
-}
-
-.section.active{
-display:block;
-}
-
-@keyframes fade{
-
-from{
-opacity:0;
-transform:translateY(15px);
-}
-
-to{
-opacity:1;
-transform:translateY(0);
-}
-
-}
-
-.card{
-background:#fff;
-padding:25px;
-margin-bottom:25px;
-border-radius:15px;
-box-shadow:0 10px 25px rgba(0,0,0,.12);
-}
-
-.card h3{
-color:#1e3a8a;
-margin-bottom:15px;
-}
-
-.card p{
-line-height:1.7;
-}
-
-.btn-ver,
-.btn-dl{
-display:inline-block;
-padding:10px 18px;
-border-radius:8px;
-text-decoration:none;
-color:#fff;
-margin-right:10px;
-margin-top:10px;
-}
-
-.btn-ver{
-background:#2563eb;
-}
-
-.btn-dl{
-background:#16a34a;
-}
-
-.btn-ver:hover{
-background:#1d4ed8;
-}
-
-.btn-dl:hover{
-background:#15803d;
-}
-
-footer{
-margin-top:50px;
-padding:30px;
-background:#0f172a;
-color:#fff;
-text-align:center;
-}
-
 </style>
 
 </head>
 
 <body>
-
 <header>
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Logo_Universidad_Central_del_Ecuador.svg/512px-Logo_Universidad_Central_del_Ecuador.svg.png">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Logo_Universidad_Central_del_Ecuador.svg/512px-Logo_Universidad_Central_del_Ecuador.svg.png" alt="UCE">
 
 <h1>PORTAFOLIO ACADÉMICO</h1>
 
@@ -215,37 +25,32 @@ text-align:center;
 
 </header>
 
+
 <nav>
 
 <ul>
 
-<li><a href="#" class="active" onclick="mostrar('datos',this)">Datos Informativos</a></li>
+<li><a href="#" class="active" onclick="mostrar('datos',this)">📋 Datos Informativos</a></li>
 
-<li><a href="#" onclick="mostrar('silabo',this)">Sílabo</a></li>
+<li><a href="#" onclick="mostrar('silabo',this)">📘 Sílabo</a></li>
 
-<li><a href="#" onclick="mostrar('hoja',this)">Hoja de Vida</a></li>
+<li><a href="#" onclick="mostrar('hoja',this)">👤 Hoja de Vida</a></li>
 
-<li><a href="#" onclick="mostrar('deberes',this)">Deberes</a></li>
+<li><a href="#" onclick="mostrar('deberes',this)">📝 Deberes</a></li>
 
-<li><a href="#" onclick="mostrar('organizadores',this)">Organizadores</a></li>
+<li><a href="#" onclick="mostrar('organizadores',this)">🧠 Organizadores Gráficos</a></li>
 
-<li><a href="#" onclick="mostrar('fundamentos',this)">Fundamentos</a></li>
+<li><a href="#" onclick="mostrar('fundamentos',this)">📚 Fundamentos Conceptuales</a></li>
 
-<li><a href="#" onclick="mostrar('informes',this)">Informes</a></li>
+<li><a href="#" onclick="mostrar('informes',this)">📑 Informes</a></li>
 
-<li><a href="#" onclick="mostrar('clases',this)">Trabajos en Clase</a></li>
+<li><a href="#" onclick="mostrar('clases',this)">🏫 Trabajos en Clase</a></li>
 
-<li><a href="#" onclick="mostrar('evaluaciones',this)">Evaluaciones</a></li>
+<li><a href="#" onclick="mostrar('evaluaciones',this)">📊 Evaluaciones</a></li>
 
-<li><a href="#" onclick="mostrar('unidad1',this)">Unidad 1</a></li>
+<li><a href="#" onclick="mostrar('trabajos',this)">💻 Trabajos del Aula Virtual</a></li>
 
-<li><a href="#" onclick="mostrar('unidad2',this)">Unidad 2</a></li>
-
-<li><a href="#" onclick="mostrar('unidad3',this)">Unidad 3</a></li>
-
-<li><a href="#" onclick="mostrar('unidad4',this)">Unidad 4</a></li>
-
-<li><a href="#" onclick="mostrar('trabajos',this)">Trabajos</a></li>
+<li><a href="#" onclick="mostrar('grupo',this)">👥 Trabajos en Grupo</a></li>
 
 </ul>
 
@@ -253,27 +58,33 @@ text-align:center;
 
 <main>
 
-<div id="datos" class="section active">
+<main>
 
-<div class="card">
+  <!-- DATOS -->
+  <div id="datos" class="section active">
+    <h2 class="section-title">Datos Informativos</h2>
+    <p class="section-subtitle">Información general del estudiante y la asignatura</p>
+    <table class="info-table">
+      <tr><th>Nombre completo</th><td>Mateo Nicolás Torres Peñafiel</td></tr>
+      <tr><th>Carrera</th><td>Pedagogía de Informática</td></tr>
+      <tr><th>Semestre / Nivel</th><td>Quinto Semestre</td></tr>
+      <tr><th>Asignatura</th><td>Física Aplicada — FIP05P0EC5.1</td></tr>
+      <tr><th>Docente</th><td>MSc. Diego Marcelo Tipán Renjifo</td></tr>
+      <tr><th>Período académico</th><td>Abril 2026 – Julio 2026</td></tr>
+      <tr><th>Correo electrónico</th><td>mateonicolas1214@gmail.com</td></tr>
+      <tr><th>Modalidad</th><td>Presencial</td></tr>
+    <tr>
+    <th>Hoja de vida</th>
+    <td>
+      <a class="btn-ver" href="hoja-vida.pdf" target="_blank">👁 Ver CV</a>
+      &nbsp;
+      <a class="btn-dl" href="hoja-vida.pdf" download>⬇ Descargar</a>
+    </td>
+  </tr>
 
-<h2>Datos Informativos</h2>
-
-<p><b>Asignatura:</b> Física Aplicada</p>
-
-<p><b>Estudiante:</b> Elkin Adriano Morales Coello</p>
-
-<p><b>Universidad:</b> Universidad Central del Ecuador</p>
-
-<p><b>Carrera:</b> Pedagogía de la Informática</p>
-
-<p><b>Semestre:</b> Sexto</p>
-
-<p><b>Periodo:</b> 2026</p>
-
-</div>
-
-</div>
+</table>
+  
+  </div>
 
   <!-- SILABO -->
   <div id="silabo" class="section">
@@ -483,99 +294,192 @@ text-align:center;
 
 </main>
 
-<footer>
-  Portafolio de Física Aplicada · <span>Mateo Nicolás Torres Peñafiel</span> · Universidad Central del Ecuador · 2026
-</footer>
+</section>
+<!-- ===================== TRABAJOS DEL AULA VIRTUAL ===================== -->
 
-<div class="modal-overlay" id="modal">
-  <div class="modal-box">
-    <div class="modal-header">
-      <span id="modal-title">Archivo</span>
-      <button class="modal-close" onclick="closeModal()">✕</button>
-    </div>
-    <div class="modal-body" id="modal-body"></div>
-  </div>
+<section id="trabajos" class="section">
+
+<h2>💻 Trabajos del Aula Virtual</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>📘 Actividad 1</h3>
+
+<p>
+
+Actividad desarrollada y entregada mediante el Aula Virtual de la asignatura.
+
+</p>
+
+<a href="#" target="_blank">
+
+Ver actividad
+
+</a>
+
 </div>
 
+<div class="card">
+
+<h3>📗 Actividad 2</h3>
+
+<p>
+
+Trabajo enviado a través de la plataforma virtual.
+
+</p>
+
+<a href="#" target="_blank">
+
+Ver actividad
+
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>📙 Taller Virtual</h3>
+
+<p>
+
+Resolución de ejercicios publicados en el Aula Virtual.
+
+</p>
+
+<a href="#" target="_blank">
+
+Ver taller
+
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>📕 Foro Académico</h3>
+
+<p>
+
+Participación en foros de discusión de la asignatura.
+
+</p>
+
+<a href="#" target="_blank">
+
+Ver participación
+
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>📊 Cuestionarios</h3>
+
+<p>
+
+Cuestionarios desarrollados en la plataforma virtual.
+
+</p>
+
+<a href="#" target="_blank">
+
+Ver cuestionarios
+
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>📂 Evidencias</h3>
+
+<p>
+
+Documentos, capturas y archivos entregados en el Aula Virtual.
+
+</p>
+
+<a href="#" target="_blank">
+
+Ver evidencias
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+<!-- ===================== TRABAJOS EN GRUPO ===================== -->
+
+
+</div>
+
+</section>
+</main>
+
+<footer>
+
+<p>
+
+© 2026 | Portafolio Académico de Física Aplicada
+
+</p>
+
+<p>
+
+Universidad Central del Ecuador
+
+</p>
+
+<p>
+
+Elkin Adriano Morales Coello
+
+</p>
+
+</footer>
+
 <script>
-function show(id,el){
-  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
-  document.querySelectorAll('nav a').forEach(a=>a.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-  el.classList.add('active');
+
+function mostrar(id, elemento){
+
+// Ocultar todas las secciones
+var secciones = document.querySelectorAll(".section");
+
+for(var i=0; i<secciones.length; i++){
+
+    secciones[i].classList.remove("active");
+
 }
-function closeModal(){
-  document.getElementById('modal').classList.remove('open');
-  document.getElementById('modal-body').innerHTML='';
+
+// Mostrar la sección seleccionada
+document.getElementById(id).classList.add("active");
+
+// Quitar el color activo del menú
+var enlaces = document.querySelectorAll("nav a");
+
+for(var i=0; i<enlaces.length; i++){
+
+    enlaces[i].classList.remove("active");
+
 }
-document.getElementById('modal').addEventListener('click',e=>{
-  if(e.target===document.getElementById('modal')) closeModal();
+
+// Activar el botón seleccionado
+elemento.classList.add("active");
+
+// Regresar al inicio de la página
+window.scrollTo({
+    top:0,
+    behavior:"smooth"
 });
 
-// INDEXEDDB for user-uploaded files
-const DB_NAME='portafolio_fisica_v3';
-let db;
-function openDB(){
-  return new Promise((res,rej)=>{
-    const req=indexedDB.open(DB_NAME,1);
-    req.onupgradeneeded=e=>{
-      const d=e.target.result;
-      ['individuales','grupales','evaluaciones','mapas','anexos'].forEach(s=>{
-        if(!d.objectStoreNames.contains(s)) d.createObjectStore(s,{keyPath:'id',autoIncrement:true});
-      });
-    };
-    req.onsuccess=e=>{db=e.target.result;res(db);};
-    req.onerror=e=>rej(e);
-  });
-}
-function saveFile(store,obj){return new Promise((res,rej)=>{const tx=db.transaction(store,'readwrite');const r=tx.objectStore(store).add(obj);r.onsuccess=()=>res(r.result);r.onerror=e=>rej(e);});}
-function getFiles(store){return new Promise((res,rej)=>{const tx=db.transaction(store,'readonly');const r=tx.objectStore(store).getAll();r.onsuccess=()=>res(r.result);r.onerror=e=>rej(e);});}
-function deleteFile(store,id){return new Promise((res,rej)=>{const tx=db.transaction(store,'readwrite');const r=tx.objectStore(store).delete(id);r.onsuccess=()=>res();r.onerror=e=>rej(e);});}
-function fileIcon(n){const e=n.split('.').pop().toLowerCase();return{pdf:'📄',doc:'📝',docx:'📝',ppt:'📊',pptx:'📊',xls:'📈',xlsx:'📈',jpg:'🖼️',jpeg:'🖼️',png:'🖼️',zip:'🗜️'}[e]||'📁';}
-function fmtSize(b){if(b<1024)return b+' B';if(b<1048576)return(b/1024).toFixed(1)+' KB';return(b/1048576).toFixed(1)+' MB';}
-function fmtDate(ts){return new Date(ts).toLocaleDateString('es-EC',{day:'2-digit',month:'short',year:'numeric'});}
-
-async function renderList(store){
-  const c=document.getElementById(store+'-list');
-  if(!c) return;
-  const files=await getFiles(store);
-  if(!files.length){c.innerHTML='';return;}
-  c.innerHTML='<div style="margin-top:20px"><p style="font-weight:700;color:var(--navy);margin-bottom:12px;">Archivos subidos <span class=\"badge green\">'+files.length+'</span></p><div>'+
-    files.map(f=>`<div class="file-item"><div class="fi-icon">${fileIcon(f.name)}</div><div class="fi-info"><div class="fi-name">${f.name}</div><div class="fi-size">${fmtSize(f.size)} · ${fmtDate(f.date)}</div></div><div class="fi-actions"><button class="btn-v2" onclick="viewUploaded('${store}',${f.id})">👁 Ver</button><button class="btn-del" onclick="removeFile('${store}',${f.id})">🗑</button></div></div>`).join('')+'</div></div>';
 }
 
-async function handleFiles(store,fileList){
-  for(const file of fileList){
-    if(file.size>10*1024*1024){alert('"'+file.name+'" supera 10 MB.');continue;}
-    const reader=new FileReader();
-    reader.onload=async e=>{await saveFile(store,{name:file.name,size:file.size,type:file.type,date:Date.now(),data:e.target.result});renderList(store);};
-    reader.readAsDataURL(file);
-  }
-}
-async function removeFile(store,id){if(!confirm('¿Eliminar este archivo?'))return;await deleteFile(store,id);renderList(store);}
-async function viewUploaded(store,id){
-  const files=await getFiles(store);
-  const f=files.find(x=>x.id===id);if(!f)return;
-  document.getElementById('modal-title').textContent=f.name;
-  const body=document.getElementById('modal-body');
-  const ext=f.name.split('.').pop().toLowerCase();
-  if(['jpg','jpeg','png','gif','webp'].includes(ext)){body.innerHTML='<img src="'+f.data+'" style="object-fit:contain;">';}
-  else if(ext==='pdf'){body.innerHTML='<iframe src="'+f.data+'" width="100%" height="100%" style="border:none"></iframe>';}
-  else{body.innerHTML='<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;gap:16px;color:#6b7280"><div style="font-size:4rem;">'+fileIcon(f.name)+'</div><p>'+f.name+'</p><a href="'+f.data+'" download="'+f.name+'" class="btn-ver" style="padding:10px 24px;">⬇ Descargar</a></div>';}
-  document.getElementById('modal').classList.add('open');
-}
-
-['individuales','grupales','evaluaciones','mapas','anexos'].forEach(store=>{
-  const zone=document.getElementById('drop-'+store);
-  const input=document.getElementById('file-'+store);
-  if(!zone||!input)return;
-  input.addEventListener('change',()=>handleFiles(store,input.files));
-  zone.addEventListener('dragover',e=>{e.preventDefault();zone.classList.add('dragover');});
-  zone.addEventListener('dragleave',()=>zone.classList.remove('dragover'));
-  zone.addEventListener('drop',e=>{e.preventDefault();zone.classList.remove('dragover');handleFiles(store,e.dataTransfer.files);});
-});
-
-openDB().then(()=>['individuales','grupales','evaluaciones','mapas','anexos'].forEach(renderList));
 </script>
+
 </body>
-</html>
