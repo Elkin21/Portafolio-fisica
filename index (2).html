@@ -1,972 +1,1971 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Portafolio de Física Aplicada – Elkin Morales</title>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Fira+Mono:wght@400;500&display=swap" rel="stylesheet"/>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    :root{
-    --azul:#0f172a;
-    --azul2:#1e3a8a;
-    --celeste:#38bdf8;
-    --morado:#7c3aed;
-    --rosa:#ec4899;
-    --amarillo:#facc15;
-    --blanco:#ffffff;
-    --gris:#64748b;
-    --fondo:#eef5ff;
-    --borde:#cbd5e1;
-    --card-bg:rgba(255,255,255,.92);
+<meta charset="UTF-8">
 
-    /* Variables faltantes */
-    --oscuro:#0f172a;
-    --acento:#facc15;
-    --verde:#2563eb;
-    --verde-claro:#38bdf8;
-    --verde-med:#1d4ed8;
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Portafolio de Física Aplicada</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
 }
 
-    html { scroll-behavior: smooth; }
-
-    body{
-    font-family:'Outfit',sans-serif;
-
-    background:
-    linear-gradient(rgba(255,255,255,.92),rgba(255,255,255,.92)),
-    url("https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1800&q=80");
-
-    background-size:cover;
-    background-attachment:fixed;
-    background-position:center;
-
-    color:#111827;
-
-    min-height:100vh;
+body{
+background:#eef5ff;
+color:#222;
 }
-    .topbar {
-      background: var(--oscuro);
-      color: rgba(255,255,255,0.6);
-      font-size: 0.75rem;
-      text-align: center;
-      padding: 0.4rem 1rem;
-      letter-spacing: 0.08em;
-    }
-    .topbar span { color: var(--acento); font-weight: 600; }
 
-    /* ── HERO ── */
 header{
 
-background:
-linear-gradient(rgba(15,23,42,.85),rgba(30,58,138,.80)),
-url("https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1800&q=80");
+background:linear-gradient(rgba(15,23,42,.9),rgba(30,58,138,.85)),
+url("https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1800&q=80");
 
 background-size:cover;
 background-position:center;
-
+padding:70px 20px;
+text-align:center;
 color:white;
 
-padding:4rem 2rem;
+}
 
-text-align:center;
+header img{
 
-position:relative;
-
-overflow:hidden;
+width:120px;
+margin-bottom:20px;
 
 }
-    header::before {
-      content: '';
-      position: absolute; inset: 0;
-      background-image: radial-gradient(circle at 20% 80%, rgba(31,203,143,0.15) 0%, transparent 50%),
-                        radial-gradient(circle at 80% 20%, rgba(232,200,64,0.10) 0%, transparent 50%);
-      pointer-events: none;
-    }
-    .logos-row {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 1.5rem;
-      margin-bottom: 2rem;
-      flex-wrap: wrap;
-    }
-    .logo-box {
-      background: rgba(255,255,255,0.10);
-      border: 1px solid rgba(255,255,255,0.15);
-      border-radius: 12px;
-      padding: 0.6rem 1.2rem;
-      font-size: 0.8rem;
-      font-weight: 600;
-      letter-spacing: 0.05em;
-      color: rgba(255,255,255,0.85);
-    }
-    .logo-box.uce { color: var(--acento); border-color: rgba(232,200,64,0.3); background: rgba(232,200,64,0.08); }
-    .chip {
-      display: inline-block;
-      background: rgba(31,203,143,0.18);
-      color: var(--verde-claro);
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      padding: 0.3rem 1rem;
-      border-radius: 999px;
-      border: 1px solid rgba(31,203,143,0.35);
-      margin-bottom: 1rem;
-    }
-    header h1 {
-      font-size: clamp(2rem, 5vw, 3.2rem);
-      font-weight: 800;
-      line-height: 1.1;
-      margin-bottom: 0.5rem;
-    }
-    header h1 em {
-      font-style: normal;
-      color: var(--acento);
-    }
-    .subtitle {
-      font-size: 1rem;
-      color: rgba(255,255,255,0.65);
-      font-weight: 300;
-      margin-bottom: 1.8rem;
-    }
-    .info-pills {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 0.6rem;
-    }
-    .pill {
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.14);
-      border-radius: 999px;
-      padding: 0.35rem 0.9rem;
-      font-size: 0.8rem;
-      color: rgba(255,255,255,0.78);
-    }
-    .pill strong { color: var(--verde-claro); font-weight: 600; }
 
-    /* ── NAV ── */
+header h1{
+
+font-size:42px;
+margin-bottom:10px;
+
+}
+
+header h2{
+
+font-weight:400;
+
+}
+
 nav{
 
+background:#0f172a;
 position:sticky;
-
 top:0;
+z-index:999;
 
-z-index:100;
+}
 
-background:linear-gradient(90deg,#1e3a8a,#2563eb,#0ea5e9);
-
-border-bottom:5px solid #facc15;
-
-padding:.8rem;
+nav ul{
 
 display:flex;
-
 justify-content:center;
-
-gap:1rem;
-
-box-shadow:0 6px 18px rgba(0,0,0,.25);
+flex-wrap:wrap;
+list-style:none;
 
 }
 
 nav a{
 
+display:block;
+padding:16px 20px;
 text-decoration:none;
-
-font-size:15px;
-
-font-weight:700;
-
 color:white;
-
-padding:12px 18px;
-
-border-radius:8px;
-
+font-weight:600;
 transition:.3s;
 
 }
 
 nav a:hover{
 
-background:white;
+background:#2563eb;
 
-color:#2563eb;
-
-transform:translateY(-3px);
-
-}
-
-/* Hover elegante */
-nav a:hover {
-  color: #ffffff;
-}
-
-/* Línea activa (como en la imagen) */
-nav a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -6px;
-  width: 0%;
-  height: 3px;
-  background: #e8c840;
-  transition: width 0.3s;
-}
-
-nav a:hover::after {
-  width: 100%;
-}
-
-    /* ── MAIN ── */
-   main{
-
-max-width:1200px;
-
-margin:auto;
-
-padding:50px 20px;
-
-}
-    /* ── SECTION HEADER ── */
-    section { margin-bottom: 3rem; }
-
-    .sec-head {
-      display: flex;
-      align-items: center;
-      gap: 0.8rem;
-      margin-bottom: 1.25rem;
-      padding-bottom: 0.75rem;
-      border-bottom: 2px solid var(--borde);
-    }
-    .sec-num {
-      font-family: 'Fira Mono', monospace;
-      font-size: 0.72rem;
-      font-weight: 500;
-      color: var(--verde-claro);
-      background: rgba(20,163,116,0.12);
-      border: 1px solid rgba(20,163,116,0.25);
-      border-radius: 6px;
-      padding: 0.15rem 0.55rem;
-    }
-    .sec-title {
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: var(--verde);
-      letter-spacing: -0.01em;
-    }
-    .sec-line { flex: 1; }
-
-    /* ── GRID ── */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
-      gap: 1rem;
-    }
-
-    /* ── CARD ── */
-    .card{
-
-background:rgba(255,255,255,.88);
-
-backdrop-filter:blur(12px);
-
-border:none;
-
-border-radius:18px;
-
-padding:20px;
-
-display:flex;
-
-gap:15px;
-
-text-decoration:none;
-
-color:inherit;
-
-box-shadow:0 10px 30px rgba(0,0,0,.12);
-
-transition:.35s;
-
-overflow:hidden;
-
-position:relative;
-
-}
-    .card::before {
-      content: '';
-      position: absolute;
-      left: 0; top: 0; bottom: 0;
-      width: 4px;
-      background: var(--verde-claro);
-      transform: scaleY(0);
-      transform-origin: bottom;
-      border-radius: 4px 0 0 4px;
-      transition: transform 0.22s;
-    }
-    .card:hover{
-
-transform:translateY(-8px);
-
-box-shadow:0 20px 40px rgba(37,99,235,.30);
-
-}
-    .card-ico {
-      width: 42px; height: 42px;
-      border-radius: 10px;
-      background: rgba(20,163,116,0.10);
-      border: 1px solid rgba(20,163,116,0.20);
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0;
-    }
-    .card-ico svg { width: 22px; height: 22px; stroke: var(--verde); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
-
-    .card-body { flex: 1; min-width: 0; }
-    .card-tag {
-      font-size: 0.65rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--verde-med);
-      margin-bottom: 0.2rem;
-      font-family: 'Fira Mono', monospace;
-    }
-    .card-title {
-      font-size: 0.92rem;
-      font-weight: 600;
-      color: var(--oscuro);
-      line-height: 1.35;
-    }
-    .card-desc {
-      font-size: 0.75rem;
-      color: var(--gris);
-      margin-top: 0.15rem;
-      font-weight: 300;
-    }
-    .card-arrow {
-      color: var(--borde);
-      transition: color 0.2s, transform 0.2s;
-      flex-shrink: 0;
-      align-self: center;
-    }
-    .card:hover .card-arrow { color: var(--verde-claro); transform: translateX(3px); }
-
-    /* ── FOOTER ── */
-    footer {
-      background: var(--oscuro);
-      color: rgba(255,255,255,0.5);
-      text-align: center;
-      padding: 1.8rem 1rem;
-      font-size: 0.8rem;
-    }
-    footer strong { color: var(--verde-claro); }
-    
-}
-    .section{
-    display:none;
-    animation:fadeIn .4s ease;
-}
-
-.section.active{
-    display:block;
-}
-
-@keyframes fadeIn{
-
-from{
-    opacity:0;
-    transform:translateY(20px);
-}
-
-to{
-    opacity:1;
-    transform:translateY(0);
-}
-
-}
-    .nav-inner{
-    display:flex;
-    overflow-x:auto;
 }
 
 nav a.active{
 
 background:#facc15;
+color:#0f172a;
 
+}
+
+main{
+
+max-width:1200px;
+margin:auto;
+padding:40px 20px;
+
+}
+
+.section{
+
+display:none;
+
+animation:fade .5s;
+
+}
+
+.section.active{
+
+display:block;
+
+}
+
+@keyframes fade{
+
+from{
+
+opacity:0;
+transform:translateY(20px);
+
+}
+
+to{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+}
+
+h2{
+
+margin-bottom:30px;
 color:#1e3a8a;
 
+}
+
+.grid{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:25px;
+
+}
+
+.card{
+
+background:white;
+padding:25px;
+border-radius:15px;
+box-shadow:0 10px 25px rgba(0,0,0,.15);
+
+}
+
+.card h3{
+
+color:#1e3a8a;
+margin-bottom:10px;
+
+}
+
+.card p{
+
+margin-bottom:15px;
+
+}
+
+.card a{
+
+background:#2563eb;
+color:white;
+padding:10px 18px;
 border-radius:8px;
+text-decoration:none;
 
 }
-  </style>
+
+.card a:hover{
+
+background:#0f172a;
+
+}
+
+table{
+
+width:100%;
+border-collapse:collapse;
+background:white;
+
+}
+
+th,td{
+
+padding:15px;
+border:1px solid #ddd;
+
+}
+
+th{
+
+background:#1e3a8a;
+color:white;
+text-align:left;
+
+}
+
+footer{
+
+margin-top:50px;
+padding:30px;
+background:#0f172a;
+color:white;
+text-align:center;
+
+}
+
+</style>
+
 </head>
-  <script>
 
-function show(id,link){
-
-// Ocultar todas las secciones
-var sections=document.querySelectorAll(".section");
-
-sections.forEach(function(sec){
-
-sec.classList.remove("active");
-
-});
-
-// Mostrar la seleccionada
-document.getElementById(id).classList.add("active");
-
-// Cambiar botón activo
-var enlaces=document.querySelectorAll("nav a");
-
-enlaces.forEach(function(a){
-
-a.classList.remove("active");
-
-});
-
-link.classList.add("active");
-
-}
-
-</script>
 <body>
-
-<div class="topbar">Universidad Central del Ecuador &nbsp;·&nbsp; Facultad de Ingeniería &nbsp;·&nbsp; <span>Física Aplicada</span></div>
-
 <header>
-  <div class="logos-row">
-    <div class="logo-box uce">UNIVERSIDAD CENTRAL DEL ECUADOR</div>
-    <div class="logo-box">PEDAGOGIA INFORMÁTICA</div>
-    <div class="logo-box">2026 – 2026</div>
-  </div>
-  <div class="chip">Portafolio Académico</div>
-  <h1>Física <em>Aplicada</em></h1>
-  <p class="subtitle">MORALES ELKIN &nbsp;|&nbsp;</p>
-  <div class="info-pills">
-    <span class="pill"><strong>Docente:</strong> DIEGO TIPAN</span>
-    <span class="pill"><strong>Semestre:</strong> 5 SEMESTRE</span>
-    <span class="pill"><strong>Paralelo:</strong> B</span>
-  </div>
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Logo_Universidad_Central_del_Ecuador.svg/512px-Logo_Universidad_Central_del_Ecuador.svg.png" alt="UCE">
+
+<h1>PORTAFOLIO ACADÉMICO</h1>
+
+<h2>Física Aplicada</h2>
+
+<p>Universidad Central del Ecuador</p>
+
+<p>Facultad de Filosofía, Letras y Ciencias de la Educación</p>
+
+<p>Carrera de Pedagogía de la Informática</p>
+
+<br>
+
+<h3>Elkin Adriano Morales Coello</h3>
+
+<p>Sexto Semestre</p>
+
 </header>
 
+
 <nav>
-<div class="nav-inner">
 
-<a href="#" class="active" onclick="show('datos',this);return false;">Datos Informativos</a>
+<ul>
 
-<a href="#" onclick="show('silabo',this);return false;">Sílabo</a>
+<li><a href="#" class="active" onclick="mostrar('datos',this)">📋 Datos Informativos</a></li>
 
-<a href="#" onclick="show('individuales',this);return false;">Trabajos Individuales</a>
+<li><a href="#" onclick="mostrar('silabo',this)">📘 Sílabo</a></li>
 
-<a href="#" onclick="show('grupales',this);return false;">Trabajos Grupales</a>
+<li><a href="#" onclick="mostrar('hoja',this)">👤 Hoja de Vida</a></li>
 
-<a href="#" onclick="show('evaluaciones',this);return false;">Evaluaciones</a>
+<li><a href="#" onclick="mostrar('deberes',this)">📝 Deberes</a></li>
 
-<a href="#" onclick="show('mapas',this);return false;">Mapas</a>
+<li><a href="#" onclick="mostrar('organizadores',this)">🧠 Organizadores Gráficos</a></li>
 
-<a href="#" onclick="show('anexos',this);return false;">Anexos</a>
+<li><a href="#" onclick="mostrar('fundamentos',this)">📚 Fundamentos Conceptuales</a></li>
 
-</div>
+<li><a href="#" onclick="mostrar('informes',this)">📑 Informes</a></li>
+
+<li><a href="#" onclick="mostrar('clases',this)">🏫 Trabajos en Clase</a></li>
+
+<li><a href="#" onclick="mostrar('evaluaciones',this)">📊 Evaluaciones</a></li>
+
+<li><a href="#" onclick="mostrar('trabajos',this)">💻 Trabajos del Aula Virtual</a></li>
+
+<li><a href="#" onclick="mostrar('grupo',this)">👥 Trabajos en Grupo</a></li>
+
+</ul>
+
 </nav>
+
 <main>
-  <!-- ================= DATOS INFORMATIVOS ================= -->
 
-<section class="contenido" id="datos">
+<main>
+  <!-- ===================== DATOS INFORMATIVOS ===================== -->
 
-<div class="sec-head">
-    <span class="sec-num">00</span>
-    <span class="sec-title">Datos Informativos</span>
-    <div class="sec-line"></div>
-</div>
+<section id="datos" class="section active">
 
-<div class="card" style="display:block;">
+<h2>📋 Datos Informativos</h2>
 
-<table style="width:100%;font-size:17px;line-height:40px;">
+<table>
 
 <tr>
-<td><strong>Universidad:</strong></td>
+<th>Universidad</th>
 <td>Universidad Central del Ecuador</td>
 </tr>
 
 <tr>
-<td><strong>Facultad:</strong></td>
-<td>Facultad de filosofia Letras y Ciencias de la Educaión </td>
+<th>Facultad</th>
+<td>Facultad de Filosofía, Letras y Ciencias de la Educación</td>
 </tr>
 
 <tr>
-<td><strong>Carrera:</strong></td>
+<th>Carrera</th>
 <td>Pedagogía de la Informática</td>
 </tr>
 
 <tr>
-<td><strong>Asignatura:</strong></td>
+<th>Asignatura</th>
 <td>Física Aplicada</td>
 </tr>
 
 <tr>
-<td><strong>Docente:</strong></td>
-<td>Diego Tipán</td>
+<th>Docente</th>
+<td>_____________________________________</td>
 </tr>
 
 <tr>
-<td><strong>Estudiante:</strong></td>
+<th>Estudiante</th>
 <td>Elkin Adriano Morales Coello</td>
 </tr>
 
 <tr>
-<td><strong>Semestre:</strong></td>
+<th>Semestre</th>
 <td>Sexto</td>
 </tr>
 
 <tr>
-<td><strong>Paralelo:</strong></td>
-<td>B</td>
+<th>Paralelo</th>
+<td>__________________</td>
 </tr>
 
 <tr>
-<td><strong>Período:</strong></td>
+<th>Período Académico</th>
 <td>2026 - 2026</td>
+</tr>
+
+<tr>
+<th>Correo Electrónico</th>
+<td>____________________________</td>
 </tr>
 
 </table>
 
+<br><br>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>🎯 Objetivo del Portafolio</h3>
+
+<p>
+
+Este portafolio académico reúne todas las actividades desarrolladas durante la asignatura de Física Aplicada, evidenciando el aprendizaje alcanzado mediante trabajos individuales, grupales, prácticas, evaluaciones e informes elaborados durante el semestre.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>📚 Contenido</h3>
+
+<p>
+
+• Sílabo<br>
+• Hoja de Vida<br>
+• Deberes<br>
+• Organizadores Gráficos<br>
+• Fundamentos Conceptuales<br>
+• Informes<br>
+• Trabajos en Clase<br>
+• Evaluaciones<br>
+• Unidades 1, 2, 3 y 4<br>
+• Trabajos Finales
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>👨‍🎓 Información del Estudiante</h3>
+
+<p>
+
+Nombre: Elkin Adriano Morales Coello<br><br>
+
+Universidad Central del Ecuador<br>
+
+Carrera de Pedagogía de la Informática<br>
+
+Sexto Semestre
+
+</p>
+
+</div>
+
 </div>
 
 </section>
-<main>
+<!-- ===================== SÍLABO ===================== -->
 
-  <!-- ══ SÍLABO ══ -->
-<section class="contenido" id="silabo">
-    <div class="sec-head">
-    <div class="seccion-imagen">
-        <img URL=""C:\Users\Usuario\Pictures\Screenshots\Captura de pantalla 2026-07-07 225531.png"" alt="Sílabo">
-        <span class="sec-num">01</span>
-        <span class="sec-title">Sílabo</span>
-        <div class="sec-line"></div>
-    </div>
+<section id="silabo" class="section">
 
-    <div class="grid">
+<h2>📘 Sílabo</h2>
 
-        <a class="card" href="LINK_GOOGLE_DRIVE_AQUI" target="_blank">
-            <div class="card-ico">
-                <svg viewBox="0 0 24 24">
-                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                    <polyline points="14 2 14 8 20 8"/>
-                </svg>
-            </div>
+<div class="grid">
 
-            <div class="card-body">
-                <div class="card-tag">Documento Oficial</div>
-                <div class="card-title">Sílabo de la asignatura</div>
-                <div class="card-desc">
-                    Documento con la planificación del curso.
-                </div>
-            </div>
+<div class="card">
 
-            <svg class="card-arrow" width="16" height="16" viewBox="0 0 24 24"
-                fill="none" stroke="currentColor" stroke-width="2.5">
-                <path d="M5 12h14M12 5l7 7-7 7"/>
-            </svg>
+<h3>📄 Sílabo de la Asignatura</h3>
 
-        </a>
+<p>
 
-    </div>
-</section>
+En este apartado se encontrará el sílabo oficial de la asignatura de Física Aplicada.
 
+</p>
 
-<!-- ══ HOJA DE VIDA ══ -->
-<section class="contenido" id="hoja-vida">
-    <div class="sec-head">
-      <div class="seccion-imagen">
-    <img URL="https://opem.b-cdn.net/wp-content/uploads/2017/05/Curriculum_doble_VIENA_1-600x800.jpg>
-        <span class="sec-num">02</span>
-        <span class="sec-title">Hoja de Vida</span>
-        <div class="sec-line"></div>
-    </div>
+<a href="#" target="_blank">
 
-    <div class="grid">
+Ver documento
 
-        <a class="card" href="LINK_GOOGLE_DRIVE_AQUI" target="_blank">
-            <div class="card-ico">
-                <svg viewBox="0 0 24 24">
-                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                    <polyline points="14 2 14 8 20 8"/>
-                </svg>
-            </div>
+</a>
 
-            <div class="card-body">
-                <div class="card-tag">PDF</div>
-                <div class="card-title">Currículum Vitae</div>
-                <div class="card-desc">
-                    Información académica y profesional.
-                </div>
-            </div>
-
-            <svg class="card-arrow" width="16" height="16" viewBox="0 0 24 24"
-                fill="none" stroke="currentColor" stroke-width="2.5">
-                <path d="M5 12h14M12 5l7 7-7 7"/>
-            </svg>
-
-        </a>
-
-    </div>
-</section>
-
-
-<!-- ══ DEBERES ══ -->
-<section class="contenido" id="deberes">
-    <div class="sec-head">
-      <div class="seccion-imagen">
-    <img src="img/deberes.jpg">
 </div>
-        <span class="sec-num">03</span>
-        <span class="sec-title">Deberes</span>
-        <div class="sec-line"></div>
-    </div>
 
-    <div class="grid">
+<div class="card">
 
-        <a class="card" href="LINK_GOOGLE_DRIVE_AQUI" target="_blank">
-            <div class="card-ico">
-                <svg viewBox="0 0 24 24">
-                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                    <polyline points="14 2 14 8 20 8"/>
-                </svg>
-            </div>
+<h3>📅 Cronograma Académico</h3>
 
-            <div class="card-body">
-                <div class="card-tag">Actividad</div>
-                <div class="card-title">Deber 1</div>
-                <div class="card-desc">Tareas y actividades desarrolladas.</div>
-            </div>
+<p>
 
-            <svg class="card-arrow" width="16" height="16" viewBox="0 0 24 24"
-                fill="none" stroke="currentColor" stroke-width="2.5">
-                <path d="M5 12h14M12 5l7 7-7 7"/>
-            </svg>
+Aquí podrá colocar el cronograma de actividades, evaluaciones y fechas importantes del semestre.
 
-        </a>
+</p>
 
-    </div>
-</section>
+<a href="#" target="_blank">
 
+Ver cronograma
 
-<!-- ══ ORGANIZADORES GRÁFICOS ══ -->
-<section class="contenido" id="organizadores">
-    <div class="sec-head">
-        <span class="sec-num">04</span>
-        <span class="sec-title">Organizadores Gráficos</span>
-        <div class="sec-line"></div>
-    </div>
+</a>
 
-    <div class="grid">
-        <a class="card" href="LINK_GOOGLE_DRIVE_AQUI" target="_blank">
-            <div class="card-body">
-                <div class="card-tag">Mapa Conceptual</div>
-                <div class="card-title">Organizador 1</div>
-                <div class="card-desc">Mapas conceptuales, mentales e infografías.</div>
-            </div>
-        </a>
-    </div>
-</section>
-
-
-<!-- ══ FUNDAMENTOS CONCEPTUALES ══ -->
-<section class="contenido" id="fundamentos">
-    <div class="sec-head">
-        <span class="sec-num">05</span>
-        <span class="sec-title">Fundamentos Conceptuales</span>
-        <div class="sec-line"></div>
-    </div>
-
-    <div class="grid">
-        <a class="card" href="LINK_GOOGLE_DRIVE_AQUI" target="_blank">
-            <div class="card-body">
-                <div class="card-tag">Teoría</div>
-                <div class="card-title">Material de estudio</div>
-                <div class="card-desc">Conceptos y fundamentos de la asignatura.</div>
-            </div>
-        </a>
-    </div>
-</section>
-
-
-<!-- ══ INFORMES ══ -->
-<section class="contenido" id="informes">
-    <div class="sec-head">
-        <span class="sec-num">06</span>
-        <span class="sec-title">Informes</span>
-        <div class="sec-line"></div>
-    </div>
-
-    <div class="grid">
-        <a class="card" href="LINK_GOOGLE_DRIVE_AQUI" target="_blank">
-            <div class="card-body">
-                <div class="card-tag">Informe</div>
-                <div class="card-title">Informe 1</div>
-                <div class="card-desc">Reportes y documentos académicos.</div>
-            </div>
-        </a>
-    </div>
-</section>
-
-
-<!-- ══ TRABAJOS EN CLASE ══ -->
-<section class="contenido" id="trabajos-clase">
-    <div class="sec-head">
-        <span class="sec-num">07</span>
-        <span class="sec-title">Trabajos en Clase</span>
-        <div class="sec-line"></div>
-    </div>
-
-    <div class="grid">
-        <a class="card" href="LINK_GOOGLE_DRIVE_AQUI" target="_blank">
-            <div class="card-body">
-                <div class="card-tag">Clase</div>
-                <div class="card-title">Actividad en clase</div>
-                <div class="card-desc">Ejercicios desarrollados durante las clases.</div>
-            </div>
-        </a>
-    </div>
-</section>
-
-
-<!-- ══ EVALUACIONES ══ -->
-<section class="contenido" id="evaluaciones">
-    <div class="sec-head">
-        <span class="sec-num">08</span>
-        <span class="sec-title">Evaluaciones</span>
-        <div class="sec-line"></div>
-    </div>
-
-    <div class="grid">
-        <a class="card" href="LINK_GOOGLE_DRIVE_AQUI" target="_blank">
-            <div class="card-body">
-                <div class="card-tag">Evaluación</div>
-                <div class="card-title">Examen o prueba</div>
-                <div class="card-desc">Evaluaciones realizadas durante el semestre.</div>
-            </div>
-        </a>
-    </div>
-</section>
-  <!-- ══ UNIDAD 1 ══ -->
-<section class="contenido" id="unidad1">
-    <div class="sec-head">
-      <div class="seccion-imagen">
-    <img src="img/unidad1.jpg">
 </div>
-      <span class="sec-num">01</span>
-      <span class="sec-title">Unidad 1 — Nombre de la Unidad</span>
-      <div class="sec-line"></div>
-    </div>
-    <div class="grid">
 
-      <a class="card" href="LINK_GOOGLE_DRIVE_AQUI" target="_blank" rel="noopener">
-        <div class="card-ico"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
-        <div class="card-body">
-          <div class="card-tag">PDF · Tema 1.1</div>
-          <div class="card-title">Nombre del documento 1</div>
-          <div class="card-desc">Descripción o páginas del tema</div>
-        </div>
-        <svg class="card-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
+<div class="card">
 
-      <a class="card" href="LINK_GOOGLE_DRIVE_AQUI" target="_blank" rel="noopener">
-        <div class="card-ico"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
-        <div class="card-body">
-          <div class="card-tag">PDF · Tema 1.2</div>
-          <div class="card-title">Nombre del documento 2</div>
-          <div class="card-desc">Descripción o páginas del tema</div>
-        </div>
-        <svg class="card-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
+<h3>📖 Plan Analítico</h3>
 
-      <a class="card" href="LINK_GOOGLE_DRIVE_AQUI" target="_blank" rel="noopener">
-        <div class="card-ico"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
-        <div class="card-body">
-          <div class="card-tag">PDF · Tema 1.3</div>
-          <div class="card-title">Nombre del documento 3</div>
-          <div class="card-desc">Descripción o páginas del tema</div>
-        </div>
-        <svg class="card-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
+<p>
 
-    </div>
-  </section>
+Documento donde se presentan las unidades, contenidos, metodología y bibliografía utilizada durante el curso.
 
-  <!-- ══ UNIDAD 2 ══ -->
-<section class="contenido" id="unidad2">
-    <div class="sec-head">
-      <span class="sec-num">02</span>
-      <span class="sec-title">Unidad 2 — Nombre de la Unidad</span>
-      <div class="sec-line"></div>
-    </div>
-    <div class="grid">
+</p>
 
-      <a class="card" href="LINK_GOOGLE_DRIVE_AQUI" target="_blank" rel="noopener">
-        <div class="card-ico"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
-        <div class="card-body">
-          <div class="card-tag">PDF · Tema 2.1</div>
-          <div class="card-title">Nombre del documento 4</div>
-          <div class="card-desc">Descripción o páginas del tema</div>
-        </div>
-        <svg class="card-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
+<a href="#" target="_blank">
 
-      <a class="card" href="LINK_GOOGLE_DRIVE_AQUI" target="_blank" rel="noopener">
-        <div class="card-ico"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
-        <div class="card-body">
-          <div class="card-tag">PDF · Tema 2.2</div>
-          <div class="card-title">Nombre del documento 5</div>
-          <div class="card-desc">Descripción o páginas del tema</div>
-        </div>
-        <svg class="card-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
+Ver plan analítico
 
-      <a class="card" href="LINK_GOOGLE_DRIVE_AQUI" target="_blank" rel="noopener">
-        <div class="card-ico"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
-        <div class="card-body">
-          <div class="card-tag">PDF · Tema 2.3</div>
-          <div class="card-title">Nombre del documento 6</div>
-          <div class="card-desc">Descripción o páginas del tema</div>
-        </div>
-        <svg class="card-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
+</a>
 
-    </div>
-  </section>
+</div>
 
-  <!-- ══ UNIDAD 3 ══ -->
- <section class="contenido" id="unidad3">
-    <div class="sec-head">
-      <span class="sec-num">03</span>
-      <span class="sec-title">Unidad 3 — Nombre de la Unidad</span>
-      <div class="sec-line"></div>
-    </div>
-    <div class="grid">
+<div class="card">
 
-      <a class="card" href="LINK_GOOGLE_DRIVE_AQUI" target="_blank" rel="noopener">
-        <div class="card-ico"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
-        <div class="card-body">
-          <div class="card-tag">PDF · Tema 3.1</div>
-          <div class="card-title">Nombre del documento 7</div>
-          <div class="card-desc">Descripción o páginas del tema</div>
-        </div>
-        <svg class="card-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
+<h3>🎯 Resultados de Aprendizaje</h3>
 
-      <a class="card" href="LINK_GOOGLE_DRIVE_AQUI" target="_blank" rel="noopener">
-        <div class="card-ico"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
-        <div class="card-body">
-          <div class="card-tag">PDF · Tema 3.2</div>
-          <div class="card-title">Nombre del documento 8</div>
-          <div class="card-desc">Descripción o páginas del tema</div>
-        </div>
-        <svg class="card-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
+<p>
 
-      <a class="card" href="LINK_GOOGLE_DRIVE_AQUI" target="_blank" rel="noopener">
-        <div class="card-ico"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
-        <div class="card-body">
-          <div class="card-tag">PDF · Tema 3.3</div>
-          <div class="card-title">Nombre del documento 9</div>
-          <div class="card-desc">Descripción o páginas del tema</div>
-        </div>
-        <svg class="card-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
+En esta sección puede incorporar el documento con los resultados de aprendizaje esperados para la asignatura.
 
-    </div>
-  </section>
+</p>
 
-  <!-- ══ UNIDAD 4 ══ -->
- <section class="contenido" id="unidad4">
-    <div class="sec-head">
-      <span class="sec-num">04</span>
-      <span class="sec-title">Unidad 4 — Nombre de la Unidad</span>
-      <div class="sec-line"></div>
-    </div>
-    <div class="grid">
+<a href="#" target="_blank">
 
-      <a class="card" href="LINK_GOOGLE_DRIVE_AQUI" target="_blank" rel="noopener">
-        <div class="card-ico"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
-        <div class="card-body">
-          <div class="card-tag">PDF · Tema 4.1</div>
-          <div class="card-title">Nombre del documento 10</div>
-          <div class="card-desc">Descripción o páginas del tema</div>
-        </div>
-        <svg class="card-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
+Ver documento
 
-      <a class="card" href="LINK_GOOGLE_DRIVE_AQUI" target="_blank" rel="noopener">
-        <div class="card-ico"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
-        <div class="card-body">
-          <div class="card-tag">PDF · Tema 4.2</div>
-          <div class="card-title">Nombre del documento 11</div>
-          <div class="card-desc">Descripción o páginas del tema</div>
-        </div>
-        <svg class="card-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
+</a>
 
-      <a class="card" href="LINK_GOOGLE_DRIVE_AQUI" target="_blank" rel="noopener">
-        <div class="card-ico"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
-        <div class="card-body">
-          <div class="card-tag">PDF · Tema 4.3</div>
-          <div class="card-title">Nombre del documento 12</div>
-          <div class="card-desc">Descripción o páginas del tema</div>
-        </div>
-        <svg class="card-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
+</div>
 
-    </div>
-  </section>
+<div class="card">
 
-  <!-- ══ TRABAJOS ══ -->
-<section class="contenido" id="trabajos">
-    <div class="sec-head">
-      <span class="sec-num">05</span>
-      <span class="sec-title">Trabajos y Prácticas</span>
-      <div class="sec-line"></div>
-    </div>
-    <div class="grid">
+<h3>📚 Bibliografía</h3>
 
-      <a class="card" href="LINK_GOOGLE_DRIVE_AQUI" target="_blank" rel="noopener">
-        <div class="card-ico">
-          <svg viewBox="0 0 24 24" fill="none" stroke="var(--verde)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
-        </div>
-        <div class="card-body">
-          <div class="card-tag">Trabajo · Práctica 1</div>
-          <div class="card-title">Nombre del trabajo 1</div>
-          <div class="card-desc">Descripción breve del trabajo</div>
-        </div>
-        <svg class="card-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
+<p>
 
-      <a class="card" href="LINK_GOOGLE_DRIVE_AQUI" target="_blank" rel="noopener">
-        <div class="card-ico">
-          <svg viewBox="0 0 24 24" fill="none" stroke="var(--verde)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
-        </div>
-        <div class="card-body">
-          <div class="card-tag">Trabajo · Práctica 2</div>
-          <div class="card-title">Nombre del trabajo 2</div>
-          <div class="card-desc">Descripción breve del trabajo</div>
-        </div>
-        <svg class="card-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
+Espacio destinado para colocar la bibliografía principal y complementaria utilizada durante el desarrollo de la asignatura.
 
-    </div>
-  </section>
+</p>
 
+<a href="#" target="_blank">
+
+Ver bibliografía
+
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>📂 Material Complementario</h3>
+
+<p>
+
+Aquí puede agregar documentos adicionales, reglamentos o recursos relacionados con el sílabo.
+
+</p>
+
+<a href="#" target="_blank">
+
+Ver material
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+<!-- ===================== HOJA DE VIDA ===================== -->
+
+<section id="hoja" class="section">
+
+<h2>👨‍🎓 Hoja de Vida</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>📄 Hoja de Vida</h3>
+
+<p>
+
+Documento con la información personal, formación académica, experiencia laboral y habilidades del estudiante.
+
+</p>
+
+<a href="#" target="_blank">
+
+Ver Hoja de Vida
+
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>🎓 Título de Bachiller</h3>
+
+<p>
+
+Documento que certifica la culminación de los estudios de bachillerato.
+
+</p>
+
+<a href="#" target="_blank">
+
+Ver documento
+
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>🏫 Certificados Académicos</h3>
+
+<p>
+
+Espacio para agregar certificados de cursos, capacitaciones y eventos académicos.
+
+</p>
+
+<a href="#" target="_blank">
+
+Ver certificados
+
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>💻 Certificaciones Tecnológicas</h3>
+
+<p>
+
+Aquí puede colocar certificados relacionados con informática, programación, redes o tecnologías de la información.
+
+</p>
+
+<a href="#" target="_blank">
+
+Ver certificaciones
+
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>📜 Reconocimientos</h3>
+
+<p>
+
+Espacio destinado para reconocimientos, diplomas o constancias obtenidas durante la formación académica.
+
+</p>
+
+<a href="#" target="_blank">
+
+Ver reconocimientos
+
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>📂 Documentos Personales</h3>
+
+<p>
+
+Puede agregar documentos de respaldo relacionados con su formación profesional.
+
+</p>
+
+<a href="#" target="_blank">
+
+Ver documentos
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+<!-- ===================== DEBERES ===================== -->
+
+<section id="deberes" class="section">
+
+<h2>📝 Deberes</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>📘 Deber 1</h3>
+
+<p>
+
+Actividad correspondiente a la primera unidad de la asignatura.
+
+</p>
+
+<a href="#" target="_blank">
+
+Ver deber
+
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>📗 Deber 2</h3>
+
+<p>
+
+Desarrollo de ejercicios y actividades prácticas.
+
+</p>
+
+<a href="#" target="_blank">
+
+Ver deber
+
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>📙 Deber 3</h3>
+
+<p>
+
+Resolución de problemas y aplicación de conceptos de Física Aplicada.
+
+</p>
+
+<a href="#" target="_blank">
+
+Ver deber
+
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>📕 Deber 4</h3>
+
+<p>
+
+Actividad de investigación y análisis de contenidos.
+
+</p>
+
+<a href="#" target="_blank">
+
+Ver deber
+
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>📒 Deber 5</h3>
+
+<p>
+
+Trabajo práctico desarrollado durante el semestre.
+
+</p>
+
+<a href="#" target="_blank">
+
+Ver deber
+
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>📔 Deber 6</h3>
+
+<p>
+
+Actividad complementaria de la asignatura.
+
+</p>
+
+<a href="#" target="_blank">
+
+Ver deber
+
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>📓 Deber 7</h3>
+
+<p>
+
+Resolución de ejercicios propuestos por el docente.
+
+</p>
+
+<a href="#" target="_blank">
+
+Ver deber
+
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>📑 Deber 8</h3>
+
+<p>
+
+Actividad de evaluación continua y refuerzo académico.
+
+</p>
+
+<a href="#" target="_blank">
+
+Ver deber
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+<!-- ===================== ORGANIZADORES GRÁFICOS ===================== -->
+
+<section id="organizadores" class="section">
+
+<h2>🧠 Organizadores Gráficos</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>🗂️ Mapa Conceptual</h3>
+
+<p>
+
+Mapa conceptual elaborado para resumir los principales contenidos de la asignatura de Física Aplicada.
+
+</p>
+
+<a href="#" target="_blank">
+
+Ver organizador
+
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>🧩 Mapa Mental</h3>
+
+<p>
+
+Organizador gráfico que representa de forma visual las ideas principales y secundarias de cada unidad.
+
+</p>
+
+<a href="#" target="_blank">
+
+Ver organizador
+
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>📊 Cuadro Comparativo</h3>
+
+<p>
+
+Comparación entre conceptos, leyes y principios físicos estudiados durante el semestre.
+
+</p>
+
+<a href="#" target="_blank">
+
+Ver organizador
+
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>📈 Línea de Tiempo</h3>
+
+<p>
+
+Representación cronológica de acontecimientos, descubrimientos o actividades desarrolladas en la asignatura.
+
+</p>
+
+<a href="#" target="_blank">
+
+Ver organizador
+
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>📝 Infografía</h3>
+
+<p>
+
+Infografía diseñada para explicar de forma visual un tema importante de Física Aplicada.
+
+</p>
+
+<a href="#" target="_blank">
+
+Ver organizador
+
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>🧾 Esquema General</h3>
+
+<p>
+
+Resumen gráfico de los contenidos abordados durante el desarrollo de la asignatura.
+
+</p>
+
+<a href="#" target="_blank">
+
+Ver organizador
+
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>📚 Resumen Visual</h3>
+
+<p>
+
+Material elaborado para facilitar el estudio mediante diagramas y representaciones gráficas.
+
+</p>
+
+<a href="#" target="_blank">
+
+Ver organizador
+
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>📂 Otros Organizadores</h3>
+
+<p>
+
+Espacio destinado para agregar cualquier otro organizador gráfico realizado durante el semestre.
+
+</p>
+
+<a href="#" target="_blank">
+
+Ver organizador
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+<!-- ===================== FUNDAMENTOS CONCEPTUALES ===================== -->
+
+<section id="fundamentos" class="section">
+
+<h2>📚 Fundamentos Conceptuales</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>📖 Concepto 1</h3>
+
+<p>
+
+Explicación de los conceptos fundamentales estudiados en la asignatura.
+
+</p>
+
+<a href="#" target="_blank">
+
+Ver documento
+
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>⚖️ Leyes de la Física</h3>
+
+<p>
+
+Documento con las principales leyes, principios y aplicaciones desarrolladas durante el curso.
+
+</p>
+
+<a href="#" target="_blank">
+
+Ver documento
+
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>📐 Magnitudes y Unidades</h3>
+
+<p>
+
+Material relacionado con el Sistema Internacional de Unidades y magnitudes físicas.
+
+</p>
+
+<a href="#" target="_blank">
+
+Ver documento
+
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>🚀 Movimiento</h3>
+
+<p>
+
+Conceptos relacionados con MRU, MRUA, movimiento parabólico y movimiento circular.
+
+</p>
+
+<a href="#" target="_blank">
+
+Ver documento
+
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>💪 Fuerzas</h3>
+
+<p>
+
+Contenido referente a fuerza, equilibrio, Segunda Ley de Newton, fricción y peso.
+
+</p>
+
+<a href="#" target="_blank">
+
+Ver documento
+
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>🌀 Trabajo y Energía</h3>
+
+<p>
+
+Información sobre trabajo mecánico, energía cinética, potencial y conservación de la energía.
+
+</p>
+
+<a href="#" target="_blank">
+
+Ver documento
+
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>🔬 Elasticidad</h3>
+
+<p>
+
+Material relacionado con la Ley de Hooke, esfuerzo, deformación y energía elástica.
+
+</p>
+
+<a href="#" target="_blank">
+
+Ver documento
+
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>📂 Material Complementario</h3>
+
+<p>
+
+Espacio para agregar presentaciones, artículos científicos, libros o recursos adicionales.
+
+</p>
+
+<a href="#" target="_blank">
+
+Ver documento
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+<!-- ===================== INFORMES ===================== -->
+
+<section id="informes" class="section">
+
+<h2>📑 Informes</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>🧪 Informe de Práctica 1</h3>
+
+<p>
+
+Informe correspondiente a la primera práctica de laboratorio realizada durante la asignatura.
+
+</p>
+
+<a href="#" target="_blank">
+
+Ver informe
+
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>⚙️ Informe de Práctica 2</h3>
+
+<p>
+
+Documento con el desarrollo, cálculos, resultados y conclusiones de la segunda práctica.
+
+</p>
+
+<a href="#" target="_blank">
+
+Ver informe
+
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>📊 Informe Experimental</h3>
+
+<p>
+
+Análisis de datos obtenidos durante una práctica experimental de Física Aplicada.
+
+</p>
+
+<a href="#" target="_blank">
+
+Ver informe
+
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>📈 Informe de Resultados</h3>
+
+<p>
+
+Presentación e interpretación de tablas, gráficas y resultados obtenidos en laboratorio.
+
+</p>
+
+<a href="#" target="_blank">
+
+Ver informe
+
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>📋 Informe Técnico</h3>
+
+<p>
+
+Documento elaborado siguiendo el formato técnico solicitado por el docente.
+
+</p>
+
+<a href="#" target="_blank">
+
+Ver informe
+
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>📝 Informe de Investigación</h3>
+
+<p>
+
+Trabajo de investigación relacionado con un tema desarrollado en la asignatura.
+
+</p>
+
+<a href="#" target="_blank">
+
+Ver informe
+
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>📚 Informe Final</h3>
+
+<p>
+
+Compilación de actividades, análisis y resultados obtenidos durante el semestre.
+
+</p>
+
+<a href="#" target="_blank">
+
+Ver informe
+
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>📂 Otros Informes</h3>
+
+<p>
+
+Espacio destinado para agregar informes adicionales elaborados durante el curso.
+
+</p>
+
+<a href="#" target="_blank">
+
+Ver informe
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+<!-- ===================== TRABAJOS EN CLASE ===================== -->
+
+<section id="clases" class="section">
+
+<h2>🏫 Trabajos en Clase</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>📘 Trabajo en Clase 1</h3>
+
+<p>
+
+Actividad desarrollada durante la primera sesión de clases de la asignatura.
+
+</p>
+
+<a href="#" target="_blank">
+
+Ver trabajo
+
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>📗 Trabajo en Clase 2</h3>
+
+<p>
+
+Resolución de ejercicios y análisis de problemas propuestos por el docente.
+
+</p>
+
+<a href="#" target="_blank">
+
+Ver trabajo
+
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>📙 Taller Práctico</h3>
+
+<p>
+
+Desarrollo de ejercicios prácticos relacionados con los contenidos de la unidad.
+
+</p>
+
+<a href="#" target="_blank">
+
+Ver trabajo
+
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>📕 Actividad Colaborativa</h3>
+
+<p>
+
+Trabajo realizado en equipos durante la clase para fortalecer el aprendizaje.
+
+</p>
+
+<a href="#" target="_blank">
+
+Ver trabajo
+
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>🧮 Resolución de Problemas</h3>
+
+<p>
+
+Aplicación de fórmulas y procedimientos para resolver ejercicios de Física Aplicada.
+
+</p>
+
+<a href="#" target="_blank">
+
+Ver trabajo
+
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>📊 Análisis de Resultados</h3>
+
+<p>
+
+Interpretación de tablas, gráficas y resultados obtenidos durante las actividades en clase.
+
+</p>
+
+<a href="#" target="_blank">
+
+Ver trabajo
+
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>💡 Actividad de Refuerzo</h3>
+
+<p>
+
+Ejercicios complementarios para consolidar los conocimientos adquiridos.
+
+</p>
+
+<a href="#" target="_blank">
+
+Ver trabajo
+
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>📂 Evidencias de Clase</h3>
+
+<p>
+
+Espacio destinado para almacenar fotografías, apuntes y demás evidencias de las actividades realizadas.
+
+</p>
+
+<a href="#" target="_blank">
+
+Ver evidencias
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+<!-- ===================== EVALUACIONES ===================== -->
+
+<section id="evaluaciones" class="section">
+
+<h2>📝 Evaluaciones</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>📋 Evaluación Diagnóstica</h3>
+
+<p>
+
+Evaluación aplicada al inicio de la asignatura para identificar los conocimientos previos.
+
+</p>
+
+<a href="#" target="_blank">
+
+Ver evaluación
+
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>📖 Lección 1</h3>
+
+<p>
+
+Primera lección correspondiente a los contenidos de la Unidad 1.
+
+</p>
+
+<a href="#" target="_blank">
+
+Ver lección
+
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>🧮 Prueba de la Unidad 1</h3>
+
+<p>
+
+Evaluación sobre los temas desarrollados durante la primera unidad.
+
+</p>
+
+<a href="#" target="_blank">
+
+Ver evaluación
+
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>📊 Evaluación Práctica</h3>
+
+<p>
+
+Actividad práctica desarrollada para comprobar la aplicación de los conocimientos adquiridos.
+
+</p>
+
+<a href="#" target="_blank">
+
+Ver evaluación
+
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>⚙️ Examen Parcial</h3>
+
+<p>
+
+Evaluación correspondiente al primer parcial de la asignatura.
+
+</p>
+
+<a href="#" target="_blank">
+
+Ver examen
+
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>🧪 Evaluación Experimental</h3>
+
+<p>
+
+Prueba basada en prácticas de laboratorio y resolución de problemas experimentales.
+
+</p>
+
+<a href="#" target="_blank">
+
+Ver evaluación
+
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>🎓 Examen Final</h3>
+
+<p>
+
+Evaluación final donde se integran todos los contenidos desarrollados durante el semestre.
+
+</p>
+
+<a href="#" target="_blank">
+
+Ver examen
+
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>📂 Evidencias de Evaluación</h3>
+
+<p>
+
+Espacio para almacenar exámenes, rúbricas, calificaciones y demás evidencias del proceso de evaluación.
+
+</p>
+
+<a href="#" target="_blank">
+
+Ver evidencias
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+<!-- ===================== EVALUACIONES ===================== -->
+
+<section id="evaluaciones" class="section">
+
+<h2>📝 Evaluaciones</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>📘 Unidad 1</h3>
+
+<p>
+
+Evaluaciones, lecciones, talleres, quices y exámenes correspondientes a la Unidad 1.
+
+</p>
+
+<a href="#" target="_blank">
+
+Ver Unidad 1
+
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>📗 Unidad 2</h3>
+
+<p>
+
+Evaluaciones y actividades calificadas desarrolladas durante la Unidad 2.
+
+</p>
+
+<a href="#" target="_blank">
+
+Ver Unidad 2
+
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>📙 Unidad 3</h3>
+
+<p>
+
+Material correspondiente a las evaluaciones de la Unidad 3.
+
+</p>
+
+<a href="#" target="_blank">
+
+Ver Unidad 3
+
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>📕 Unidad 4</h3>
+
+<p>
+
+Evaluaciones finales, trabajos y actividades calificadas de la Unidad 4.
+
+</p>
+
+<a href="#" target="_blank">
+
+Ver Unidad 4
+
+</a>
+
+</div>
+
+</div>
+
+<br><br>
+
+
+
+</div>
+
+</section>
+<!-- ===================== TRABAJOS DEL AULA VIRTUAL ===================== -->
+
+<section id="trabajos" class="section">
+
+<h2>💻 Trabajos del Aula Virtual</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>📘 Actividad 1</h3>
+
+<p>
+
+Actividad desarrollada y entregada mediante el Aula Virtual de la asignatura.
+
+</p>
+
+<a href="#" target="_blank">
+
+Ver actividad
+
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>📗 Actividad 2</h3>
+
+<p>
+
+Trabajo enviado a través de la plataforma virtual.
+
+</p>
+
+<a href="#" target="_blank">
+
+Ver actividad
+
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>📙 Taller Virtual</h3>
+
+<p>
+
+Resolución de ejercicios publicados en el Aula Virtual.
+
+</p>
+
+<a href="#" target="_blank">
+
+Ver taller
+
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>📕 Foro Académico</h3>
+
+<p>
+
+Participación en foros de discusión de la asignatura.
+
+</p>
+
+<a href="#" target="_blank">
+
+Ver participación
+
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>📊 Cuestionarios</h3>
+
+<p>
+
+Cuestionarios desarrollados en la plataforma virtual.
+
+</p>
+
+<a href="#" target="_blank">
+
+Ver cuestionarios
+
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>📂 Evidencias</h3>
+
+<p>
+
+Documentos, capturas y archivos entregados en el Aula Virtual.
+
+</p>
+
+<a href="#" target="_blank">
+
+Ver evidencias
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+<!-- ===================== TRABAJOS EN GRUPO ===================== -->
+
+<section id="grupo" class="section">
+
+<h2>👥 Trabajos en Grupo</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>👨‍👩‍👧‍👦 Trabajo Grupal 1</h3>
+
+<p>
+
+Actividad colaborativa desarrollada con los integrantes del grupo.
+
+</p>
+
+<a href="#" target="_blank">
+
+Ver trabajo
+
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>📚 Investigación Grupal</h3>
+
+<p>
+
+Trabajo de investigación realizado en equipo.
+
+</p>
+
+<a href="#" target="_blank">
+
+Ver investigación
+
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>🖥️ Presentación Grupal</h3>
+
+<p>
+
+Presentación elaborada en conjunto para exponer un tema de la asignatura.
+
+</p>
+
+<a href="#" target="_blank">
+
+Ver presentación
+
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>🧪 Proyecto Colaborativo</h3>
+
+<p>
+
+Proyecto desarrollado durante el semestre con participación de todos los integrantes.
+
+</p>
+
+<a href="#" target="_blank">
+
+Ver proyecto
+
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>📊 Informe Grupal</h3>
+
+<p>
+
+Informe elaborado de manera colaborativa para una práctica o investigación.
+
+</p>
+
+<a href="#" target="_blank">
+
+Ver informe
+
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>📂 Evidencias del Grupo</h3>
+
+<p>
+
+Fotografías, documentos, presentaciones y demás evidencias del trabajo colaborativo.
+
+</p>
+
+<a href="#" target="_blank">
+
+Ver evidencias
+
+</a>
+
+</div>
+
+</div>
+
+</section>
 </main>
 
 <footer>
-  <p>Portafolio de <strong>Física Aplicada</strong> &nbsp;·&nbsp; Morales Elkin  &nbsp;·&nbsp; Universidad Central del Ecuador &nbsp;·&nbsp; 2024–2025</p>
+
+<p>
+
+© 2026 | Portafolio Académico de Física Aplicada
+
+</p>
+
+<p>
+
+Universidad Central del Ecuador
+
+</p>
+
+<p>
+
+Elkin Adriano Morales Coello
+
+</p>
+
 </footer>
 
+<script>
+
+function mostrar(id, elemento){
+
+// Ocultar todas las secciones
+var secciones = document.querySelectorAll(".section");
+
+for(var i=0; i<secciones.length; i++){
+
+    secciones[i].classList.remove("active");
+
+}
+
+// Mostrar la sección seleccionada
+document.getElementById(id).classList.add("active");
+
+// Quitar el color activo del menú
+var enlaces = document.querySelectorAll("nav a");
+
+for(var i=0; i<enlaces.length; i++){
+
+    enlaces[i].classList.remove("active");
+
+}
+
+// Activar el botón seleccionado
+elemento.classList.add("active");
+
+// Regresar al inicio de la página
+window.scrollTo({
+    top:0,
+    behavior:"smooth"
+});
+
+}
+
+</script>
+
 </body>
+
 </html>
