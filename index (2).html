@@ -367,8 +367,74 @@ box-shadow:0 20px 40px rgba(37,99,235,.30);
     footer strong { color: var(--verde-claro); }
     
 }
+    .section{
+    display:none;
+    animation:fadeIn .4s ease;
+}
+
+.section.active{
+    display:block;
+}
+
+@keyframes fadeIn{
+
+from{
+    opacity:0;
+    transform:translateY(20px);
+}
+
+to{
+    opacity:1;
+    transform:translateY(0);
+}
+
+}
+    .nav-inner{
+    display:flex;
+    overflow-x:auto;
+}
+
+nav a.active{
+
+background:#facc15;
+
+color:#1e3a8a;
+
+border-radius:8px;
+
+}
   </style>
 </head>
+  <script>
+
+function show(id,link){
+
+// Ocultar todas las secciones
+var sections=document.querySelectorAll(".section");
+
+sections.forEach(function(sec){
+
+sec.classList.remove("active");
+
+});
+
+// Mostrar la seleccionada
+document.getElementById(id).classList.add("active");
+
+// Cambiar botón activo
+var enlaces=document.querySelectorAll("nav a");
+
+enlaces.forEach(function(a){
+
+a.classList.remove("active");
+
+});
+
+link.classList.add("active");
+
+}
+
+</script>
 <body>
 
 <div class="topbar">Universidad Central del Ecuador &nbsp;·&nbsp; Facultad de Ingeniería &nbsp;·&nbsp; <span>Física Aplicada</span></div>
@@ -390,35 +456,23 @@ box-shadow:0 20px 40px rgba(37,99,235,.30);
 </header>
 
 <nav>
+<div class="nav-inner">
 
-<a href="#" onclick="mostrarSeccion('datos')">Datos Informativos</a>
+<a href="#" class="active" onclick="show('datos',this);return false;">Datos Informativos</a>
 
-<a href="#" onclick="mostrarSeccion('silabo')">Sílabo</a>
+<a href="#" onclick="show('silabo',this);return false;">Sílabo</a>
 
-<a href="#" onclick="mostrarSeccion('hoja-vida')">Hoja de Vida</a>
+<a href="#" onclick="show('individuales',this);return false;">Trabajos Individuales</a>
 
-<a href="#" onclick="mostrarSeccion('deberes')">Deberes</a>
+<a href="#" onclick="show('grupales',this);return false;">Trabajos Grupales</a>
 
-<a href="#" onclick="mostrarSeccion('organizadores')">Organizadores Gráficos</a>
+<a href="#" onclick="show('evaluaciones',this);return false;">Evaluaciones</a>
 
-<a href="#" onclick="mostrarSeccion('fundamentos')">Fundamentos Conceptuales</a>
+<a href="#" onclick="show('mapas',this);return false;">Mapas</a>
 
-<a href="#" onclick="mostrarSeccion('informes')">Informes</a>
+<a href="#" onclick="show('anexos',this);return false;">Anexos</a>
 
-<a href="#" onclick="mostrarSeccion('trabajos-clase')">Trabajos en Clase</a>
-
-<a href="#" onclick="mostrarSeccion('evaluaciones')">Evaluaciones</a>
-
-<a href="#" onclick="mostrarSeccion('unidad1')">Unidad 1</a>
-
-<a href="#" onclick="mostrarSeccion('unidad2')">Unidad 2</a>
-
-<a href="#" onclick="mostrarSeccion('unidad3')">Unidad 3</a>
-
-<a href="#" onclick="mostrarSeccion('unidad4')">Unidad 4</a>
-
-<a href="#" onclick="mostrarSeccion('trabajos')">Trabajos</a>
-
+</div>
 </nav>
 <main>
   <!-- ================= DATOS INFORMATIVOS ================= -->
