@@ -4,13 +4,11 @@
 <head>
 
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Portafolio de Física Aplicada</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -30,214 +28,174 @@ color:#222;
 }
 
 header{
-
 background:linear-gradient(rgba(15,23,42,.9),rgba(30,58,138,.85)),
 url("https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1800&q=80");
-
 background-size:cover;
 background-position:center;
 padding:70px 20px;
 text-align:center;
-color:white;
-
+color:#fff;
 }
 
 header img{
-
 width:120px;
 margin-bottom:20px;
-
 }
 
 header h1{
-
 font-size:42px;
 margin-bottom:10px;
-
 }
 
 header h2{
-
 font-weight:400;
-
+margin-bottom:10px;
 }
 
-nav{
+/*========== MENU ==========*/
 
+nav{
 background:#0f172a;
 position:sticky;
 top:0;
 z-index:999;
+overflow-x:auto;
+overflow-y:hidden;
+white-space:nowrap;
+box-shadow:0 3px 8px rgba(0,0,0,.2);
+}
 
+nav::-webkit-scrollbar{
+height:8px;
+}
+
+nav::-webkit-scrollbar-thumb{
+background:#2563eb;
+border-radius:20px;
 }
 
 nav ul{
-
 display:flex;
-justify-content:center;
-flex-wrap:wrap;
+flex-wrap:nowrap;
 list-style:none;
+width:max-content;
+}
 
+nav li{
+flex:0 0 auto;
 }
 
 nav a{
-
 display:block;
-padding:16px 20px;
+padding:16px 22px;
 text-decoration:none;
-color:white;
+color:#fff;
 font-weight:600;
 transition:.3s;
-
+white-space:nowrap;
 }
 
 nav a:hover{
-
 background:#2563eb;
-
 }
 
 nav a.active{
-
 background:#facc15;
-color:#0f172a;
-
+color:#111827;
 }
 
-main{
+/*========== CONTENIDO ==========*/
 
+main{
 max-width:1200px;
 margin:auto;
-padding:40px 20px;
-
+padding:35px 20px;
 }
 
 .section{
-
 display:none;
-
-animation:fade .5s;
-
+animation:fade .4s;
 }
 
 .section.active{
-
 display:block;
-
 }
 
 @keyframes fade{
 
 from{
-
 opacity:0;
-transform:translateY(20px);
-
+transform:translateY(15px);
 }
 
 to{
-
 opacity:1;
 transform:translateY(0);
-
 }
-
-}
-
-h2{
-
-margin-bottom:30px;
-color:#1e3a8a;
-
-}
-
-.grid{
-
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:25px;
 
 }
 
 .card{
-
-background:white;
+background:#fff;
 padding:25px;
+margin-bottom:25px;
 border-radius:15px;
-box-shadow:0 10px 25px rgba(0,0,0,.15);
-
+box-shadow:0 10px 25px rgba(0,0,0,.12);
 }
 
 .card h3{
-
 color:#1e3a8a;
-margin-bottom:10px;
-
+margin-bottom:15px;
 }
 
 .card p{
-
-margin-bottom:15px;
-
+line-height:1.7;
 }
 
-.card a{
-
-background:#2563eb;
-color:white;
+.btn-ver,
+.btn-dl{
+display:inline-block;
 padding:10px 18px;
 border-radius:8px;
 text-decoration:none;
-
+color:#fff;
+margin-right:10px;
+margin-top:10px;
 }
 
-.card a:hover{
-
-background:#0f172a;
-
+.btn-ver{
+background:#2563eb;
 }
 
-table{
-
-width:100%;
-border-collapse:collapse;
-background:white;
-
+.btn-dl{
+background:#16a34a;
 }
 
-th,td{
-
-padding:15px;
-border:1px solid #ddd;
-
+.btn-ver:hover{
+background:#1d4ed8;
 }
 
-th{
-
-background:#1e3a8a;
-color:white;
-text-align:left;
-
+.btn-dl:hover{
+background:#15803d;
 }
 
 footer{
-
 margin-top:50px;
 padding:30px;
 background:#0f172a;
-color:white;
+color:#fff;
 text-align:center;
-
 }
 
 </style>
 
 </head>
+
 <body>
-<main>
+
 <header>
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Logo_Universidad_Central_del_Ecuador.svg/512px-Logo_Universidad_Central_del_Ecuador.svg.png" alt="UCE">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Logo_Universidad_Central_del_Ecuador.svg/512px-Logo_Universidad_Central_del_Ecuador.svg.png">
 
 <h1>PORTAFOLIO ACADÉMICO</h1>
 
@@ -269,9 +227,9 @@ text-align:center;
 
 <li><a href="#" onclick="mostrar('deberes',this)">Deberes</a></li>
 
-<li><a href="#" onclick="mostrar('organizadores',this)">Organizadores Gráficos</a></li>
+<li><a href="#" onclick="mostrar('organizadores',this)">Organizadores</a></li>
 
-<li><a href="#" onclick="mostrar('fundamentos',this)">Fundamentos Conceptuales</a></li>
+<li><a href="#" onclick="mostrar('fundamentos',this)">Fundamentos</a></li>
 
 <li><a href="#" onclick="mostrar('informes',this)">Informes</a></li>
 
@@ -294,17 +252,28 @@ text-align:center;
 </nav>
 
 <main>
-    <th>Hoja de vida</th>
-    <td>
-      <a class="btn-ver" href="hoja-vida.pdf" target="_blank">👁 Ver CV</a>
-      &nbsp;
-      <a class="btn-dl" href="hoja-vida.pdf" download>⬇ Descargar</a>
-    </td>
-  </tr>
 
-</table>
-  
-  </div>
+<div id="datos" class="section active">
+
+<div class="card">
+
+<h2>Datos Informativos</h2>
+
+<p><b>Asignatura:</b> Física Aplicada</p>
+
+<p><b>Estudiante:</b> Elkin Adriano Morales Coello</p>
+
+<p><b>Universidad:</b> Universidad Central del Ecuador</p>
+
+<p><b>Carrera:</b> Pedagogía de la Informática</p>
+
+<p><b>Semestre:</b> Sexto</p>
+
+<p><b>Periodo:</b> 2026</p>
+
+</div>
+
+</div>
 
   <!-- SILABO -->
   <div id="silabo" class="section">
