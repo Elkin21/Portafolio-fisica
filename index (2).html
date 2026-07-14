@@ -271,6 +271,49 @@ width:100%;
 
 }
 
+  .caratula-fondo{
+
+background-image:url('https://campusvirtual.uc.edu.py/pluginfile.php/217623/course/overviewfiles/descarga%20%283%29.jpg');
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+
+padding:70px;
+border-radius:20px;
+position:relative;
+overflow:hidden;
+
+}
+
+/* Capa blanca semitransparente para facilitar la lectura */
+
+.caratula-fondo::before{
+
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(255,255,255,.88);
+
+}
+
+.caratula-fondo > div{
+
+position:relative;
+z-index:1;
+
+}
+
+.caratula-fondo h2,
+.caratula-fondo h3,
+.caratula-fondo p{
+
+color:#0f172a;
+
+}
+
 </style>
 
 </head>
@@ -325,7 +368,7 @@ width:100%;
 
 <!-- ================= CARÁTULA ================= -->
 
-<div class="documento">
+<div class="documento caratula-fondo">
 
 <div style="text-align:center; line-height:2;">
 
