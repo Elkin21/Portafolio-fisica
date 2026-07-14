@@ -1,91 +1,119 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Portafolio Académico</title>
+<title>Portafolio Física Aplicada</title>
+
 
 <style>
 
+
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Segoe UI', sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
 }
+
 
 body{
-    background:#f1f5f9;
-    color:#1e293b;
+
+background:#f1f5f9;
+color:#1e293b;
+
 }
 
 
-/* ENCABEZADO */
+/* HEADER */
 
 header{
-    background:linear-gradient(135deg,#2563eb,#7c3aed);
-    color:white;
-    padding:35px;
-    text-align:center;
+
+background:linear-gradient(135deg,#2563eb,#7c3aed);
+color:white;
+padding:40px;
+text-align:center;
+
 }
+
 
 header h1{
-    font-size:35px;
+
+font-size:35px;
+
 }
 
+
 header p{
-    margin-top:10px;
+
+margin-top:10px;
+
 }
 
 
 
 /* CONTENEDOR */
 
+
 .container{
-    display:flex;
-    min-height:100vh;
+
+display:flex;
+min-height:100vh;
+
 }
+
 
 
 /* MENU */
 
+
 nav{
 
-    width:280px;
-    background:#0f172a;
-    padding:20px;
+width:290px;
+background:#0f172a;
+padding:20px;
+
 }
+
 
 
 nav ul{
-    list-style:none;
+
+list-style:none;
+
 }
+
 
 
 nav li{
-    margin-bottom:10px;
+
+margin-bottom:10px;
+
 }
+
 
 
 nav a{
 
-    text-decoration:none;
-    color:white;
-    display:block;
-    padding:14px;
-    border-radius:10px;
-    transition:.3s;
-    cursor:pointer;
+display:block;
+padding:14px;
+color:white;
+text-decoration:none;
+border-radius:10px;
+transition:.3s;
 
 }
+
 
 
 nav a:hover,
 .active{
 
-    background:#2563eb;
-    transform:translateX(8px);
+background:#2563eb;
+transform:translateX(8px);
 
 }
 
@@ -93,35 +121,29 @@ nav a:hover,
 
 /* CONTENIDO */
 
+
 main{
 
-    flex:1;
-    padding:35px;
+flex:1;
+padding:35px;
 
 }
 
 
 .seccion{
 
-    display:none;
-    background:white;
-    padding:30px;
-    border-radius:15px;
-    box-shadow:0 5px 20px #0002;
-    animation:aparecer .5s;
+display:none;
+background:white;
+padding:30px;
+border-radius:15px;
+box-shadow:0 5px 20px #0003;
+animation:mostrar .5s;
 
 }
 
 
-.seccion h2{
 
-    color:#2563eb;
-    margin-bottom:20px;
-
-}
-
-
-@keyframes aparecer{
+@keyframes mostrar{
 
 from{
 
@@ -141,29 +163,111 @@ transform:translateY(0);
 
 
 
+h2{
+
+color:#2563eb;
+margin-bottom:20px;
+
+}
+
+
+
+/* TARJETAS SILABO */
+
+
+.tarjetas{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+
+}
+
+
+
+.tarjeta{
+
+background:linear-gradient(135deg,#2563eb,#7c3aed);
+color:white;
+padding:20px;
+border-radius:15px;
+cursor:pointer;
+transition:.4s;
+box-shadow:0 5px 15px #0003;
+
+}
+
+
+
+.tarjeta:hover{
+
+transform:translateY(-8px);
+
+}
+
+
+
+.tarjeta h3{
+
+text-align:center;
+
+}
+
+
+.contenido-tarjeta{
+
+max-height:0;
+overflow:hidden;
+transition:.5s;
+margin-top:15px;
+
+}
+
+
+.tarjeta.activa .contenido-tarjeta{
+
+max-height:600px;
+
+}
+
+
+.contenido-tarjeta p{
+
+background:white;
+color:#1e293b;
+padding:10px;
+border-radius:8px;
+margin:8px 0;
+
+}
+
+
+
+
 /* DOCUMENTOS */
 
 
 .documento{
 
 background:#f8fafc;
-padding:15px;
-margin:15px 0;
+padding:20px;
+margin-top:20px;
+border-radius:12px;
 border-left:5px solid #2563eb;
-border-radius:10px;
 
 }
+
 
 
 .btn{
 
 display:inline-block;
-padding:10px 20px;
 background:#2563eb;
 color:white;
+padding:12px 20px;
 border-radius:8px;
 text-decoration:none;
-margin-top:10px;
+margin-top:15px;
 
 }
 
@@ -176,7 +280,6 @@ background:#1d4ed8;
 
 
 
-/* RESPONSIVE */
 
 @media(max-width:800px){
 
@@ -196,22 +299,26 @@ width:100%;
 }
 
 
+
 </style>
 
 
 </head>
 
 
+
 <body>
+
 
 
 <header>
 
 <h1>📚 Portafolio Académico</h1>
 
-<p>Repositorio digital de evidencias educativas</p>
+<p>Física Aplicada - Pedagogía de Informática</p>
 
 </header>
+
 
 
 
@@ -223,33 +330,87 @@ width:100%;
 <ul>
 
 
-<li><a href="#" class="active" onclick="mostrar('datos',this)">📋 Datos Informativos</a></li>
+<li>
+<a href="#" class="active" onclick="mostrar('datos',this)">
+📋 Datos Informativos
+</a>
+</li>
 
-<li><a href="#" onclick="mostrar('silabo',this)">📘 Sílabo</a></li>
 
-<li><a href="#" onclick="mostrar('hoja',this)">👤 Hoja de Vida</a></li>
+<li>
+<a href="#" onclick="mostrar('silabo',this)">
+📘 Sílabo
+</a>
+</li>
 
-<li><a href="#" onclick="mostrar('deberes',this)">📝 Deberes</a></li>
 
-<li><a href="#" onclick="mostrar('organizadores',this)">🧠 Organizadores Gráficos</a></li>
+<li>
+<a href="#" onclick="mostrar('hoja',this)">
+👤 Hoja de Vida
+</a>
+</li>
 
-<li><a href="#" onclick="mostrar('fundamentos',this)">📚 Fundamentos Conceptuales</a></li>
 
-<li><a href="#" onclick="mostrar('informes',this)">📑 Informes</a></li>
+<li>
+<a href="#" onclick="mostrar('deberes',this)">
+📝 Deberes
+</a>
+</li>
 
-<li><a href="#" onclick="mostrar('clases',this)">🏫 Trabajos en Clase</a></li>
 
-<li><a href="#" onclick="mostrar('evaluaciones',this)">📊 Evaluaciones</a></li>
+<li>
+<a href="#" onclick="mostrar('organizadores',this)">
+🧠 Organizadores Gráficos
+</a>
+</li>
 
-<li><a href="#" onclick="mostrar('trabajos',this)">💻 Trabajos del Aula Virtual</a></li>
 
-<li><a href="#" onclick="mostrar('grupo',this)">👥 Trabajos en Grupo</a></li>
+<li>
+<a href="#" onclick="mostrar('fundamentos',this)">
+📚 Fundamentos Conceptuales
+</a>
+</li>
+
+
+<li>
+<a href="#" onclick="mostrar('informes',this)">
+📑 Informes
+</a>
+</li>
+
+
+<li>
+<a href="#" onclick="mostrar('clases',this)">
+🏫 Trabajos en Clase
+</a>
+</li>
+
+
+<li>
+<a href="#" onclick="mostrar('evaluaciones',this)">
+📊 Evaluaciones
+</a>
+</li>
+
+
+<li>
+<a href="#" onclick="mostrar('trabajos',this)">
+💻 Trabajos del Aula Virtual
+</a>
+</li>
+
+
+<li>
+<a href="#" onclick="mostrar('grupo',this)">
+👥 Trabajos en Grupo
+</a>
+</li>
 
 
 </ul>
 
-
 </nav>
+
 
 
 
@@ -257,44 +418,215 @@ width:100%;
 
 
 
+
 <section id="datos" class="seccion" style="display:block">
 
+
 <h2>📋 Datos Informativos</h2>
-
-<p>
-Nombre: Elkin Adriano Morales Coello
-</p>
-
-<p>
-Carrera: Pedagogía de las Ciencias Experimentales Informática
-</p>
-
-<p>
-Universidad Central del Ecuador
-</p>
-
-
-</section>
-
-
-
-<section id="silabo" class="seccion">
-
-<h2>📘 Sílabo</h2>
 
 
 <div class="documento">
 
-<p>Documento del sílabo de la asignatura</p>
+<p><b>Asignatura:</b> Física Aplicada</p>
 
-<a class="btn" href="https://drive.google.com/" target="_blank">
-Abrir Google Drive
-</a>
+<p><b>Código:</b> FIP05P0EC5.1</p>
+
+<p><b>Carrera:</b> Pedagogía de Informática</p>
+
+<p><b>Semestre:</b> Quinto semestre</p>
+
+<p><b>Periodo:</b> Abril - Julio 2026</p>
 
 </div>
 
 
 </section>
+
+
+
+
+
+
+<section id="silabo" class="seccion">
+
+
+<h2>📘 Sílabo</h2>
+
+
+
+<div class="tarjetas">
+
+
+
+<div class="tarjeta" onclick="abrirTarjeta(this)">
+
+
+<h3>📋 Descripción</h3>
+
+
+<div class="contenido-tarjeta">
+
+
+<p>
+<b>Asignatura:</b> Física Aplicada (FIP05P0EC5.1)
+</p>
+
+
+<p>
+<b>Carrera:</b> Pedagogía de Informática
+</p>
+
+
+<p>
+<b>Semestre:</b> Quinto semestre
+</p>
+
+
+<p>
+<b>Total:</b> 128 horas
+</p>
+
+
+<p>
+64 horas docencia<br>
+16 horas práctica experimental<br>
+48 horas trabajo autónomo
+</p>
+
+
+<p>
+<b>Periodo:</b> Abril - Julio 2026
+</p>
+
+
+<p>
+<b>Modalidad:</b> Presencial
+</p>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="tarjeta" onclick="abrirTarjeta(this)">
+
+
+<h3>📚 Unidades Didácticas</h3>
+
+
+<div class="contenido-tarjeta">
+
+
+<p>
+<b>Unidad 1:</b><br>
+Introducción al estudio de la Física; Vectores y sus operaciones
+</p>
+
+
+<p>
+<b>Unidad 2:</b><br>
+Cinemática
+</p>
+
+
+<p>
+<b>Unidad 3:</b><br>
+Dinámica
+</p>
+
+
+<p>
+<b>Unidad 4:</b><br>
+Trabajo, Potencia y Energía
+</p>
+
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+<div class="tarjeta" onclick="abrirTarjeta(this)">
+
+
+<h3>📊 Evaluación</h3>
+
+
+<div class="contenido-tarjeta">
+
+
+<p>
+<b>Evaluación Formativa 1</b><br>
+Individual: 35% (7 puntos)
+</p>
+
+
+<p>
+<b>Evaluación Formativa 2</b><br>
+Grupal: 25% (5 puntos)
+</p>
+
+
+<p>
+<b>Evaluación Sumativa 1:</b><br>
+10% (2 puntos)
+</p>
+
+
+<p>
+<b>Evaluación Sumativa 2:</b><br>
+30% (6 puntos)
+</p>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="documento">
+
+
+<h3>📄 Documento PDF del Sílabo</h3>
+
+
+<iframe 
+src="documentos/silabo.pdf"
+width="100%"
+height="600px">
+</iframe>
+
+
+
+<a class="btn" href="documentos/silabo.pdf" target="_blank">
+📥 Abrir PDF
+</a>
+
+
+</div>
+
+
+
+</section>
+
+
 
 
 
@@ -303,19 +635,17 @@ Abrir Google Drive
 
 <h2>👤 Hoja de Vida</h2>
 
-
 <div class="documento">
 
-<p>Currículum Vitae</p>
-
-<a class="btn" href="#" target="_blank">
-Ver documento
+<a class="btn" href="documentos/hoja_vida.pdf">
+Ver PDF
 </a>
 
 </div>
 
-
 </section>
+
+
 
 
 
@@ -326,15 +656,14 @@ Ver documento
 
 <div class="documento">
 
-<p>Deber 1</p>
-
-<a href="https://drive.google.com/" class="btn" target="_blank">
-Ver archivo
+<a class="btn" href="documentos/deberes.pdf">
+Abrir documentos
 </a>
 
 </div>
 
 </section>
+
 
 
 
@@ -343,20 +672,8 @@ Ver archivo
 
 <h2>🧠 Organizadores Gráficos</h2>
 
-
-<div class="documento">
-
-<p>Mapas mentales y organizadores</p>
-
-<a href="https://drive.google.com/" class="btn" target="_blank">
-Abrir carpeta
-</a>
-
-
-</div>
-
-
 </section>
+
 
 
 
@@ -364,18 +681,6 @@ Abrir carpeta
 <section id="fundamentos" class="seccion">
 
 <h2>📚 Fundamentos Conceptuales</h2>
-
-
-<div class="documento">
-
-<p>Investigaciones y fundamentos teóricos</p>
-
-<a href="#" class="btn">
-Documentos
-</a>
-
-</div>
-
 
 </section>
 
@@ -386,18 +691,6 @@ Documentos
 
 <h2>📑 Informes</h2>
 
-
-<div class="documento">
-
-<p>Informes académicos</p>
-
-<a href="https://drive.google.com/" class="btn">
-Ver informes
-</a>
-
-</div>
-
-
 </section>
 
 
@@ -406,16 +699,6 @@ Ver informes
 <section id="clases" class="seccion">
 
 <h2>🏫 Trabajos en Clase</h2>
-
-<div class="documento">
-
-<p>Evidencias realizadas en clases</p>
-
-<a href="#" class="btn">
-Abrir
-</a>
-
-</div>
 
 </section>
 
@@ -426,17 +709,6 @@ Abrir
 
 <h2>📊 Evaluaciones</h2>
 
-<div class="documento">
-
-<p>Evaluaciones y resultados</p>
-
-<a href="#" class="btn">
-Ver
-</a>
-
-</div>
-
-
 </section>
 
 
@@ -444,19 +716,7 @@ Ver
 
 <section id="trabajos" class="seccion">
 
-<h2>💻 Trabajos del Aula Virtual</h2>
-
-
-<div class="documento">
-
-<p>Actividades Moodle / Aula Virtual</p>
-
-<a href="https://drive.google.com/" class="btn">
-Abrir
-</a>
-
-</div>
-
+<h2>💻 Trabajos Aula Virtual</h2>
 
 </section>
 
@@ -467,19 +727,8 @@ Abrir
 
 <h2>👥 Trabajos en Grupo</h2>
 
-
-<div class="documento">
-
-<p>Proyectos colaborativos</p>
-
-<a href="https://drive.google.com/" class="btn">
-Ver proyectos
-</a>
-
-</div>
-
-
 </section>
+
 
 
 
@@ -491,10 +740,11 @@ Ver proyectos
 
 
 
+
 <script>
 
 
-function mostrar(id, elemento){
+function mostrar(id,elemento){
 
 
 let secciones=document.querySelectorAll(".seccion");
@@ -514,9 +764,9 @@ document.getElementById(id).style.display="block";
 let enlaces=document.querySelectorAll("nav a");
 
 
-enlaces.forEach(function(link){
+enlaces.forEach(function(a){
 
-link.classList.remove("active");
+a.classList.remove("active");
 
 });
 
@@ -527,8 +777,20 @@ elemento.classList.add("active");
 }
 
 
+
+
+function abrirTarjeta(tarjeta){
+
+tarjeta.classList.toggle("activa");
+
+}
+
+
+
 </script>
 
 
+
 </body>
+
 </html>
