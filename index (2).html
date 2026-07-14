@@ -28,6 +28,7 @@ color:#1e293b;
 }
 
 
+
 /* HEADER */
 
 header{
@@ -55,8 +56,8 @@ margin-top:10px;
 
 
 
-/* CONTENEDOR */
 
+/* CONTENEDOR */
 
 .container{
 
@@ -69,7 +70,6 @@ min-height:100vh;
 
 /* MENU */
 
-
 nav{
 
 width:290px;
@@ -79,13 +79,11 @@ padding:20px;
 }
 
 
-
 nav ul{
 
 list-style:none;
 
 }
-
 
 
 nav li{
@@ -119,8 +117,9 @@ transform:translateX(8px);
 
 
 
-/* CONTENIDO */
 
+
+/* CONTENIDO */
 
 main{
 
@@ -128,6 +127,7 @@ flex:1;
 padding:35px;
 
 }
+
 
 
 .seccion{
@@ -172,7 +172,113 @@ margin-bottom:20px;
 
 
 
-/* TARJETAS SILABO */
+
+
+/* TARJETAS DE DOCUMENTOS */
+
+
+.trabajos-container{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:20px;
+margin-top:20px;
+
+}
+
+
+
+.trabajo{
+
+background:#f8fafc;
+padding:20px;
+border-radius:15px;
+display:flex;
+align-items:center;
+gap:15px;
+border-left:6px solid #2563eb;
+transition:.3s;
+box-shadow:0 5px 15px #0002;
+
+}
+
+
+
+.trabajo:hover{
+
+transform:translateY(-8px);
+
+}
+
+
+
+.icono{
+
+font-size:40px;
+
+}
+
+
+
+.trabajo h3{
+
+color:#2563eb;
+margin-bottom:8px;
+
+}
+
+
+
+.trabajo p{
+
+margin-bottom:10px;
+
+}
+
+
+
+/* BOTONES */
+
+
+.btn{
+
+display:inline-block;
+background:#2563eb;
+color:white;
+padding:10px 18px;
+border-radius:8px;
+text-decoration:none;
+margin:5px;
+
+}
+
+
+
+.btn:hover{
+
+background:#1d4ed8;
+
+}
+
+
+
+.descargar{
+
+background:#16a34a;
+
+}
+
+
+
+.descargar:hover{
+
+background:#15803d;
+
+}
+
+
+
+/* SILABO */
 
 
 .tarjetas{
@@ -184,7 +290,6 @@ gap:20px;
 }
 
 
-
 .tarjeta{
 
 background:linear-gradient(135deg,#2563eb,#7c3aed);
@@ -193,10 +298,8 @@ padding:20px;
 border-radius:15px;
 cursor:pointer;
 transition:.4s;
-box-shadow:0 5px 15px #0003;
 
 }
-
 
 
 .tarjeta:hover{
@@ -207,21 +310,14 @@ transform:translateY(-8px);
 
 
 
-.tarjeta h3{
-
-text-align:center;
-
-}
-
-
 .contenido-tarjeta{
 
 max-height:0;
 overflow:hidden;
 transition:.5s;
-margin-top:15px;
 
 }
+
 
 
 .tarjeta.activa .contenido-tarjeta{
@@ -229,6 +325,7 @@ margin-top:15px;
 max-height:600px;
 
 }
+
 
 
 .contenido-tarjeta p{
@@ -244,41 +341,8 @@ margin:8px 0;
 
 
 
-/* DOCUMENTOS */
 
-
-.documento{
-
-background:#f8fafc;
-padding:20px;
-margin-top:20px;
-border-radius:12px;
-border-left:5px solid #2563eb;
-
-}
-
-
-
-.btn{
-
-display:inline-block;
-background:#2563eb;
-color:white;
-padding:12px 20px;
-border-radius:8px;
-text-decoration:none;
-margin-top:15px;
-
-}
-
-
-.btn:hover{
-
-background:#1d4ed8;
-
-}
-
-
+/* RESPONSIVE */
 
 
 @media(max-width:800px){
@@ -306,9 +370,7 @@ width:100%;
 </head>
 
 
-
 <body>
-
 
 
 <header>
@@ -318,7 +380,6 @@ width:100%;
 <p>Física Aplicada - Pedagogía de Informática</p>
 
 </header>
-
 
 
 
@@ -412,32 +473,111 @@ width:100%;
 </nav>
 
 
-
-
 <main>
+  <!-- ================= DATOS INFORMATIVOS ================= -->
 
 
-
-
-<section id="datos" class="seccion" style="display:block">
+<section id="datos" class="seccion" style="display:block;">
 
 
 <h2>📋 Datos Informativos</h2>
 
 
-<div class="documento">
+<p>
+Información general de la asignatura Física Aplicada.
+</p>
 
-<p><b>Asignatura:</b> Física Aplicada</p>
 
-<p><b>Código:</b> FIP05P0EC5.1</p>
 
-<p><b>Carrera:</b> Pedagogía de Informática</p>
+<h3 style="margin-top:25px;color:#2563eb;">
+📌 Información Académica
+</h3>
 
-<p><b>Semestre:</b> Quinto semestre</p>
 
-<p><b>Periodo:</b> Abril - Julio 2026</p>
+
+<div class="trabajos-container">
+
+
+
+<div class="trabajo">
+
+
+<div class="icono">
+👤
+</div>
+
+
+<div>
+
+<h3>
+Datos del estudiante
+</h3>
+
+
+<p>
+PDF · Información personal
+</p>
+
+
+<a class="btn" href="documentos/datos_estudiante.pdf" target="_blank">
+👁 Ver
+</a>
+
+
+<a class="btn descargar" href="documentos/datos_estudiante.pdf" download>
+⬇ Descargar
+</a>
+
 
 </div>
+
+
+</div>
+
+
+
+
+
+<div class="trabajo">
+
+
+<div class="icono">
+📚
+</div>
+
+
+<div>
+
+
+<h3>
+Datos de la asignatura
+</h3>
+
+
+<p>
+PDF · Física Aplicada
+</p>
+
+
+<a class="btn" href="documentos/datos_asignatura.pdf" target="_blank">
+👁 Ver
+</a>
+
+
+<a class="btn descargar" href="documentos/datos_asignatura.pdf" download>
+⬇ Descargar
+</a>
+
+
+</div>
+
+
+</div>
+
+
+
+</div>
+
 
 
 </section>
@@ -447,10 +587,25 @@ width:100%;
 
 
 
+
+<!-- ================= SILABO ================= -->
+
+
 <section id="silabo" class="seccion">
 
 
 <h2>📘 Sílabo</h2>
+
+
+<p>
+Documento de planificación académica de la asignatura Física Aplicada.
+</p>
+
+
+
+<h3 style="margin-top:25px;color:#2563eb;">
+📋 Información General
+</h3>
 
 
 
@@ -461,7 +616,10 @@ width:100%;
 <div class="tarjeta" onclick="abrirTarjeta(this)">
 
 
-<h3>📋 Descripción</h3>
+<h3>
+📋 Descripción de la Asignatura
+</h3>
+
 
 
 <div class="contenido-tarjeta">
@@ -513,10 +671,15 @@ width:100%;
 
 
 
+
+
+
 <div class="tarjeta" onclick="abrirTarjeta(this)">
 
 
-<h3>📚 Unidades Didácticas</h3>
+<h3>
+📚 Unidades Didácticas
+</h3>
 
 
 <div class="contenido-tarjeta">
@@ -548,7 +711,10 @@ Trabajo, Potencia y Energía
 
 </div>
 
+
 </div>
+
+
 
 
 
@@ -559,7 +725,10 @@ Trabajo, Potencia y Energía
 <div class="tarjeta" onclick="abrirTarjeta(this)">
 
 
-<h3>📊 Evaluación</h3>
+<h3>
+📊 Sistema de Evaluación
+</h3>
+
 
 
 <div class="contenido-tarjeta">
@@ -571,20 +740,23 @@ Individual: 35% (7 puntos)
 </p>
 
 
+
 <p>
 <b>Evaluación Formativa 2</b><br>
 Grupal: 25% (5 puntos)
 </p>
 
 
+
 <p>
-<b>Evaluación Sumativa 1:</b><br>
+<b>Evaluación Sumativa 1</b><br>
 10% (2 puntos)
 </p>
 
 
+
 <p>
-<b>Evaluación Sumativa 2:</b><br>
+<b>Evaluación Sumativa 2</b><br>
 30% (6 puntos)
 </p>
 
@@ -595,29 +767,48 @@ Grupal: 25% (5 puntos)
 </div>
 
 
+
 </div>
 
 
 
 
 
-<div class="documento">
 
 
-<h3>📄 Documento PDF del Sílabo</h3>
+<h3 style="margin-top:30px;color:#2563eb;">
+📄 Documento Oficial del Sílabo
+</h3>
+
+
+
+<div class="trabajo" style="display:block;">
+
 
 
 <iframe 
 src="documentos/silabo.pdf"
 width="100%"
-height="600px">
+height="600px"
+style="border-radius:10px;border:none;">
 </iframe>
 
 
 
+<br><br>
+
+
+
 <a class="btn" href="documentos/silabo.pdf" target="_blank">
-📥 Abrir PDF
+👁 Ver PDF
 </a>
+
+
+
+<a class="btn descargar" href="documentos/silabo.pdf" download>
+⬇ Descargar
+</a>
+
 
 
 </div>
@@ -629,109 +820,1235 @@ height="600px">
 
 
 
+
+
+
+<!-- ================= HOJA DE VIDA ================= -->
 
 
 <section id="hoja" class="seccion">
 
+
 <h2>👤 Hoja de Vida</h2>
 
-<div class="documento">
 
-<a class="btn" href="documentos/hoja_vida.pdf">
-Ver PDF
+
+<p>
+Información académica y profesional.
+</p>
+
+
+
+<h3 style="margin-top:25px;color:#2563eb;">
+📌 Documento Personal
+</h3>
+
+
+
+
+<div class="trabajos-container">
+
+
+
+<div class="trabajo">
+
+
+<div class="icono">
+👤
+</div>
+
+
+<div>
+
+
+<h3>
+Currículum Vitae
+</h3>
+
+
+<p>
+PDF · Hoja de Vida
+</p>
+
+
+
+<a class="btn" href="documentos/hoja_vida.pdf" target="_blank">
+👁 Ver
 </a>
+
+
+
+<a class="btn descargar" href="documentos/hoja_vida.pdf" download>
+⬇ Descargar
+</a>
+
+
 
 </div>
 
+
+</div>
+
+
+
+</div>
+
+
+
 </section>
-
-
-
-
+<!-- ================= DEBERES ================= -->
 
 
 <section id="deberes" class="seccion">
 
-<h2>📝 Deberes</h2>
 
-<div class="documento">
+<h2>📝 Trabajos Individuales</h2>
 
-<a class="btn" href="documentos/deberes.pdf">
-Abrir documentos
+
+<p>
+Trabajos realizados de forma individual durante la asignatura de Física Aplicada.
+</p>
+
+
+
+<h3 style="margin-top:25px;color:#2563eb;">
+📌 Unidad 1 — Vectores
+</h3>
+
+
+
+<div class="trabajos-container">
+
+
+
+
+
+<div class="trabajo">
+
+
+<div class="icono">
+📐
+</div>
+
+
+<div>
+
+
+<h3>
+Vectores 3D
+</h3>
+
+
+<p>
+PDF · Unidad 1 — Vectores
+</p>
+
+
+<a class="btn" href="documentos/vectores3D.pdf" target="_blank">
+👁 Ver
 </a>
 
+
+<a class="btn descargar" href="documentos/vectores3D.pdf" download>
+⬇ Descargar
+</a>
+
+
 </div>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="trabajo">
+
+
+<div class="icono">
+📐
+</div>
+
+
+<div>
+
+
+<h3>
+Vectores 2D
+</h3>
+
+
+<p>
+PDF · Unidad 1 — Vectores
+</p>
+
+
+<a class="btn" href="documentos/vectores2D.pdf" target="_blank">
+👁 Ver
+</a>
+
+
+<a class="btn descargar" href="documentos/vectores2D.pdf" download>
+⬇ Descargar
+</a>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="trabajo">
+
+
+<div class="icono">
+🔄
+</div>
+
+
+<div>
+
+
+<h3>
+Conversiones
+</h3>
+
+
+<p>
+PDF · Unidad 1 — Vectores
+</p>
+
+
+<a class="btn" href="documentos/conversiones.pdf" target="_blank">
+👁 Ver
+</a>
+
+
+<a class="btn descargar" href="documentos/conversiones.pdf" download>
+⬇ Descargar
+</a>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="trabajo">
+
+
+<div class="icono">
+✍️
+</div>
+
+
+<div>
+
+
+<h3>
+Ensayo
+</h3>
+
+
+<p>
+PDF · Unidad 1 — Vectores
+</p>
+
+
+<a class="btn" href="documentos/ensayo.pdf" target="_blank">
+👁 Ver
+</a>
+
+
+<a class="btn descargar" href="documentos/ensayo.pdf" download>
+⬇ Descargar
+</a>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="trabajo">
+
+
+<div class="icono">
+📖
+</div>
+
+
+<div>
+
+
+<h3>
+Glosario
+</h3>
+
+
+<p>
+PDF · Unidad 1 — Vectores
+</p>
+
+
+<a class="btn" href="documentos/glosario.pdf" target="_blank">
+👁 Ver
+</a>
+
+
+<a class="btn descargar" href="documentos/glosario.pdf" download>
+⬇ Descargar
+</a>
+
+
+</div>
+
+
+</div>
+
+
+
+
+</div>
+
 
 </section>
 
 
 
+
+
+
+
+
+
+<!-- ================= ORGANIZADORES ================= -->
 
 
 <section id="organizadores" class="seccion">
 
-<h2>🧠 Organizadores Gráficos</h2>
+
+<h2>🧠 Mapas</h2>
+
+
+<p>
+Mapas conceptuales y mentales realizados durante la asignatura.
+</p>
+
+
+
+<h3 style="margin-top:25px;color:#2563eb;">
+🗺️ Unidad 1 — Vectores y Sistemas de Unidades
+</h3>
+
+
+
+<div class="trabajos-container">
+
+
+
+
+
+
+<div class="trabajo">
+
+
+<div class="icono">
+🗺️
+</div>
+
+
+<div>
+
+
+<h3>
+Mapa de Trigonometría
+</h3>
+
+
+<p>
+PDF · Unidad 1
+</p>
+
+
+
+<a class="btn" href="documentos/mapa_trigonometria.pdf" target="_blank">
+👁 Ver
+</a>
+
+
+<a class="btn descargar" href="documentos/mapa_trigonometria.pdf" download>
+⬇ Descargar
+</a>
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+<div class="trabajo">
+
+
+<div class="icono">
+🗺️
+</div>
+
+
+<div>
+
+
+<h3>
+Mapa Sistema Internacional (SI)
+</h3>
+
+
+<p>
+PDF · Unidad 1
+</p>
+
+
+<a class="btn" href="documentos/mapa_SI.pdf" target="_blank">
+👁 Ver
+</a>
+
+
+<a class="btn descargar" href="documentos/mapa_SI.pdf" download>
+⬇ Descargar
+</a>
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+</div>
+
+
 
 </section>
 
 
 
+
+
+
+
+
+
+<!-- ================= FUNDAMENTOS ================= -->
 
 
 <section id="fundamentos" class="seccion">
 
+
 <h2>📚 Fundamentos Conceptuales</h2>
 
+
+<p>
+Investigaciones y conceptos fundamentales desarrollados en Física Aplicada.
+</p>
+
+
+
+<h3 style="margin-top:25px;color:#2563eb;">
+📌 Unidad 1 — Fundamentos de Física
+</h3>
+
+
+
+<div class="trabajos-container">
+
+
+
+
+
+
+<div class="trabajo">
+
+
+<div class="icono">
+📚
+</div>
+
+
+<div>
+
+
+<h3>
+Introducción a la Física
+</h3>
+
+
+<p>
+PDF · Fundamentos Conceptuales
+</p>
+
+
+<a class="btn" href="documentos/introduccion_fisica.pdf" target="_blank">
+👁 Ver
+</a>
+
+
+
+<a class="btn descargar" href="documentos/introduccion_fisica.pdf" download>
+⬇ Descargar
+</a>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+<div class="trabajo">
+
+
+<div class="icono">
+📖
+</div>
+
+
+<div>
+
+
+<h3>
+Magnitudes Físicas
+</h3>
+
+
+<p>
+PDF · Fundamentos Conceptuales
+</p>
+
+
+
+<a class="btn" href="documentos/magnitudes_fisicas.pdf" target="_blank">
+👁 Ver
+</a>
+
+
+
+<a class="btn descargar" href="documentos/magnitudes_fisicas.pdf" download>
+⬇ Descargar
+</a>
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+</div>
+
+
+
 </section>
-
-
+<!-- ================= INFORMES ================= -->
 
 
 <section id="informes" class="seccion">
 
+
 <h2>📑 Informes</h2>
+
+
+<p>
+Informes de prácticas experimentales y actividades desarrolladas durante la asignatura.
+</p>
+
+
+
+<h3 style="margin-top:25px;color:#2563eb;">
+🔬 Prácticas Experimentales
+</h3>
+
+
+
+<div class="trabajos-container">
+
+
+
+
+
+<div class="trabajo">
+
+
+<div class="icono">
+🔬
+</div>
+
+
+<div>
+
+
+<h3>
+Informe Práctica de Vectores
+</h3>
+
+
+<p>
+PDF · Informe Experimental
+</p>
+
+
+<a class="btn" href="documentos/informe_vectores.pdf" target="_blank">
+👁 Ver
+</a>
+
+
+<a class="btn descargar" href="documentos/informe_vectores.pdf" download>
+⬇ Descargar
+</a>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+<div class="trabajo">
+
+
+<div class="icono">
+⚙️
+</div>
+
+
+<div>
+
+
+<h3>
+Informe Mediciones Físicas
+</h3>
+
+
+<p>
+PDF · Informe Experimental
+</p>
+
+
+<a class="btn" href="documentos/informe_mediciones.pdf" target="_blank">
+👁 Ver
+</a>
+
+
+<a class="btn descargar" href="documentos/informe_mediciones.pdf" download>
+⬇ Descargar
+</a>
+
+
+</div>
+
+
+</div>
+
+
+
+
+</div>
+
+
 
 </section>
 
 
+
+
+
+
+
+
+
+<!-- ================= TRABAJOS EN CLASE ================= -->
 
 
 <section id="clases" class="seccion">
 
+
 <h2>🏫 Trabajos en Clase</h2>
+
+
+<p>
+Actividades realizadas durante las horas de clase presencial.
+</p>
+
+
+
+
+<h3 style="margin-top:25px;color:#2563eb;">
+📝 Actividades Académicas
+</h3>
+
+
+
+
+<div class="trabajos-container">
+
+
+
+
+
+<div class="trabajo">
+
+
+<div class="icono">
+📝
+</div>
+
+
+<div>
+
+
+<h3>
+Actividad Fuerzas
+</h3>
+
+
+<p>
+PDF · Trabajo en Clase
+</p>
+
+
+<a class="btn" href="documentos/actividad_fuerzas.pdf" target="_blank">
+👁 Ver
+</a>
+
+
+<a class="btn descargar" href="documentos/actividad_fuerzas.pdf" download>
+⬇ Descargar
+</a>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+<div class="trabajo">
+
+
+<div class="icono">
+📐
+</div>
+
+
+<div>
+
+
+<h3>
+Ejercicios de Cinemática
+</h3>
+
+
+<p>
+PDF · Trabajo en Clase
+</p>
+
+
+<a class="btn" href="documentos/ejercicios_cinematica.pdf" target="_blank">
+👁 Ver
+</a>
+
+
+<a class="btn descargar" href="documentos/ejercicios_cinematica.pdf" download>
+⬇ Descargar
+</a>
+
+
+</div>
+
+
+</div>
+
+
+
+
+</div>
+
+
 
 </section>
 
 
+
+
+
+
+
+
+
+<!-- ================= EVALUACIONES ================= -->
 
 
 <section id="evaluaciones" class="seccion">
 
+
 <h2>📊 Evaluaciones</h2>
+
+
+<p>
+Evidencias de evaluaciones realizadas durante el periodo académico.
+</p>
+
+
+
+
+<h3 style="margin-top:25px;color:#2563eb;">
+📌 Evaluaciones Académicas
+</h3>
+
+
+
+
+<div class="trabajos-container">
+
+
+
+
+
+<div class="trabajo">
+
+
+<div class="icono">
+📝
+</div>
+
+
+<div>
+
+
+<h3>
+Evaluación Formativa 1
+</h3>
+
+
+<p>
+PDF · Individual
+</p>
+
+
+
+<a class="btn" href="documentos/evaluacion_formativa1.pdf" target="_blank">
+👁 Ver
+</a>
+
+
+
+<a class="btn descargar" href="documentos/evaluacion_formativa1.pdf" download>
+⬇ Descargar
+</a>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+<div class="trabajo">
+
+
+<div class="icono">
+👥
+</div>
+
+
+<div>
+
+
+<h3>
+Evaluación Formativa 2
+</h3>
+
+
+<p>
+PDF · Grupal
+</p>
+
+
+<a class="btn" href="documentos/evaluacion_formativa2.pdf" target="_blank">
+👁 Ver
+</a>
+
+
+<a class="btn descargar" href="documentos/evaluacion_formativa2.pdf" download>
+⬇ Descargar
+</a>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+<div class="trabajo">
+
+
+<div class="icono">
+📊
+</div>
+
+
+<div>
+
+
+<h3>
+Evaluaciones Sumativas
+</h3>
+
+
+<p>
+PDF · Evaluaciones
+</p>
+
+
+<a class="btn" href="documentos/evaluaciones_sumativas.pdf" target="_blank">
+👁 Ver
+</a>
+
+
+<a class="btn descargar" href="documentos/evaluaciones_sumativas.pdf" download>
+⬇ Descargar
+</a>
+
+
+</div>
+
+
+</div>
+
+
+
+
+</div>
+
+
 
 </section>
 
 
+
+
+
+
+
+
+
+<!-- ================= AULA VIRTUAL ================= -->
 
 
 <section id="trabajos" class="seccion">
 
-<h2>💻 Trabajos Aula Virtual</h2>
+
+<h2>💻 Trabajos del Aula Virtual</h2>
+
+
+<p>
+Actividades entregadas mediante la plataforma virtual.
+</p>
+
+
+
+
+<h3 style="margin-top:25px;color:#2563eb;">
+💻 Actividades Virtuales
+</h3>
+
+
+
+
+<div class="trabajos-container">
+
+
+
+
+
+<div class="trabajo">
+
+
+<div class="icono">
+💻
+</div>
+
+
+<div>
+
+
+<h3>
+Actividad Virtual 1
+</h3>
+
+
+<p>
+PDF · Aula Virtual
+</p>
+
+
+<a class="btn" href="documentos/actividad_virtual1.pdf" target="_blank">
+👁 Ver
+</a>
+
+
+<a class="btn descargar" href="documentos/actividad_virtual1.pdf" download>
+⬇ Descargar
+</a>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+<div class="trabajo">
+
+
+<div class="icono">
+💻
+</div>
+
+
+<div>
+
+
+<h3>
+Actividad Virtual 2
+</h3>
+
+
+<p>
+PDF · Aula Virtual
+</p>
+
+
+<a class="btn" href="documentos/actividad_virtual2.pdf" target="_blank">
+👁 Ver
+</a>
+
+
+<a class="btn descargar" href="documentos/actividad_virtual2.pdf" download>
+⬇ Descargar
+</a>
+
+
+</div>
+
+
+</div>
+
+
+
+
+</div>
+
+
 
 </section>
 
 
+
+
+
+
+
+
+
+<!-- ================= TRABAJOS EN GRUPO ================= -->
 
 
 <section id="grupo" class="seccion">
 
+
 <h2>👥 Trabajos en Grupo</h2>
 
+
+<p>
+Actividades colaborativas desarrolladas con compañeros.
+</p>
+
+
+
+
+<h3 style="margin-top:25px;color:#2563eb;">
+🤝 Proyectos Grupales
+</h3>
+
+
+
+
+<div class="trabajos-container">
+
+
+
+
+
+<div class="trabajo">
+
+
+<div class="icono">
+👥
+</div>
+
+
+<div>
+
+
+<h3>
+Proyecto Grupal Física Aplicada
+</h3>
+
+
+<p>
+PDF · Trabajo Grupal
+</p>
+
+
+<a class="btn" href="documentos/proyecto_grupal.pdf" target="_blank">
+👁 Ver
+</a>
+
+
+<a class="btn descargar" href="documentos/proyecto_grupal.pdf" download>
+⬇ Descargar
+</a>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+<div class="trabajo">
+
+
+<div class="icono">
+🤝
+</div>
+
+
+<div>
+
+
+<h3>
+Investigación Grupal
+</h3>
+
+
+<p>
+PDF · Trabajo Grupal
+</p>
+
+
+<a class="btn" href="documentos/investigacion_grupal.pdf" target="_blank">
+👁 Ver
+</a>
+
+
+<a class="btn descargar" href="documentos/investigacion_grupal.pdf" download>
+⬇ Descargar
+</a>
+
+
+</div>
+
+
+</div>
+
+
+
+
+</div>
+
+
+
 </section>
-
-
-
-
 </main>
 
 
@@ -744,34 +2061,44 @@ Abrir documentos
 <script>
 
 
-function mostrar(id,elemento){
+// CAMBIO DE SECCIONES DEL MENU
+
+function mostrar(id, elemento){
 
 
-let secciones=document.querySelectorAll(".seccion");
+
+let secciones = document.querySelectorAll(".seccion");
 
 
-secciones.forEach(function(sec){
 
-sec.style.display="none";
+secciones.forEach(function(seccion){
+
+seccion.style.display="none";
 
 });
+
 
 
 document.getElementById(id).style.display="block";
 
 
 
-let enlaces=document.querySelectorAll("nav a");
 
 
-enlaces.forEach(function(a){
+let enlaces = document.querySelectorAll("nav a");
 
-a.classList.remove("active");
+
+
+enlaces.forEach(function(enlace){
+
+enlace.classList.remove("active");
 
 });
 
 
+
 elemento.classList.add("active");
+
 
 
 }
@@ -779,9 +2106,16 @@ elemento.classList.add("active");
 
 
 
+
+
+// TARJETAS INTERACTIVAS DEL SILABO
+
+
 function abrirTarjeta(tarjeta){
 
+
 tarjeta.classList.toggle("activa");
+
 
 }
 
