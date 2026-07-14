@@ -1,132 +1,127 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Portafolio de Física Aplicada</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<title>Portafolio Académico</title>
 
 <style>
 
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI', sans-serif;
 }
 
 body{
-background:#eef5ff;
-color:#222;
+    background:#f1f5f9;
+    color:#1e293b;
 }
+
+
+/* ENCABEZADO */
 
 header{
-
-background:linear-gradient(rgba(15,23,42,.9),rgba(30,58,138,.85)),
-url("https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1800&q=80");
-
-background-size:cover;
-background-position:center;
-padding:70px 20px;
-text-align:center;
-color:white;
-
-}
-
-header img{
-
-width:120px;
-margin-bottom:20px;
-
+    background:linear-gradient(135deg,#2563eb,#7c3aed);
+    color:white;
+    padding:35px;
+    text-align:center;
 }
 
 header h1{
-
-font-size:42px;
-margin-bottom:10px;
-
+    font-size:35px;
 }
 
-header h2{
-
-font-weight:400;
-
+header p{
+    margin-top:10px;
 }
+
+
+
+/* CONTENEDOR */
+
+.container{
+    display:flex;
+    min-height:100vh;
+}
+
+
+/* MENU */
 
 nav{
 
-background:#0f172a;
-position:sticky;
-top:0;
-z-index:999;
-
+    width:280px;
+    background:#0f172a;
+    padding:20px;
 }
+
 
 nav ul{
-
-display:flex;
-justify-content:center;
-flex-wrap:wrap;
-list-style:none;
-
+    list-style:none;
 }
+
+
+nav li{
+    margin-bottom:10px;
+}
+
 
 nav a{
 
-display:block;
-padding:16px 20px;
-text-decoration:none;
-color:white;
-font-weight:600;
-transition:.3s;
+    text-decoration:none;
+    color:white;
+    display:block;
+    padding:14px;
+    border-radius:10px;
+    transition:.3s;
+    cursor:pointer;
 
 }
 
-nav a:hover{
 
-background:#2563eb;
+nav a:hover,
+.active{
 
-}
-
-nav a.active{
-
-background:#facc15;
-color:#0f172a;
+    background:#2563eb;
+    transform:translateX(8px);
 
 }
+
+
+
+/* CONTENIDO */
 
 main{
 
-max-width:1200px;
-margin:auto;
-padding:40px 20px;
+    flex:1;
+    padding:35px;
 
 }
 
-.section{
 
-display:none;
+.seccion{
 
-animation:fade .5s;
-
-}
-
-.section.active{
-
-display:block;
+    display:none;
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 5px 20px #0002;
+    animation:aparecer .5s;
 
 }
 
-@keyframes fade{
+
+.seccion h2{
+
+    color:#2563eb;
+    margin-bottom:20px;
+
+}
+
+
+@keyframes aparecer{
 
 from{
 
@@ -144,123 +139,89 @@ transform:translateY(0);
 
 }
 
-h2{
 
-margin-bottom:30px;
-color:#1e3a8a;
 
-}
+/* DOCUMENTOS */
 
-.grid{
 
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:25px;
+.documento{
 
-}
-
-.card{
-
-background:white;
-padding:25px;
-border-radius:15px;
-box-shadow:0 10px 25px rgba(0,0,0,.15);
+background:#f8fafc;
+padding:15px;
+margin:15px 0;
+border-left:5px solid #2563eb;
+border-radius:10px;
 
 }
 
-.card h3{
 
-color:#1e3a8a;
-margin-bottom:10px;
+.btn{
 
-}
-
-.card p{
-
-margin-bottom:15px;
-
-}
-
-.card a{
-
+display:inline-block;
+padding:10px 20px;
 background:#2563eb;
 color:white;
-padding:10px 18px;
 border-radius:8px;
 text-decoration:none;
+margin-top:10px;
 
 }
 
-.card a:hover{
 
-background:#0f172a;
+.btn:hover{
+
+background:#1d4ed8;
 
 }
 
-table{
+
+
+/* RESPONSIVE */
+
+@media(max-width:800px){
+
+.container{
+
+flex-direction:column;
+
+}
+
+
+nav{
 
 width:100%;
-border-collapse:collapse;
-background:white;
 
 }
 
-th,td{
-
-padding:15px;
-border:1px solid #ddd;
-
 }
 
-th{
-
-background:#1e3a8a;
-color:white;
-text-align:left;
-
-}
-
-footer{
-
-margin-top:50px;
-padding:30px;
-background:#0f172a;
-color:white;
-text-align:center;
-
-}
 
 </style>
 
+
 </head>
 
+
 <body>
+
+
 <header>
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Logo_Universidad_Central_del_Ecuador.svg/512px-Logo_Universidad_Central_del_Ecuador.svg.png" alt="UCE">
+<h1>📚 Portafolio Académico</h1>
 
-<h1>PORTAFOLIO ACADÉMICO</h1>
-
-<h2>Física Aplicada</h2>
-
-<p>Universidad Central del Ecuador</p>
-
-<p>Facultad de Filosofía, Letras y Ciencias de la Educación</p>
-
-<p>Carrera de Pedagogía de la Informática</p>
-
-<br>
-
-<h3>Elkin Adriano Morales Coello</h3>
-
-<p>Sexto Semestre</p>
+<p>Repositorio digital de evidencias educativas</p>
 
 </header>
+
+
+
+<div class="container">
 
 
 <nav>
 
 <ul>
+
 
 <li><a href="#" class="active" onclick="mostrar('datos',this)">📋 Datos Informativos</a></li>
 
@@ -284,1686 +245,290 @@ text-align:center;
 
 <li><a href="#" onclick="mostrar('grupo',this)">👥 Trabajos en Grupo</a></li>
 
+
 </ul>
+
 
 </nav>
 
-<main>
+
 
 <main>
-  <!-- ===================== DATOS INFORMATIVOS ===================== -->
 
-<section id="datos" class="section active">
+
+
+<section id="datos" class="seccion" style="display:block">
 
 <h2>📋 Datos Informativos</h2>
 
-<table>
-
-<tr>
-<th>Universidad</th>
-<td>Universidad Central del Ecuador</td>
-</tr>
-
-<tr>
-<th>Facultad</th>
-<td>Facultad de Filosofía, Letras y Ciencias de la Educación</td>
-</tr>
-
-<tr>
-<th>Carrera</th>
-<td>Pedagogía de la Informática</td>
-</tr>
-
-<tr>
-<th>Asignatura</th>
-<td>Física Aplicada</td>
-</tr>
-
-<tr>
-<th>Docente</th>
-<td>_____________________________________</td>
-</tr>
-
-<tr>
-<th>Estudiante</th>
-<td>Elkin Adriano Morales Coello</td>
-</tr>
-
-<tr>
-<th>Semestre</th>
-<td>Sexto</td>
-</tr>
-
-<tr>
-<th>Paralelo</th>
-<td>__________________</td>
-</tr>
-
-<tr>
-<th>Período Académico</th>
-<td>2026 - 2026</td>
-</tr>
-
-<tr>
-<th>Correo Electrónico</th>
-<td>____________________________</td>
-</tr>
-
-</table>
-
-<br><br>
-
-<div class="grid">
-
-<div class="card">
-
-<h3>🎯 Objetivo del Portafolio</h3>
-
 <p>
-
-Este portafolio académico reúne todas las actividades desarrolladas durante la asignatura de Física Aplicada, evidenciando el aprendizaje alcanzado mediante trabajos individuales, grupales, prácticas, evaluaciones e informes elaborados durante el semestre.
-
+Nombre: Elkin Adriano Morales Coello
 </p>
 
-</div>
-
-<div class="card">
-
-<h3>📚 Contenido</h3>
-
 <p>
-
-• Sílabo<br>
-• Hoja de Vida<br>
-• Deberes<br>
-• Organizadores Gráficos<br>
-• Fundamentos Conceptuales<br>
-• Informes<br>
-• Trabajos en Clase<br>
-• Evaluaciones<br>
-• Unidades 1, 2, 3 y 4<br>
-• Trabajos Finales
-
+Carrera: Pedagogía de las Ciencias Experimentales Informática
 </p>
 
-</div>
-
-<div class="card">
-
-<h3>👨‍🎓 Información del Estudiante</h3>
-
 <p>
-
-Nombre: Elkin Adriano Morales Coello<br><br>
-
-Universidad Central del Ecuador<br>
-
-Carrera de Pedagogía de la Informática<br>
-
-Sexto Semestre
-
+Universidad Central del Ecuador
 </p>
 
-</div>
-
-</div>
 
 </section>
-<!-- ===================== SÍLABO ===================== -->
 
-<section id="silabo" class="section">
+
+
+<section id="silabo" class="seccion">
 
 <h2>📘 Sílabo</h2>
 
-<div class="grid">
 
-<div class="card">
+<div class="documento">
 
-<h3>📄 Sílabo de la Asignatura</h3>
+<p>Documento del sílabo de la asignatura</p>
 
-<p>
-
-En este apartado se encontrará el sílabo oficial de la asignatura de Física Aplicada.
-
-</p>
-
-<a href="#" target="_blank">
-
-Ver documento
-
+<a class="btn" href="https://drive.google.com/" target="_blank">
+Abrir Google Drive
 </a>
 
 </div>
 
-<div class="card">
-
-<h3>📅 Cronograma Académico</h3>
-
-<p>
-
-Aquí podrá colocar el cronograma de actividades, evaluaciones y fechas importantes del semestre.
-
-</p>
-
-<a href="#" target="_blank">
-
-Ver cronograma
-
-</a>
-
-</div>
-
-<div class="card">
-
-<h3>📖 Plan Analítico</h3>
-
-<p>
-
-Documento donde se presentan las unidades, contenidos, metodología y bibliografía utilizada durante el curso.
-
-</p>
-
-<a href="#" target="_blank">
-
-Ver plan analítico
-
-</a>
-
-</div>
-
-<div class="card">
-
-<h3>🎯 Resultados de Aprendizaje</h3>
-
-<p>
-
-En esta sección puede incorporar el documento con los resultados de aprendizaje esperados para la asignatura.
-
-</p>
-
-<a href="#" target="_blank">
-
-Ver documento
-
-</a>
-
-</div>
-
-<div class="card">
-
-<h3>📚 Bibliografía</h3>
-
-<p>
-
-Espacio destinado para colocar la bibliografía principal y complementaria utilizada durante el desarrollo de la asignatura.
-
-</p>
-
-<a href="#" target="_blank">
-
-Ver bibliografía
-
-</a>
-
-</div>
-
-<div class="card">
-
-<h3>📂 Material Complementario</h3>
-
-<p>
-
-Aquí puede agregar documentos adicionales, reglamentos o recursos relacionados con el sílabo.
-
-</p>
-
-<a href="#" target="_blank">
-
-Ver material
-
-</a>
-
-</div>
-
-</div>
 
 </section>
-<!-- ===================== HOJA DE VIDA ===================== -->
 
-<section id="hoja" class="section">
 
-<h2>👨‍🎓 Hoja de Vida</h2>
 
-<div class="grid">
 
-<div class="card">
+<section id="hoja" class="seccion">
 
-<h3>📄 Hoja de Vida</h3>
+<h2>👤 Hoja de Vida</h2>
 
-<p>
 
-Documento con la información personal, formación académica, experiencia laboral y habilidades del estudiante.
+<div class="documento">
 
-</p>
+<p>Currículum Vitae</p>
 
-<a href="#" target="_blank">
-
-Ver Hoja de Vida
-
-</a>
-
-</div>
-
-<div class="card">
-
-<h3>🎓 Título de Bachiller</h3>
-
-<p>
-
-Documento que certifica la culminación de los estudios de bachillerato.
-
-</p>
-
-<a href="#" target="_blank">
-
+<a class="btn" href="#" target="_blank">
 Ver documento
-
 </a>
 
 </div>
 
-<div class="card">
-
-<h3>🏫 Certificados Académicos</h3>
-
-<p>
-
-Espacio para agregar certificados de cursos, capacitaciones y eventos académicos.
-
-</p>
-
-<a href="#" target="_blank">
-
-Ver certificados
-
-</a>
-
-</div>
-
-<div class="card">
-
-<h3>💻 Certificaciones Tecnológicas</h3>
-
-<p>
-
-Aquí puede colocar certificados relacionados con informática, programación, redes o tecnologías de la información.
-
-</p>
-
-<a href="#" target="_blank">
-
-Ver certificaciones
-
-</a>
-
-</div>
-
-<div class="card">
-
-<h3>📜 Reconocimientos</h3>
-
-<p>
-
-Espacio destinado para reconocimientos, diplomas o constancias obtenidas durante la formación académica.
-
-</p>
-
-<a href="#" target="_blank">
-
-Ver reconocimientos
-
-</a>
-
-</div>
-
-<div class="card">
-
-<h3>📂 Documentos Personales</h3>
-
-<p>
-
-Puede agregar documentos de respaldo relacionados con su formación profesional.
-
-</p>
-
-<a href="#" target="_blank">
-
-Ver documentos
-
-</a>
-
-</div>
-
-</div>
 
 </section>
-<!-- ===================== DEBERES ===================== -->
 
-<section id="deberes" class="section">
+
+
+
+<section id="deberes" class="seccion">
 
 <h2>📝 Deberes</h2>
 
-<div class="grid">
+<div class="documento">
 
-<div class="card">
+<p>Deber 1</p>
 
-<h3>📘 Deber 1</h3>
-
-<p>
-
-Actividad correspondiente a la primera unidad de la asignatura.
-
-</p>
-
-<a href="#" target="_blank">
-
-Ver deber
-
+<a href="https://drive.google.com/" class="btn" target="_blank">
+Ver archivo
 </a>
-
-</div>
-
-<div class="card">
-
-<h3>📗 Deber 2</h3>
-
-<p>
-
-Desarrollo de ejercicios y actividades prácticas.
-
-</p>
-
-<a href="#" target="_blank">
-
-Ver deber
-
-</a>
-
-</div>
-
-<div class="card">
-
-<h3>📙 Deber 3</h3>
-
-<p>
-
-Resolución de problemas y aplicación de conceptos de Física Aplicada.
-
-</p>
-
-<a href="#" target="_blank">
-
-Ver deber
-
-</a>
-
-</div>
-
-<div class="card">
-
-<h3>📕 Deber 4</h3>
-
-<p>
-
-Actividad de investigación y análisis de contenidos.
-
-</p>
-
-<a href="#" target="_blank">
-
-Ver deber
-
-</a>
-
-</div>
-
-<div class="card">
-
-<h3>📒 Deber 5</h3>
-
-<p>
-
-Trabajo práctico desarrollado durante el semestre.
-
-</p>
-
-<a href="#" target="_blank">
-
-Ver deber
-
-</a>
-
-</div>
-
-<div class="card">
-
-<h3>📔 Deber 6</h3>
-
-<p>
-
-Actividad complementaria de la asignatura.
-
-</p>
-
-<a href="#" target="_blank">
-
-Ver deber
-
-</a>
-
-</div>
-
-<div class="card">
-
-<h3>📓 Deber 7</h3>
-
-<p>
-
-Resolución de ejercicios propuestos por el docente.
-
-</p>
-
-<a href="#" target="_blank">
-
-Ver deber
-
-</a>
-
-</div>
-
-<div class="card">
-
-<h3>📑 Deber 8</h3>
-
-<p>
-
-Actividad de evaluación continua y refuerzo académico.
-
-</p>
-
-<a href="#" target="_blank">
-
-Ver deber
-
-</a>
-
-</div>
 
 </div>
 
 </section>
-<!-- ===================== ORGANIZADORES GRÁFICOS ===================== -->
 
-<section id="organizadores" class="section">
+
+
+
+<section id="organizadores" class="seccion">
 
 <h2>🧠 Organizadores Gráficos</h2>
 
-<div class="grid">
 
-<div class="card">
+<div class="documento">
 
-<h3>🗂️ Mapa Conceptual</h3>
+<p>Mapas mentales y organizadores</p>
 
-<p>
-
-Mapa conceptual elaborado para resumir los principales contenidos de la asignatura de Física Aplicada.
-
-</p>
-
-<a href="#" target="_blank">
-
-Ver organizador
-
+<a href="https://drive.google.com/" class="btn" target="_blank">
+Abrir carpeta
 </a>
 
-</div>
-
-<div class="card">
-
-<h3>🧩 Mapa Mental</h3>
-
-<p>
-
-Organizador gráfico que representa de forma visual las ideas principales y secundarias de cada unidad.
-
-</p>
-
-<a href="#" target="_blank">
-
-Ver organizador
-
-</a>
 
 </div>
 
-<div class="card">
-
-<h3>📊 Cuadro Comparativo</h3>
-
-<p>
-
-Comparación entre conceptos, leyes y principios físicos estudiados durante el semestre.
-
-</p>
-
-<a href="#" target="_blank">
-
-Ver organizador
-
-</a>
-
-</div>
-
-<div class="card">
-
-<h3>📈 Línea de Tiempo</h3>
-
-<p>
-
-Representación cronológica de acontecimientos, descubrimientos o actividades desarrolladas en la asignatura.
-
-</p>
-
-<a href="#" target="_blank">
-
-Ver organizador
-
-</a>
-
-</div>
-
-<div class="card">
-
-<h3>📝 Infografía</h3>
-
-<p>
-
-Infografía diseñada para explicar de forma visual un tema importante de Física Aplicada.
-
-</p>
-
-<a href="#" target="_blank">
-
-Ver organizador
-
-</a>
-
-</div>
-
-<div class="card">
-
-<h3>🧾 Esquema General</h3>
-
-<p>
-
-Resumen gráfico de los contenidos abordados durante el desarrollo de la asignatura.
-
-</p>
-
-<a href="#" target="_blank">
-
-Ver organizador
-
-</a>
-
-</div>
-
-<div class="card">
-
-<h3>📚 Resumen Visual</h3>
-
-<p>
-
-Material elaborado para facilitar el estudio mediante diagramas y representaciones gráficas.
-
-</p>
-
-<a href="#" target="_blank">
-
-Ver organizador
-
-</a>
-
-</div>
-
-<div class="card">
-
-<h3>📂 Otros Organizadores</h3>
-
-<p>
-
-Espacio destinado para agregar cualquier otro organizador gráfico realizado durante el semestre.
-
-</p>
-
-<a href="#" target="_blank">
-
-Ver organizador
-
-</a>
-
-</div>
-
-</div>
 
 </section>
-<!-- ===================== FUNDAMENTOS CONCEPTUALES ===================== -->
 
-<section id="fundamentos" class="section">
+
+
+
+<section id="fundamentos" class="seccion">
 
 <h2>📚 Fundamentos Conceptuales</h2>
 
-<div class="grid">
 
-<div class="card">
+<div class="documento">
 
-<h3>📖 Concepto 1</h3>
+<p>Investigaciones y fundamentos teóricos</p>
 
-<p>
-
-Explicación de los conceptos fundamentales estudiados en la asignatura.
-
-</p>
-
-<a href="#" target="_blank">
-
-Ver documento
-
+<a href="#" class="btn">
+Documentos
 </a>
 
 </div>
 
-<div class="card">
-
-<h3>⚖️ Leyes de la Física</h3>
-
-<p>
-
-Documento con las principales leyes, principios y aplicaciones desarrolladas durante el curso.
-
-</p>
-
-<a href="#" target="_blank">
-
-Ver documento
-
-</a>
-
-</div>
-
-<div class="card">
-
-<h3>📐 Magnitudes y Unidades</h3>
-
-<p>
-
-Material relacionado con el Sistema Internacional de Unidades y magnitudes físicas.
-
-</p>
-
-<a href="#" target="_blank">
-
-Ver documento
-
-</a>
-
-</div>
-
-<div class="card">
-
-<h3>🚀 Movimiento</h3>
-
-<p>
-
-Conceptos relacionados con MRU, MRUA, movimiento parabólico y movimiento circular.
-
-</p>
-
-<a href="#" target="_blank">
-
-Ver documento
-
-</a>
-
-</div>
-
-<div class="card">
-
-<h3>💪 Fuerzas</h3>
-
-<p>
-
-Contenido referente a fuerza, equilibrio, Segunda Ley de Newton, fricción y peso.
-
-</p>
-
-<a href="#" target="_blank">
-
-Ver documento
-
-</a>
-
-</div>
-
-<div class="card">
-
-<h3>🌀 Trabajo y Energía</h3>
-
-<p>
-
-Información sobre trabajo mecánico, energía cinética, potencial y conservación de la energía.
-
-</p>
-
-<a href="#" target="_blank">
-
-Ver documento
-
-</a>
-
-</div>
-
-<div class="card">
-
-<h3>🔬 Elasticidad</h3>
-
-<p>
-
-Material relacionado con la Ley de Hooke, esfuerzo, deformación y energía elástica.
-
-</p>
-
-<a href="#" target="_blank">
-
-Ver documento
-
-</a>
-
-</div>
-
-<div class="card">
-
-<h3>📂 Material Complementario</h3>
-
-<p>
-
-Espacio para agregar presentaciones, artículos científicos, libros o recursos adicionales.
-
-</p>
-
-<a href="#" target="_blank">
-
-Ver documento
-
-</a>
-
-</div>
-
-</div>
 
 </section>
-<!-- ===================== INFORMES ===================== -->
 
-<section id="informes" class="section">
+
+
+
+<section id="informes" class="seccion">
 
 <h2>📑 Informes</h2>
 
-<div class="grid">
 
-<div class="card">
+<div class="documento">
 
-<h3>🧪 Informe de Práctica 1</h3>
+<p>Informes académicos</p>
 
-<p>
-
-Informe correspondiente a la primera práctica de laboratorio realizada durante la asignatura.
-
-</p>
-
-<a href="#" target="_blank">
-
-Ver informe
-
+<a href="https://drive.google.com/" class="btn">
+Ver informes
 </a>
 
 </div>
 
-<div class="card">
-
-<h3>⚙️ Informe de Práctica 2</h3>
-
-<p>
-
-Documento con el desarrollo, cálculos, resultados y conclusiones de la segunda práctica.
-
-</p>
-
-<a href="#" target="_blank">
-
-Ver informe
-
-</a>
-
-</div>
-
-<div class="card">
-
-<h3>📊 Informe Experimental</h3>
-
-<p>
-
-Análisis de datos obtenidos durante una práctica experimental de Física Aplicada.
-
-</p>
-
-<a href="#" target="_blank">
-
-Ver informe
-
-</a>
-
-</div>
-
-<div class="card">
-
-<h3>📈 Informe de Resultados</h3>
-
-<p>
-
-Presentación e interpretación de tablas, gráficas y resultados obtenidos en laboratorio.
-
-</p>
-
-<a href="#" target="_blank">
-
-Ver informe
-
-</a>
-
-</div>
-
-<div class="card">
-
-<h3>📋 Informe Técnico</h3>
-
-<p>
-
-Documento elaborado siguiendo el formato técnico solicitado por el docente.
-
-</p>
-
-<a href="#" target="_blank">
-
-Ver informe
-
-</a>
-
-</div>
-
-<div class="card">
-
-<h3>📝 Informe de Investigación</h3>
-
-<p>
-
-Trabajo de investigación relacionado con un tema desarrollado en la asignatura.
-
-</p>
-
-<a href="#" target="_blank">
-
-Ver informe
-
-</a>
-
-</div>
-
-<div class="card">
-
-<h3>📚 Informe Final</h3>
-
-<p>
-
-Compilación de actividades, análisis y resultados obtenidos durante el semestre.
-
-</p>
-
-<a href="#" target="_blank">
-
-Ver informe
-
-</a>
-
-</div>
-
-<div class="card">
-
-<h3>📂 Otros Informes</h3>
-
-<p>
-
-Espacio destinado para agregar informes adicionales elaborados durante el curso.
-
-</p>
-
-<a href="#" target="_blank">
-
-Ver informe
-
-</a>
-
-</div>
-
-</div>
 
 </section>
-<!-- ===================== TRABAJOS EN CLASE ===================== -->
 
-<section id="clases" class="section">
+
+
+
+<section id="clases" class="seccion">
 
 <h2>🏫 Trabajos en Clase</h2>
 
-<div class="grid">
+<div class="documento">
 
-<div class="card">
+<p>Evidencias realizadas en clases</p>
 
-<h3>📘 Trabajo en Clase 1</h3>
-
-<p>
-
-Actividad desarrollada durante la primera sesión de clases de la asignatura.
-
-</p>
-
-<a href="#" target="_blank">
-
-Ver trabajo
-
+<a href="#" class="btn">
+Abrir
 </a>
-
-</div>
-
-<div class="card">
-
-<h3>📗 Trabajo en Clase 2</h3>
-
-<p>
-
-Resolución de ejercicios y análisis de problemas propuestos por el docente.
-
-</p>
-
-<a href="#" target="_blank">
-
-Ver trabajo
-
-</a>
-
-</div>
-
-<div class="card">
-
-<h3>📙 Taller Práctico</h3>
-
-<p>
-
-Desarrollo de ejercicios prácticos relacionados con los contenidos de la unidad.
-
-</p>
-
-<a href="#" target="_blank">
-
-Ver trabajo
-
-</a>
-
-</div>
-
-<div class="card">
-
-<h3>📕 Actividad Colaborativa</h3>
-
-<p>
-
-Trabajo realizado en equipos durante la clase para fortalecer el aprendizaje.
-
-</p>
-
-<a href="#" target="_blank">
-
-Ver trabajo
-
-</a>
-
-</div>
-
-<div class="card">
-
-<h3>🧮 Resolución de Problemas</h3>
-
-<p>
-
-Aplicación de fórmulas y procedimientos para resolver ejercicios de Física Aplicada.
-
-</p>
-
-<a href="#" target="_blank">
-
-Ver trabajo
-
-</a>
-
-</div>
-
-<div class="card">
-
-<h3>📊 Análisis de Resultados</h3>
-
-<p>
-
-Interpretación de tablas, gráficas y resultados obtenidos durante las actividades en clase.
-
-</p>
-
-<a href="#" target="_blank">
-
-Ver trabajo
-
-</a>
-
-</div>
-
-<div class="card">
-
-<h3>💡 Actividad de Refuerzo</h3>
-
-<p>
-
-Ejercicios complementarios para consolidar los conocimientos adquiridos.
-
-</p>
-
-<a href="#" target="_blank">
-
-Ver trabajo
-
-</a>
-
-</div>
-
-<div class="card">
-
-<h3>📂 Evidencias de Clase</h3>
-
-<p>
-
-Espacio destinado para almacenar fotografías, apuntes y demás evidencias de las actividades realizadas.
-
-</p>
-
-<a href="#" target="_blank">
-
-Ver evidencias
-
-</a>
-
-</div>
 
 </div>
 
 </section>
-<!-- ===================== EVALUACIONES ===================== -->
 
-<section id="evaluaciones" class="section">
 
-<h2>📝 Evaluaciones</h2>
 
-<div class="grid">
 
-<div class="card">
+<section id="evaluaciones" class="seccion">
 
-<h3>📋 Evaluación Diagnóstica</h3>
+<h2>📊 Evaluaciones</h2>
 
-<p>
+<div class="documento">
 
-Evaluación aplicada al inicio de la asignatura para identificar los conocimientos previos.
+<p>Evaluaciones y resultados</p>
 
-</p>
-
-<a href="#" target="_blank">
-
-Ver evaluación
-
+<a href="#" class="btn">
+Ver
 </a>
 
 </div>
 
-<div class="card">
-
-<h3>📖 Lección 1</h3>
-
-<p>
-
-Primera lección correspondiente a los contenidos de la Unidad 1.
-
-</p>
-
-<a href="#" target="_blank">
-
-Ver lección
-
-</a>
-
-</div>
-
-<div class="card">
-
-<h3>🧮 Prueba de la Unidad 1</h3>
-
-<p>
-
-Evaluación sobre los temas desarrollados durante la primera unidad.
-
-</p>
-
-<a href="#" target="_blank">
-
-Ver evaluación
-
-</a>
-
-</div>
-
-<div class="card">
-
-<h3>📊 Evaluación Práctica</h3>
-
-<p>
-
-Actividad práctica desarrollada para comprobar la aplicación de los conocimientos adquiridos.
-
-</p>
-
-<a href="#" target="_blank">
-
-Ver evaluación
-
-</a>
-
-</div>
-
-<div class="card">
-
-<h3>⚙️ Examen Parcial</h3>
-
-<p>
-
-Evaluación correspondiente al primer parcial de la asignatura.
-
-</p>
-
-<a href="#" target="_blank">
-
-Ver examen
-
-</a>
-
-</div>
-
-<div class="card">
-
-<h3>🧪 Evaluación Experimental</h3>
-
-<p>
-
-Prueba basada en prácticas de laboratorio y resolución de problemas experimentales.
-
-</p>
-
-<a href="#" target="_blank">
-
-Ver evaluación
-
-</a>
-
-</div>
-
-<div class="card">
-
-<h3>🎓 Examen Final</h3>
-
-<p>
-
-Evaluación final donde se integran todos los contenidos desarrollados durante el semestre.
-
-</p>
-
-<a href="#" target="_blank">
-
-Ver examen
-
-</a>
-
-</div>
-
-<div class="card">
-
-<h3>📂 Evidencias de Evaluación</h3>
-
-<p>
-
-Espacio para almacenar exámenes, rúbricas, calificaciones y demás evidencias del proceso de evaluación.
-
-</p>
-
-<a href="#" target="_blank">
-
-Ver evidencias
-
-</a>
-
-</div>
-
-</div>
 
 </section>
-<!-- ===================== EVALUACIONES ===================== -->
-
-<section id="evaluaciones" class="section">
-
-<h2>📝 Evaluaciones</h2>
-
-<div class="grid">
-
-<div class="card">
-
-<h3>📘 Unidad 1</h3>
-
-<p>
-
-Evaluaciones, lecciones, talleres, quices y exámenes correspondientes a la Unidad 1.
-
-</p>
-
-<a href="#" target="_blank">
-
-Ver Unidad 1
-
-</a>
-
-</div>
-
-<div class="card">
-
-<h3>📗 Unidad 2</h3>
-
-<p>
-
-Evaluaciones y actividades calificadas desarrolladas durante la Unidad 2.
-
-</p>
-
-<a href="#" target="_blank">
-
-Ver Unidad 2
-
-</a>
-
-</div>
-
-<div class="card">
-
-<h3>📙 Unidad 3</h3>
-
-<p>
-
-Material correspondiente a las evaluaciones de la Unidad 3.
-
-</p>
-
-<a href="#" target="_blank">
-
-Ver Unidad 3
-
-</a>
-
-</div>
-
-<div class="card">
-
-<h3>📕 Unidad 4</h3>
-
-<p>
-
-Evaluaciones finales, trabajos y actividades calificadas de la Unidad 4.
-
-</p>
-
-<a href="#" target="_blank">
-
-Ver Unidad 4
-
-</a>
-
-</div>
-
-</div>
-
-<br><br>
 
 
 
-</div>
 
-</section>
-<!-- ===================== TRABAJOS DEL AULA VIRTUAL ===================== -->
-
-<section id="trabajos" class="section">
+<section id="trabajos" class="seccion">
 
 <h2>💻 Trabajos del Aula Virtual</h2>
 
-<div class="grid">
 
-<div class="card">
+<div class="documento">
 
-<h3>📘 Actividad 1</h3>
+<p>Actividades Moodle / Aula Virtual</p>
 
-<p>
-
-Actividad desarrollada y entregada mediante el Aula Virtual de la asignatura.
-
-</p>
-
-<a href="#" target="_blank">
-
-Ver actividad
-
+<a href="https://drive.google.com/" class="btn">
+Abrir
 </a>
 
 </div>
 
-<div class="card">
-
-<h3>📗 Actividad 2</h3>
-
-<p>
-
-Trabajo enviado a través de la plataforma virtual.
-
-</p>
-
-<a href="#" target="_blank">
-
-Ver actividad
-
-</a>
-
-</div>
-
-<div class="card">
-
-<h3>📙 Taller Virtual</h3>
-
-<p>
-
-Resolución de ejercicios publicados en el Aula Virtual.
-
-</p>
-
-<a href="#" target="_blank">
-
-Ver taller
-
-</a>
-
-</div>
-
-<div class="card">
-
-<h3>📕 Foro Académico</h3>
-
-<p>
-
-Participación en foros de discusión de la asignatura.
-
-</p>
-
-<a href="#" target="_blank">
-
-Ver participación
-
-</a>
-
-</div>
-
-<div class="card">
-
-<h3>📊 Cuestionarios</h3>
-
-<p>
-
-Cuestionarios desarrollados en la plataforma virtual.
-
-</p>
-
-<a href="#" target="_blank">
-
-Ver cuestionarios
-
-</a>
-
-</div>
-
-<div class="card">
-
-<h3>📂 Evidencias</h3>
-
-<p>
-
-Documentos, capturas y archivos entregados en el Aula Virtual.
-
-</p>
-
-<a href="#" target="_blank">
-
-Ver evidencias
-
-</a>
-
-</div>
-
-</div>
 
 </section>
-<!-- ===================== TRABAJOS EN GRUPO ===================== -->
 
-<section id="grupo" class="section">
+
+
+
+<section id="grupo" class="seccion">
 
 <h2>👥 Trabajos en Grupo</h2>
 
-<div class="grid">
 
-<div class="card">
+<div class="documento">
 
-<h3>👨‍👩‍👧‍👦 Trabajo Grupal 1</h3>
+<p>Proyectos colaborativos</p>
 
-<p>
-
-Actividad colaborativa desarrollada con los integrantes del grupo.
-
-</p>
-
-<a href="#" target="_blank">
-
-Ver trabajo
-
+<a href="https://drive.google.com/" class="btn">
+Ver proyectos
 </a>
 
 </div>
 
-<div class="card">
-
-<h3>📚 Investigación Grupal</h3>
-
-<p>
-
-Trabajo de investigación realizado en equipo.
-
-</p>
-
-<a href="#" target="_blank">
-
-Ver investigación
-
-</a>
-
-</div>
-
-<div class="card">
-
-<h3>🖥️ Presentación Grupal</h3>
-
-<p>
-
-Presentación elaborada en conjunto para exponer un tema de la asignatura.
-
-</p>
-
-<a href="#" target="_blank">
-
-Ver presentación
-
-</a>
-
-</div>
-
-<div class="card">
-
-<h3>🧪 Proyecto Colaborativo</h3>
-
-<p>
-
-Proyecto desarrollado durante el semestre con participación de todos los integrantes.
-
-</p>
-
-<a href="#" target="_blank">
-
-Ver proyecto
-
-</a>
-
-</div>
-
-<div class="card">
-
-<h3>📊 Informe Grupal</h3>
-
-<p>
-
-Informe elaborado de manera colaborativa para una práctica o investigación.
-
-</p>
-
-<a href="#" target="_blank">
-
-Ver informe
-
-</a>
-
-</div>
-
-<div class="card">
-
-<h3>📂 Evidencias del Grupo</h3>
-
-<p>
-
-Fotografías, documentos, presentaciones y demás evidencias del trabajo colaborativo.
-
-</p>
-
-<a href="#" target="_blank">
-
-Ver evidencias
-
-</a>
-
-</div>
-
-</div>
 
 </section>
+
+
+
 </main>
 
-<footer>
 
-<p>
+</div>
 
-© 2026 | Portafolio Académico de Física Aplicada
 
-</p>
 
-<p>
-
-Universidad Central del Ecuador
-
-</p>
-
-<p>
-
-Elkin Adriano Morales Coello
-
-</p>
-
-</footer>
 
 <script>
 
+
 function mostrar(id, elemento){
 
-// Ocultar todas las secciones
-var secciones = document.querySelectorAll(".section");
 
-for(var i=0; i<secciones.length; i++){
+let secciones=document.querySelectorAll(".seccion");
 
-    secciones[i].classList.remove("active");
 
-}
+secciones.forEach(function(sec){
 
-// Mostrar la sección seleccionada
-document.getElementById(id).classList.add("active");
+sec.style.display="none";
 
-// Quitar el color activo del menú
-var enlaces = document.querySelectorAll("nav a");
-
-for(var i=0; i<enlaces.length; i++){
-
-    enlaces[i].classList.remove("active");
-
-}
-
-// Activar el botón seleccionado
-elemento.classList.add("active");
-
-// Regresar al inicio de la página
-window.scrollTo({
-    top:0,
-    behavior:"smooth"
 });
 
+
+document.getElementById(id).style.display="block";
+
+
+
+let enlaces=document.querySelectorAll("nav a");
+
+
+enlaces.forEach(function(link){
+
+link.classList.remove("active");
+
+});
+
+
+elemento.classList.add("active");
+
+
 }
+
 
 </script>
 
+
 </body>
+</html>
