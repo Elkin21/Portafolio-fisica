@@ -9,39 +9,106 @@
 
 <style>
 
+/*====================================================
+        ESTILO MODERNO - PORTAFOLIO DIGITAL
+====================================================*/
+
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Segoe UI',sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
+/*================ BODY ================*/
+
 body{
-background:#f1f5f9;
-color:#1e293b;
+    background:#f4f9ff;
+    color:#334155;
 }
 
 /*================ HEADER ================*/
 
 header{
 
-background:linear-gradient(135deg,#2563eb,#7c3aed);
-color:white;
-padding:40px;
-text-align:center;
+    background:
+    linear-gradient(rgba(15,23,42,.55),rgba(20,184,166,.35)),
+    url("https://s3-eu-west-1.amazonaws.com/beunicoos-quizs/21cbe197-75d8-4f25-87f8-7d6b11c9ac34.webp");
+
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+
+    height:320px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    color:#fff;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+header::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:500px;
+    height:500px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.08);
+
+    animation:girar 20s linear infinite;
 
 }
 
 header h1{
 
-font-size:36px;
+    position:relative;
+    z-index:2;
+
+    font-size:56px;
+
+    text-shadow:0 4px 15px rgba(0,0,0,.45);
 
 }
 
 header p{
 
-margin-top:10px;
-font-size:18px;
+    position:relative;
+    z-index:2;
+
+    margin-top:15px;
+
+    font-size:22px;
+
+    text-shadow:0 3px 12px rgba(0,0,0,.45);
+
+}
+
+@keyframes girar{
+
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
 
 }
 
@@ -49,49 +116,64 @@ font-size:18px;
 
 .container{
 
-display:flex;
-min-height:100vh;
+    display:flex;
+
+    min-height:100vh;
 
 }
 
-/*================ MENU ================*/
+/*================ MENÚ ================*/
 
 nav{
 
-width:300px;
-background:#0f172a;
-padding:20px;
+    width:300px;
+
+    background:#ffffff;
+
+    padding:22px;
+
+    box-shadow:5px 0 20px rgba(0,0,0,.08);
 
 }
 
 nav ul{
 
-list-style:none;
+    list-style:none;
 
 }
 
 nav li{
 
-margin-bottom:12px;
+    margin-bottom:12px;
 
 }
 
 nav a{
 
-display:block;
-padding:14px;
-text-decoration:none;
-color:white;
-border-radius:10px;
-transition:.3s;
+    display:block;
+
+    padding:14px 18px;
+
+    border-radius:12px;
+
+    text-decoration:none;
+
+    color:#334155;
+
+    font-weight:600;
+
+    transition:.35s;
 
 }
 
 nav a:hover,
 .active{
 
-background:#2563eb;
-transform:translateX(8px);
+    background:linear-gradient(135deg,#38bdf8,#14b8a6);
+
+    color:#fff;
+
+    transform:translateX(8px);
 
 }
 
@@ -99,210 +181,253 @@ transform:translateX(8px);
 
 main{
 
-flex:1;
-padding:35px;
+    flex:1;
+
+    padding:35px;
 
 }
 
 .seccion{
 
-display:none;
-background:white;
-padding:30px;
-border-radius:15px;
-box-shadow:0 5px 20px #0003;
-animation:mostrar .5s;
+    display:none;
+
+    background:#fff;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+    animation:mostrar .5s;
 
 }
 
 @keyframes mostrar{
 
-from{
+    from{
 
-opacity:0;
-transform:translateY(20px);
+        opacity:0;
+        transform:translateY(20px);
 
-}
+    }
 
-to{
+    to{
 
-opacity:1;
-transform:translateY(0);
+        opacity:1;
+        transform:translateY(0);
 
-}
+    }
 
 }
 
 h2{
 
-color:#2563eb;
-margin-bottom:20px;
+    color:#0f766e;
+
+    margin-bottom:20px;
 
 }
 
-/*================ TARJETAS ================*/
+/*================ TARJETAS =================*/
 
 .trabajos-container{
 
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:20px;
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+    gap:22px;
 
 }
 
 .trabajo{
 
-background:#f8fafc;
-padding:20px;
-border-radius:15px;
-display:flex;
-gap:15px;
-align-items:center;
-border-left:6px solid #2563eb;
-box-shadow:0 5px 15px #0002;
-transition:.3s;
+    background:#ffffff;
+
+    border-left:6px solid #14b8a6;
+
+    border-radius:18px;
+
+    padding:22px;
+
+    display:flex;
+
+    gap:18px;
+
+    align-items:center;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+    transition:.35s;
 
 }
 
 .trabajo:hover{
 
-transform:translateY(-8px);
+    transform:translateY(-8px);
+
+    box-shadow:0 15px 30px rgba(20,184,166,.20);
 
 }
 
 .icono{
 
-font-size:38px;
+    font-size:42px;
 
 }
 
+/*================ BOTONES ================*/
+
 .btn{
 
-display:inline-block;
-background:#2563eb;
-color:white;
-padding:10px 18px;
-border-radius:8px;
-text-decoration:none;
-margin-top:10px;
+    display:inline-block;
+
+    padding:11px 20px;
+
+    margin-top:10px;
+
+    text-decoration:none;
+
+    color:#fff;
+
+    border-radius:10px;
+
+    background:linear-gradient(135deg,#06b6d4,#2563eb);
+
+    transition:.3s;
 
 }
 
 .btn:hover{
 
-background:#1d4ed8;
+    transform:translateY(-3px);
+
+    box-shadow:0 8px 18px rgba(37,99,235,.30);
 
 }
 
 .descargar{
 
-background:#16a34a;
+    background:linear-gradient(135deg,#22c55e,#16a34a);
 
 }
 
 .descargar:hover{
 
-background:#15803d;
+    box-shadow:0 8px 18px rgba(34,197,94,.30);
 
 }
 
+/*================ TARJETAS DESPLEGABLES ================*/
+
 .tarjetas{
 
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+    gap:20px;
 
 }
 
 .tarjeta{
 
-background:linear-gradient(135deg,#2563eb,#7c3aed);
-color:white;
-padding:20px;
-border-radius:15px;
-cursor:pointer;
-transition:.4s;
+    background:linear-gradient(135deg,#38bdf8,#3b82f6);
+
+    color:white;
+
+    padding:22px;
+
+    border-radius:18px;
+
+    cursor:pointer;
+
+    transition:.35s;
 
 }
 
 .tarjeta:hover{
 
-transform:translateY(-8px);
+    transform:translateY(-8px);
+
+    box-shadow:0 15px 30px rgba(59,130,246,.25);
 
 }
 
 .contenido-tarjeta{
 
-max-height:0;
-overflow:hidden;
-transition:.5s;
+    max-height:0;
+
+    overflow:hidden;
+
+    transition:.5s;
 
 }
 
 .tarjeta.activa .contenido-tarjeta{
 
-max-height:600px;
+    max-height:650px;
 
 }
 
 .contenido-tarjeta p{
 
-background:white;
-color:#1e293b;
-padding:10px;
-margin-top:10px;
-border-radius:8px;
+    background:#fff;
+
+    color:#334155;
+
+    padding:10px;
+
+    margin-top:10px;
+
+    border-radius:10px;
 
 }
 
-@media(max-width:800px){
+/*================ CARÁTULA ================*/
 
-.container{
+.caratula-fondo{
 
-flex-direction:column;
+    background-image:url('https://campusvirtual.uc.edu.py/pluginfile.php/217623/course/overviewfiles/descarga%20%283%29.jpg');
 
-}
+    background-size:cover;
 
-nav{
+    background-position:center;
 
-width:100%;
+    background-repeat:no-repeat;
 
-}
+    padding:70px;
 
-}
+    border-radius:20px;
 
-  .caratula-fondo{
+    position:relative;
 
-background-image:url('https://campusvirtual.uc.edu.py/pluginfile.php/217623/course/overviewfiles/descarga%20%283%29.jpg');
-background-size:cover;
-background-position:center;
-background-repeat:no-repeat;
-
-padding:70px;
-border-radius:20px;
-position:relative;
-overflow:hidden;
+    overflow:hidden;
 
 }
-
-/* Capa blanca semitransparente para facilitar la lectura */
 
 .caratula-fondo::before{
 
-content:"";
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(255,255,255,.88);
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    background:rgba(255,255,255,.88);
 
 }
 
-.caratula-fondo > div{
+.caratula-fondo>div{
 
-position:relative;
-z-index:1;
+    position:relative;
+
+    z-index:2;
 
 }
 
@@ -310,7 +435,71 @@ z-index:1;
 .caratula-fondo h3,
 .caratula-fondo p{
 
-color:#0f172a;
+    color:#0f172a;
+
+}
+
+/*================ SCROLL ================*/
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#e2e8f0;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#38bdf8;
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#0ea5e9;
+
+}
+
+/*================ RESPONSIVE ================*/
+
+@media(max-width:900px){
+
+.container{
+
+    flex-direction:column;
+
+}
+
+nav{
+
+    width:100%;
+
+}
+
+header{
+
+    height:250px;
+
+}
+
+header h1{
+
+    font-size:38px;
+
+}
+
+header p{
+
+    font-size:18px;
+
+}
 
 }
 
